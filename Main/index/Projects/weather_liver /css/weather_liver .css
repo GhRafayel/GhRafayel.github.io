@@ -1,0 +1,162 @@
+/*  section - header */
+
+body{
+    font-family: Arial;
+    padding-left: 10px ;
+    background-color: rgb(242, 200, 206);
+}
+header{
+   width: 400px;
+}
+
+#parent-header{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.calendar-div span{
+    font-size: 20px;
+    margin-right: 5px;
+}
+#form-img-input-btn{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 9px;
+    box-shadow: 0px 0px 3px 0px;
+    padding: 5px;
+}
+
+
+#input-header{
+    height: 40px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px 0px 0px 5px;
+
+}
+#input-header:focus{
+    outline: none;
+    border: none;
+}
+.button-header{
+    background-color: rgb(132, 102, 243);
+    height: 40px;
+    padding: 10px;
+    border: none;
+    font-size: 15px;
+    border-radius: 0px 5px 5px 0px;
+    margin-right: 5px;
+}
+/*  section - main */
+
+#main-parent{
+    display: grid;
+    grid-template-columns:300px 300px;
+    grid-row-gap: 15px;
+    grid-column-gap:25px ;
+    font-size: 20px;
+    
+}
+#main-parent :hover{
+    background-color: white;
+}
+ main h2{
+    margin-top: 60px;
+}
+.color-silver,
+.color-silver,
+.color-silver,
+.color-silver{
+    color: rgb(207, 70, 125);
+    margin-bottom: 10px;
+}
+.div-wind,
+.div-pressure,
+.div-lowest-highest,
+.div-humidity{
+    display: flex;
+    align-items: center;
+    border-radius: 9px;
+    height: 100px;
+    box-shadow: 0px 0px 6px 0px;
+    background-color:  rgb(75, 180, 232);
+}
+.div-wind-child-se{
+    margin-left: 10px;
+}
+.img-main-div{
+    margin:0px 30px;
+}
+.div-wind-child{
+    display: flex;
+}
+#main-parent img{
+    height: 20px;
+    object-fit: cover;
+    object-position: center;
+}
+
+/*  aside-ight */
+#aside-ight{
+    background-color: rgb(33, 33, 102);
+    position: absolute;
+    color: white;
+    right: 0px;
+    top: 0px;
+    width: 270px;
+    height:1000px;
+    padding: 10px;
+}
+.div-aside-1,
+.div-aside-2,
+.div-aside-3,
+.div-aside-4{
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.div-aside-3,
+.div-aside-4{
+    border-radius: 9px;
+    padding: 15px 0px 10px 10px;  
+    border: 1px solid black;
+    background-color: rgb(87, 87, 125) ;
+}
+
+.div-aside-3-child div{
+    margin-bottom: 7px;
+}
+.div-aside-4-child div{
+    margin-bottom: 7px;
+}
+#div-canvas{
+    max-width: 50%;
+    margin-top: 50px;
+}
+.div.canvas{
+    min-width: 100px;
+}
+#fahrenheit,
+#celsus{
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+footer button{
+    padding: 15px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 0px;
+    background-color: rgb(75, 180, 232);
+    color: white;
+    font-size: 20px;
+    margin-top: 30px;
+
+
+}
