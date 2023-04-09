@@ -1,0 +1,154 @@
+#about{
+  padding: 50px;
+}
+.about-container-row{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.about-col-1{
+  flex-basis: 35%;
+}
+.about-col-1-img{
+  width: 100%;
+  border-radius:15px;
+  
+}
+.about-col-2{
+  flex-basis: 60%;
+}
+.about-col-2 ul li{
+  margin:10px 0;
+  font-size: 25px;
+}
+.about-title{
+  font-size: 60px;
+  font-weight: 600;
+  color: #fff;
+}
+.about-p{
+  width: 90%;
+  text-align: justify;
+}
+
+.about-tab-title-div{
+  display: flex;
+  margin: 20px 0 40px;
+}
+#div-cv{
+  display: flex;
+  align-items: center;
+  flex-basis: 50%;
+  margin-bottom: 30px;
+}
+#div-cv .downlood-a{
+  margin-top: 20px;
+  margin-left: 40px;
+  display: inline-block;
+  width: fit-content;
+  border:1px solid #ff004f;
+  padding: 14px 50px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: white;
+  transition: background 0.6s;
+  transition:  0.6s,transform 0.6s;
+  font-size: 30px;
+}
+.downlood-a:hover{
+  background-color: #ff004f;
+  transform: translateY(-6px);
+}
+.about-tab-links-p{
+  margin-right: 50px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+}
+.about-tab-links-p::after{
+  content: '';
+  width: 0;
+  height: 3px;
+  background:red ;
+  position:absolute;
+  left: 0;
+  bottom: -8px;
+  transition: 0.6s;
+}
+.about-tab-links-p.active-link::after{
+  width: 50%;
+}
+
+.about-tab-content ul li span{
+  font-size: 18px;
+}
+.about-tab-content{
+  display: none;
+}
+.about-tab-content.active-tab{
+  display: block;
+}
+#education span{
+  display: block;
+  margin-top:20px;
+}
+#experience a{
+  color: rgb(130, 167, 237);
+  text-decoration: none;
+  font-size: 18px;
+  position: relative;
+}
+#experience a::after{
+  content: '';
+  width: 0;
+  height: 3px;
+  background:red ;
+  position: absolute;
+  left: 0px;
+  bottom: -6px;
+  transition: 0.6s;
+}
+#experience a:hover::after{
+  width: 100%;
+}
+#education a{
+    color:rgb(27, 41, 233);
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+#education a::after{
+  content: '';
+  width: 0;
+  height: 3px;
+  background:red ;
+  position: absolute;
+  left: 0px;
+  bottom: -6px;
+  transition: 0.6s;
+}
+#education a:hover::after{
+  width: 100%;
+}
+/*-------------------------css for small screens---------------*/
+  @media only screen and (max-width: 600px){
+    .about-title{
+      font-size: 40px;
+    }
+    .about-col-1,
+    .about-col-2{
+      flex-basis: 100%;
+    }
+    .about-col-1{
+      margin-bottom: 30px;
+    }
+    .about-p{
+      font-size: 14px;
+    }
+    .about-tab-links-p{
+      font-size: 16px;
+      margin-right: 20px;
+    }
+    
+  }
