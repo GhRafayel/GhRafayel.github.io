@@ -1,0 +1,38 @@
+body{
+   margin-top: 200px;
+    background-color: orange;
+    color: white;
+    font-family: Arial;
+
+}
+p{
+    font-size: 25px;
+}
+.parent{
+    display: flex;
+    min-width: 400px;
+    margin-bottom: 30PX;
+    text-align: center;
+    justify-content: center;
+}
+
+#parent{
+    text-align: center;
+}
+.parent div{
+    margin-left: 2px;
+}
+h1{
+    font-size: 23px;
+    font-weight: bolder;
+}
+
+button{
+    padding: 10px 30px;
+    border: 0.2px solid white ;
+    background-color: transparent;
+    color: white;
+    margin-left: 10px;
+    cursor: pointer;
+    
+}
