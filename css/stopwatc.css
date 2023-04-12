@@ -1,0 +1,53 @@
+body{
+    margin-top: 20px;
+    background-color: black;
+    font-family: Arial;
+}
+
+#parent{
+    text-align: center;
+    background-color: rgb(208, 155, 57);
+    color: rgb(19, 67, 83);
+    padding: 10px;
+    width: 100%;
+    font-size: 60px;
+}
+
+.child-2{
+    display: flex;
+    margin-bottom: 30px;
+    text-align: center;
+    justify-content: center;
+}
+
+.child-2 div{
+    margin-left: 2px;
+}
+
+
+button{
+    cursor: pointer;
+    border: 0.3px solid white ;
+    background-color: transparent;
+    color: rgb(19, 67, 83);
+    margin-left: 20px;
+    margin-bottom: 40px;
+    font-size: 30px; 
+    padding: 20px 60px;
+    
+}
+button:hover{
+    box-shadow: 0px 10px 0px white;
+}
+@media all and (max-width:500px){
+    #parent{
+        font-size: 20px;
+    }
+    button{
+        margin-left: 10px;
+        margin-bottom: 20px;
+        font-size: 15px; 
+        padding: 10px 30px;
+        
+    }
+}

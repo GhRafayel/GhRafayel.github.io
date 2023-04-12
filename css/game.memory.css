@@ -1,0 +1,128 @@
+*{
+  margin: 0px;
+  background-color: black;
+  font-family: Arial;
+}
+#header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 25px;
+}
+#header div {
+ margin: 10px;
+}
+#header button {
+  padding:5px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color:white;
+  text-decoration: none;
+  font-size: 18px;
+  position: relative;
+  cursor: pointer;
+}
+
+#header button::after{
+  content: '';
+  width: 0;
+  height: 3px;
+  background:white;
+  position: absolute;
+  left: 0px;
+  bottom: -6px;
+  transition: 0.4s;
+}
+#header button:hover::after{
+  width: 100%;
+  box-shadow:0px 0px 10px 0px white;
+}
+#text{
+  text-align:center;
+  margin-bottom: 20px;
+  font-size: 40px;
+  color: white;
+}
+#div-parent{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  justify-content: center;
+  align-items: center;
+  grid-gap:5px;
+  padding: 10px;
+  margin: 5px;
+}
+#div-parent div{
+    border: 1px solid red;
+    margin: 5px;
+}
+#div-parent img{
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  object-position: top;
+  cursor: pointer;
+}
+
+.div-btn-reset{
+  text-align: center;
+}
+#reset{
+  padding:5px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color:white;
+  text-decoration: none;
+  font-size: 18px;
+  position: relative;
+  cursor: pointer;
+}
+#reset::after{
+  content: '';
+  width: 0;
+  height: 3px;
+  background:white;
+  position: absolute;
+  left: 0px;
+  bottom: -6px;
+  transition: 0.4s;
+}
+#reset:hover::after{
+  width: 100%;
+  box-shadow:0px 0px 10px 0px white;
+}
+
+
+
+@media only screen and (max-width: 600px){
+  #div-parent{
+    grid-template-columns: repeat(auto-fit, minmax(100px,1fr));
+
+  }
+  #div-parent img {
+    height: 100px;
+  }
+
+  #text{
+    font-size: 25px;
+  }
+}
+@media only screen and (max-width: 450px){
+  #div-parent{
+    grid-template-columns: repeat(auto-fit, minmax(50px,1fr));
+
+  }
+  #div-parent img {
+    height: 50px;
+  }
+
+  #text{
+    font-size: 20px;
+  }
+}
