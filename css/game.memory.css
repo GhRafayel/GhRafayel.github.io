@@ -102,10 +102,7 @@
 
 @media only screen and (max-width: 600px){
   #div-parent{
-   display: grid;
-   grid-template-columns: 150px 150px 150px ;
-   grid-row:10px ;
-   grid-column: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
 
   }
 
@@ -115,7 +112,7 @@
 }
 @media only screen and (max-width: 450px){
   #div-parent{
-    grid-template-columns: repeat(auto-fit, minmax(50px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
 
   }
   #div-parent img {
