@@ -102,11 +102,11 @@
 
 @media only screen and (max-width: 600px){
   #div-parent{
-    grid-template-columns: repeat(auto-fit, minmax(100px,1fr));
+   display: grid;
+   grid-template-columns: 150px 150px 150px ;
+   grid-row:10px ;
+   grid-column: 10px;
 
-  }
-  #div-parent img {
-    height: 100px;
   }
 
   #text{
