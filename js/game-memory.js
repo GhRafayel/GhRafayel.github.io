@@ -59,28 +59,28 @@ reset.addEventListener('click',()=>{
 btn_12.addEventListener('click', () => {
     divParent.innerHTML = '';
     let arr = sortAnimal(animalImg);
-    createElement(arr.slice(6).concat(arr.slice(6)));
+    createElement(sortAnimal(arr.slice(6).concat(arr.slice(6))));
     text.innerHTML = ' The game has started' ;
 
 });
 btn_16.addEventListener('click', () => {
     divParent.innerHTML = '';
     let arr = sortAnimal(animalImg);
-    createElement(arr.slice(4).concat(arr.slice(4)));
+    createElement(sortAnimal(arr.slice(4).concat(arr.slice(4))));
     text.innerHTML = ' The game has started' ;
 
 });
 btn_20.addEventListener('click', () => {
     divParent.innerHTML = '';
     let arr = sortAnimal(animalImg);
-    createElement(arr.slice(2).concat(arr.slice(2)));
+    createElement(sortAnimal(arr.slice(2).concat(arr.slice(2))));
     text.innerHTML = ' The game has started' ;
 
 });
 btn_24.addEventListener('click', () => {
     divParent.innerHTML = '';
     let arr = sortAnimal(animalImg);
-    createElement(arr.concat(arr));
+    createElement(sortAnimal(arr.concat(arr)));
     text.innerHTML = ' The game has started' ;
 
 });
