@@ -98,7 +98,7 @@
 
 #div-parent{
   display: grid;
-  grid-template-columns:  250px 250px  250px 250px 250px 250px;
+  grid-template-columns:  100px 100px  100px 100px 100px 100px;
   justify-content: center;
   align-items: center;
   padding: 10px;
@@ -108,18 +108,18 @@
 
 @media all and (max-width: 1500px) {
   #div-parent{
-    grid-template-columns: 250px 250px  250px 250px 250px  ;
+    grid-template-columns: 100px 100px  100px 100px 100px  ;
   }
 }
 @media all and (max-width: 1250px) {
   #div-parent{
-    grid-template-columns: 250px 250px  250px 250px  ;
+    grid-template-columns: 100px  100px   100px 100px  ;
   }
 }
 
 
 @media all and (max-width: 1000px) {
   #div-parent{
-    grid-template-columns: 250px 250px 250px  ;
+    grid-template-columns: 100px  100px   100px   ;
   }
 }
