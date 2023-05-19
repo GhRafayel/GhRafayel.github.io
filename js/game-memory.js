@@ -90,13 +90,14 @@ function sortAnimal(arr){
 }
 
 function createElement(arr){
-     arr.forEach((element,i)=>{
-            document.getElementById('div-parent')
-            .appendChild(document.createElement('div'))
-            .appendChild(document.createElement("img"));
-            document.getElementsByTagName('img').item(i).src = `../img/game_memory/${[element]}`;
-            document.getElementsByTagName('img').item(i).style = 'opacity:0;';
-        });
+    for(let i = 0; i < arr.length; i++) {
+        let div = document.createElement('div');
+        let img = div.appendChild(document.createElement('img'));
+            img.src = `../img/game_memory/${arr[i]}`;
+            img.id = Math.random();
+            img.style = 'opacity:0;';
+        divParent.append(div);
+    }
         imgClick();
 }
 
@@ -105,13 +106,12 @@ function imgClick(){
  let imgArrey = [...document.getElementsByTagName('img')];
  let openingElementArrey = [];
  let arr = [];
- imgArrey.forEach((v)=>{
+ imgArrey.forEach((v)=> {
         v.addEventListener('click', (e) => {
-            console.log(e.target)
             e.target.style = 'opacity:1;';
                 arr.push(e.target);
             if(arr.length === 2 ){
-                if(arr[0].src === arr[1].src){
+                if(arr[0].src === arr[1].src && arr[0].id !== arr[1].id){
                   arr.forEach((v)=> openingElementArrey.push(v));
                   openElement(openingElementArrey,imgArrey);
                        arr = [];
