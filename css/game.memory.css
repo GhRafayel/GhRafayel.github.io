@@ -3,6 +3,9 @@
   background-color: black;
   font-family: Arial;
 }
+body{
+  background-color: blue;
+}
 #header {
   display: flex;
   justify-content: center;
