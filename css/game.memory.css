@@ -102,11 +102,11 @@
   cursor: pointer;
   border-radius: 50%;
 }
-@media all and (min-width: 1200px) {
+@media all and (min-width: 1300px) {
 
 #div-parent{
   display: grid;
-  grid-template-columns: 150px  150px 150px 150px ;
+  grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
   justify-content: center;
   align-items: center;
   grid-column-gap:20px ;
@@ -119,7 +119,7 @@
 
   #div-parent{
     display: grid;
-    grid-template-columns:100px 100px 100px 100px ;
+    grid-template-columns: repeat(auto-fit, minmax(100px,1fr));
     justify-content: center;
     align-items: center;
     grid-column-gap:25px ;
@@ -147,7 +147,7 @@
 
   #div-parent{
     display: grid;
-    grid-template-columns:100px 100px 100px ;
+    grid-template-columns: repeat(auto-fit, minmax(50px,1fr));
     justify-content: center;
     align-items: center;
     grid-column-gap:25px ;
