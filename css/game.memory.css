@@ -83,7 +83,7 @@
 
 #div-parent{
   display: grid;
-  grid-template-columns: 120px 120px 120px 120px 120px ;
+  grid-template-columns: 150px 150px 150px 150px 150px 150px;
   justify-content: center;
   grid-column-gap:20px ;
   grid-row-gap: 20px;
@@ -93,17 +93,17 @@
   width:100%;
   box-shadow:0px 0px 10px 0px white;
   border-radius: 50%;
-  padding: 5px; 
+  
 }
 #div-parent img{
-  width:120px;
-  height: 120px;
+  width:150px;
+  height: 150px;
   object-fit: cover;
   object-position: top;
   cursor: pointer;
   border-radius: 50%;
 }
-@media all and (max-width: 1200px) {
+@media all and (max-width: 1100px) {
 
 #div-parent{
   display: grid;
@@ -139,7 +139,7 @@
     width:100%;
     box-shadow: 0px 0px 10px 0px white;
     border-radius: 50%;
-    padding: 10px;
+    
   }
   #div-parent img{
     width:70px;
@@ -156,7 +156,7 @@
 
   #div-parent{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(40px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(60px,1fr));
     justify-content: center;
     align-items: center;
     grid-column-gap:25px ;
@@ -167,11 +167,11 @@
     width:100%;
     box-shadow: 0px 0px 10px 0px white;
     border-radius: 50%;
-    padding: 10px;
+    
   }
   #div-parent img{
-    width:40px;
-    height: 40px;
+    width:60px;
+    height: 60px;
     object-fit: cover;
     object-position: top;
     cursor: pointer;
