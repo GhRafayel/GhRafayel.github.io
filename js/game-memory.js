@@ -21,68 +21,38 @@ let animalImg  = [
     'Tiger.jpeg',
     'Zebra.jpeg'
     ];
-    /*
-let numberImg = [
-    '1.png',
-    '2.png',
-    '3.png',
-    '4.png',
-    '5.png',
-    '6.png',
-    '7.png',
-    '8.png', 
-    '9.png'
-];
-*/
+function loop(arr){
+    divParent.innerHTML = '';
+    for(let i = 0; i < arr.length; i++){
+        let div = document.createElement('div');
+        let img = div.appendChild(document.createElement('img'));
+            img.src = `../img/game_memory/${arr[i]}`;
+        divParent.append(div);
+    }
+    text.innerHTML = 'You  can start the game' ;       
+    return divParent;
+}
+loop(animalImg);
 
-    animalImg.forEach((element)=>{
-        document.getElementById('div-parent')
-        .appendChild(document.createElement('div'))
-        .appendChild(document.createElement("img"))
-        .src = `../img/game_memory/${element}`;
-        text.innerHTML = 'You  can start the game' ;
-    });
-
-   
 reset.addEventListener('click',()=>{
-    divParent.innerHTML = '';
-    text.innerHTML  = 'You  can start the game' ;
-    animalImg.forEach((element)=>{
-        document.getElementById('div-parent')
-        .appendChild(document.createElement('div'))
-        .appendChild(document.createElement("img"))
-        .src = `../img/game_memory/${element}`;
-    });
-
+   loop(animalImg);
 })
-
-btn_12.addEventListener('click', () => {
+function sort(){
     divParent.innerHTML = '';
-    let arr = sortAnimal(animalImg);
-    createElement(sortAnimal(arr.slice(6).concat(arr.slice(6))));
-    text.innerHTML = ' The game has started' ;
-
+    text.innerHTML = ' The game has started';
+    return sortAnimal(animalImg);
+}
+btn_12.addEventListener('click', () => {
+    createElement(sortAnimal(sort().slice(6).concat(sort().slice(6))));
 });
 btn_16.addEventListener('click', () => {
-    divParent.innerHTML = '';
-    let arr = sortAnimal(animalImg);
-    createElement(sortAnimal(arr.slice(4).concat(arr.slice(4))));
-    text.innerHTML = ' The game has started' ;
-
+    createElement(sortAnimal(sort().slice(4).concat(sort().slice(4))));
 });
-btn_20.addEventListener('click', () => {
-    divParent.innerHTML = '';
-    let arr = sortAnimal(animalImg);
-    createElement(sortAnimal(arr.slice(2).concat(arr.slice(2))));
-    text.innerHTML = ' The game has started' ;
-
+btn_20.addEventListener('click', () => { 
+    createElement(sortAnimal(sort().slice(2).concat(sort().slice(2))));
 });
 btn_24.addEventListener('click', () => {
-    divParent.innerHTML = '';
-    let arr = sortAnimal(animalImg);
-    createElement(sortAnimal(arr.concat(arr)));
-    text.innerHTML = ' The game has started' ;
-
+    createElement(sortAnimal(sort().concat(sort())));
 });
 function sortAnimal(arr){
     const randomly = () => Math.random() - 0.5;
