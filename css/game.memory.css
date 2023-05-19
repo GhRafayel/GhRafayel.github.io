@@ -12,7 +12,7 @@
   margin-bottom: 25px;
 }
 #header div {
- margin: 10px;
+ margin: 2px;
 }
 #header button {
   padding:5px 20px;
@@ -50,6 +50,7 @@
   text-align: center;
 }
 #reset{
+  margin-top: 20px;
   padding:5px 20px;
   border: none;
   border-radius: 10px;
@@ -77,8 +78,6 @@
 }
 .grid{
   text-align: center;
- padding: 10px;
-
 }
 
 #div-parent{
