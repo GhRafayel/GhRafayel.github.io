@@ -48,9 +48,9 @@
 }
 .div-btn-reset{
   text-align: center;
+  margin-top: 20px;
 }
 #reset{
-  margin-top: 20px;
   padding:5px 20px;
   border: none;
   border-radius: 10px;
@@ -81,18 +81,18 @@
 }
 
 #div-parent{
+  padding: 10px;
   display: grid;
   grid-template-columns: 150px 150px 150px 150px 150px 150px;
   justify-content: center;
+  align-items: center;
   grid-column-gap:20px ;
   grid-row-gap: 20px;
 }
 
 #div-parent div{
-  width:100%;
   box-shadow:0px 0px 10px 0px white;
   border-radius: 50%;
-  
 }
 #div-parent img{
   width:150px;
@@ -103,79 +103,35 @@
   border-radius: 50%;
 }
 @media all and (max-width: 1100px) {
-
-#div-parent{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px,1fr));
-  justify-content: center;
-  align-items: center;
-  grid-column-gap:20px ;
-  grid-row-gap: 20px;
-}
-#div-parent img{
-  width:100px;
-  height: 100px;
-  object-fit: cover;
-  object-position: top;
-  cursor: pointer;
-  border-radius: 50%;
-}
-  
-}
-
-@media all and (max-width: 750px) {
-
   #div-parent{
-    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px,1fr));
+  }
+  #div-parent img{
+    width:100px;
+    height: 100px;
+  }
+}
+@media all and (max-width: 750px) {
+  #div-parent{
     grid-template-columns: repeat(auto-fit, minmax(70px,1fr));
-    justify-content: center;
-    align-items: center;
     grid-column-gap:25px ;
     grid-row-gap: 15px;
-  }
-
-  #div-parent div{
-    width:100%;
-    box-shadow: 0px 0px 10px 0px white;
-    border-radius: 50%;
-    
   }
   #div-parent img{
     width:70px;
     height: 70px;
-    object-fit: cover;
-    object-position: top;
-    cursor: pointer;
-    border-radius: 50%;
   }
-  
 }
 
 @media all and (max-width: 600px) {
-
-  #div-parent{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(60px,1fr));
-    justify-content: center;
-    align-items: center;
-    grid-column-gap:25px ;
-    grid-row-gap: 15px;
-  }
-  
-  #div-parent div{
-    width:100%;
-    box-shadow: 0px 0px 10px 0px white;
-    border-radius: 50%;
-    
-  }
-  #div-parent img{
-    width:60px;
-    height: 60px;
-    object-fit: cover;
-    object-position: top;
-    cursor: pointer;
-    border-radius: 50%;
-  }
-    
+    #div-parent{
+      grid-template-columns: repeat(auto-fit, minmax(60px,1fr));
+      grid-column-gap:25px ;
+      grid-row-gap: 15px;
+    }
+    #div-parent img{
+      width:60px;
+      height: 60px;
+    }
   }
   
