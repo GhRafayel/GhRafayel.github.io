@@ -37,29 +37,33 @@ loop(animalImg);
 reset.addEventListener('click',()=>{
    loop(animalImg);
 })
-function sort(){
-    divParent.innerHTML = '';
-    text.innerHTML = ' The game has started';
-    return sortAnimal(animalImg);
-}
-btn_12.addEventListener('click', () => {
-    createElement(sortAnimal(sort().slice(6).concat(sort().slice(6))));
-});
-btn_16.addEventListener('click', () => {
-    createElement(sortAnimal(sort().slice(4).concat(sort().slice(4))));
-});
-btn_20.addEventListener('click', () => { 
-    createElement(sortAnimal(sort().slice(2).concat(sort().slice(2))));
-});
-btn_24.addEventListener('click', () => {
-    createElement(sortAnimal(sort().concat(sort())));
-});
+
 function sortAnimal(arr){
     const randomly = () => Math.random() - 0.5;
     return arr.sort(randomly);
 }
 
+
+btn_12.addEventListener('click', () => {
+    let newArry = sortAnimal(animalImg);
+    createElement(sortAnimal(newArry.slice(6) .concat(newArry.slice(6))));
+});
+btn_16.addEventListener('click', () => {
+    let newArry = sortAnimal(animalImg);
+    createElement(sortAnimal(newArry.slice(4).concat(newArry.slice(4))));
+});
+btn_20.addEventListener('click', () => { 
+    let newArry = sortAnimal(animalImg);
+    createElement(sortAnimal(newArry.slice(2).concat(newArry.slice(2))));
+});
+btn_24.addEventListener('click', () => {
+    createElement(sortAnimal(animalImg.concat(animalImg)));
+});
+
+
 function createElement(arr){
+    divParent.innerHTML = '';
+    text.innerHTML = ' The game has started';
     for(let i = 0; i < arr.length; i++) {
         let div = document.createElement('div');
         let img = div.appendChild(document.createElement('img'));
