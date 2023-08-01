@@ -7,7 +7,7 @@ const app = express();
 app.use(express.static('public'));
 app.use(express.json());
 
-app.get('/', (req, res) => {
+app.get('https://ghrafayel.github.io/Shopping_List/public/index.html/', (req, res) => {
   req.redirect("public/index.html");
 });
 
