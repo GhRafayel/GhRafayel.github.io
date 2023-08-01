@@ -1,10 +1,10 @@
     
-    const  scissorsr =  document.querySelector('.button-scissors');
+    const  scissors =  document.querySelector('.button-scissors');
     const  stone  =  document.querySelector('.button-stone');
     const  paper =  document.querySelector('.button-paper');
     const  won    =  document.querySelector('.button-won');
 
-    let set = [scissorsr, stone, paper];
+    let set = [scissors, stone, paper];
 
     let rock = document.querySelector('.Rock');
     let scissors = document.querySelector('.Comouter');
@@ -17,20 +17,20 @@
 
 
 
-    scissorsr.addEventListener('click', () => {
+    scissors.addEventListener('click', () => {
         resoult.innerHTML = '' ;
-        rock.innerHTML = ` scissorsr ${rockNamber}` ;
+        rock.innerHTML = ` scissors ${rockNamber}` ;
         computer = set[ Math.floor(Math.random() * 3)];
 
-        if(computer === scissorsr){
-            scissors.innerHTML =  `scissorsr ${scissorsNamber }`;
-            rock.innerHTML = `scissorsr ${rockNamber }`;
+        if(computer === scissors){
+            scissors.innerHTML =  `scissors ${scissorsNamber }`;
+            rock.innerHTML = `scissors ${rockNamber }`;
         }
          if(computer === stone){
             scissors.innerHTML =  `stone ${scissorsNamber  += 1}`;
         }
          if(computer === paper){
-            rock.innerHTML = `scissorsr ${rockNamber  += 1}`;
+            rock.innerHTML = `scissors ${rockNamber  += 1}`;
             scissors.innerHTML =  `paper ${scissorsNamber}`;
         }
     });
@@ -44,8 +44,8 @@
             scissors.innerHTML =  `stone ${scissorsNamber}`;
             rock.innerHTML = `stone ${rockNamber }`;
         }
-         if(computer === scissorsr){
-            scissors.innerHTML = `scissorsr ${scissorsNamber }`;
+         if(computer === scissors){
+            scissors.innerHTML = `scissors ${scissorsNamber }`;
             rock.innerHTML = `stone ${rockNamber += 1}`;
         }
          if(computer === paper){
@@ -59,8 +59,8 @@
         rock.innerHTML = ` paper ${rockNamber}` ;
         computer = set[ Math.floor(Math.random() * 3)];
 
-        if(computer === scissorsr){
-            scissors.innerHTML =  `scissorsr ${scissorsNamber +=1}`;
+        if(computer === scissors){
+            scissors.innerHTML =  `scissors ${scissorsNamber +=1}`;
         }
         if(computer === stone){
             scissors.innerHTML =  `stone ${scissorsNamber }`;
