@@ -1,7 +1,9 @@
 const root = document.getElementById('root');
 function App(){
-
-  fetch('https://ghrafayel.github.io/Shopping_List/public/index.html',).then((strim) => strim.json()).then(((json) => {
+  let todo = [];
+  fetch('https://ghrafayel.github.io/Shopping_List/public/index.html',)
+  .then((strim) =>  strim.json())
+  .then(((json) => {
       todo = json.map((v) => v = {...v,kod: Math.random()});
       render();
   })).catch((err) =>{
