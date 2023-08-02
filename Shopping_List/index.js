@@ -11,13 +11,13 @@ app.get('/', (req, res) => {
   req.redirect("public/index.html");
 });
 
-app.get('/todo', (req, res) => {
+app.get('https://ghrafayel.github.io/Shopping_List/public/index.html', (req, res) => {
   fs.promises.readFile(path.resolve('data.json'), 'utf-8').then(json =>{
     res.send(json);
     
   })
 })
-app.post('/todo', (req, res) => {
+app.post('https://ghrafayel.github.io/Shopping_List/public/index.html', (req, res) => {
   fs.promises
   .writeFile(path.resolve("data.json"),JSON.stringify(req.body,undefined,2))
   .then(json =>{

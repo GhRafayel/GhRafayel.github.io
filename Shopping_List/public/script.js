@@ -1,14 +1,14 @@
 const root = document.getElementById('root');
 function App(){
 
-  fetch('/todo',).then((strim) => strim.json()).then(((json) => {
+  fetch('https://ghrafayel.github.io/Shopping_List/public/index.html',).then((strim) => strim.json()).then(((json) => {
       todo = json.map((v) => v = {...v,kod: Math.random()});
       render();
   })).catch((err) =>{
     console.log('This is a error');
   })
   function sendTodo(){
-    fetch('/todo', {
+    fetch('https://ghrafayel.github.io/Shopping_List/public/index.html', {
       method: 'POST',
       headers: {
         "content-type": "application/json"
