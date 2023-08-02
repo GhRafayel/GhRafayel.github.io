@@ -14,14 +14,14 @@ app.get('/', (req, res) => {
 app.get('/todo', (req, res) => {
   fs.promises.readFile(path.resolve('data.json'), 'utf-8').then(json =>{
     res.send(json);
-    console.log(json);
+    
   })
 })
 app.post('/todo', (req, res) => {
   fs.promises
   .writeFile(path.resolve("data.json"),JSON.stringify(req.body,undefined,2))
   .then(json =>{
-    console.log(todo);
+   
   }).catch(()=>{
     res.send('error');
   })
