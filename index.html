@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>  Portfolio </title>
-    <link rel="stylesheet" href="../css/header.css">
-    <link rel="stylesheet" href="../css/about_container.css">
-    <link rel="stylesheet" href="../css/services_container.css">
-    <link rel="stylesheet" href="../css/portfolio_container.css">
-    <link rel="stylesheet" href="../css/contact_container.css">
-    <link rel="stylesheet" href="../css/game.css">
+    <link rel="stylesheet" href="./header.css">
+    <link rel="stylesheet" href="./about_container.css">
+    <link rel="stylesheet" href="./services_container.css">
+    <link rel="stylesheet" href="./portfolio_container.css">
+    <link rel="stylesheet" href="./contact_container.css">
+    <link rel="stylesheet" href="./game.css">
 </head>
 <body>
    <div id="container">
@@ -18,7 +18,7 @@
         <div class="container-div-h4">
             <div class="absolute">
 
-                <a href="/Shopping_List/public/index.html" class="absolute-a">
+                <a href="/shoppingList" class="absolute-a">
                     <span class="h4-span">SHOPPING</span> LIST
                     <!-- <span class="h4-span">ING</span> LIST -->
                 </a>
@@ -37,12 +37,13 @@
                     <li><a  href="#game">Games</a></li>
                     <li><a  href="#about">About</a></li>
                     <!--<li><a  href="#home">Home</a></li>-->
-                    <img src="./img/index_img/close.png"
+                    <img src="./index_img/close.png"
+                    
                          class="header-icon" 
                          onclick="closeMenu()"
                          >
                 </ul>
-                <img src="./img/index_img/menu.png" 
+                <img src="./index_img/menu.png" 
                      class="header-icon" 
                      onclick="openMenu()"
                      >
@@ -62,14 +63,14 @@
         <div class="about-container">
             <div class="about-container-row">
                 <div  class="about-col-1">
-                    <img src="./img/My_foto.png" alt="about-poto" class="about-col-1-img">
+                    <img src="./index_img/My_foto.png" alt="about-poto" class="about-col-1-img">
                 </div>
                 <div class="about-col-2">
                     <div id="div-cv">
                         <h3 class="about-title">
                             About Me
                         </h3>
-                        <a href="./img/LL_Rafayel_Ghazaryan_2023.pdf" download class="downlood-a">Downlood My CV</a>
+                        <a href="./LL_Rafayel_Ghazaryan_2023.pdf" download class="downlood-a">Downlood My CV</a>
                     </div>
                     <p class="about-p">
                         I am Rafayel from Armenia. Now I live in Vienna, Austria. I started studying web development for fun and became too interested in it not to become a professional web developer. Since then I learned a lot on my own watching Youtube courses and took a professional individual course. You can get familiar with my skills, works and services below.                         
@@ -77,20 +78,20 @@
                    
                     <div class="about-tab-title-div">
                         <p class="about-tab-links-p active-link" onclick="openTab('skills')">Skills</p>
-                        <p class="about-tab-links-p" onclick="openTab('experience')">Experience</p>
+                        <!-- <p class="about-tab-links-p" onclick="openTab('experience')">Experience</p> -->
                         <p class="about-tab-links-p" onclick="openTab('education')">Education</p>
                         <p class="about-tab-links-p" onclick="openTab('languages')">Languages</p>
                     
                     </div>
                     <div class="about-tab-content active-tab" id="skills">
                         <ul>
-                            <li><span>APIs</span></li>
-                            <li><span>Git</span></li>
-                            <li><span>Front-end frameworks</span></li>
-                            <li><span>Testing, debugging</span></li>
-                            <li><span>Responsive design</span></li>
-                            <li><span>User interface</span></li>
-                            <li><span>Document object model</span></li>
+                            <li><span>HTML</span></li>
+                            <li><span>CSS</span></li>
+                            <li><span>JavaScript</span></li>
+                            <li><span>NODE JS + ES6</span></li>
+                            <li><span>EXPRESS JS</span></li>
+                            <li><span>REACT JS </span></li>
+                            <li><span>O.O.P</span></li>
 
                         </ul>
                     </div>
@@ -166,7 +167,7 @@
             </div>
         </div>
     </div>
-
+    <div id="root"></div>
     <!------- services-------->
     <!-- <div id="services">
         <div class="services-container">
@@ -210,32 +211,32 @@
                     <div>
                         <h4 class="portfolio-work-h4">Weather</h4>
                     </div>
-                    <a href="./weather.html" class="portfolio-work-a">
-                        <img src="./img/index_img/Weather.jpg" alt="Weather" class="portfolio-work-img">
+                    <a href="/weather" class="portfolio-work-a">
+                        <img src="./index_img/Weather.jpg" alt="Weather" class="portfolio-work-img">
                     </a>
                 </div>
                 <div class="portfolio-work">
                     <div>
                         <h4 class="portfolio-work-h4">Today_Overview</h4>
                     </div>
-                    <a href="./weather_liver .html" class="portfolio-work-a">
-                        <img src="./img/index_img/Today_Overview.jpg" alt="Today_Overview" class="portfolio-work-img">
+                    <a href="/weather_liver" class="portfolio-work-a">
+                        <img src="./index_img/Today_Overview.jpg" alt="Today_Overview" class="portfolio-work-img">
                     </a>
                 </div>
                 <div class="portfolio-work">
                     <div>
                         <h4 class="portfolio-work-h4">Stop_Watch</h4>
                     </div>
-                    <a href="./stopwatc.html" class="portfolio-work-a">
-                        <img src="./img/index_img/Stop_Watch.jpg" alt="Stop_Watch" class="portfolio-work-img">
+                    <a href="/stopWatch" class="portfolio-work-a">
+                        <img src="./index_img/Stop_Watch.jpg" alt="Stop_Watch" class="portfolio-work-img">
                     </a>
                 </div>
                 <div class="portfolio-work">
                     <div>
                         <h4 class="portfolio-work-h4">Bill_total</h4>
                     </div>
-                    <a href="./calculator.html" class="portfolio-work-a">
-                    <img src="./img/index_img/Bill_total.jpg" alt="/Bill_total" class="portfolio-work-img">
+                    <a href="/calculator" class="portfolio-work-a">
+                    <img src="./index_img/Bill_total.jpg" alt="/Bill_total" class="portfolio-work-img">
                     </a>
                 </div>
             </div>
@@ -251,24 +252,24 @@
                     <div>
                         <h4 class="game-work-h4">Game 1</h4>
                     </div>
-                    <a href="./game-1.html" class="game-work-a">
-                        <img src="./img/index_img/game-1.jpeg" alt="Game-1" class="game-work-img">
+                    <a href="/game_1" class="game-work-a">
+                        <img src="./index_img/game-1.jpeg" alt="Game-1" class="game-work-img">
                     </a>
                 </div>
                 <div class="game-work">
                     <div>
                         <h4 class="game-work-h4">Game 2</h4>
                     </div>
-                    <a href="./game-2.html" class="game-work-a">
-                        <img src="./img/index_img/game-2.jpeg" alt="game-2" class="game-work-img">
+                    <a href="/game_2" class="game-work-a">
+                        <img src="./index_img/game-2.jpeg" alt="game-2" class="game-work-img">
                     </a>
                 </div>
                 <div class="game-work">
                     <div>
                         <h4 class="game-work-h4">Memory Game</h4>
                     </div>
-                    <a href="./game-memory.html" class="game-work-a">
-                        <img src="./img/index_img/memory-game.jpg" alt="game-memory" class="game-work-img">
+                    <a href="/game-memory" class="game-work-a">
+                        <img src="./index_img/memory-game.jpg" alt="game-memory" class="game-work-img">
                     </a>
                 </div>
                
@@ -285,21 +286,21 @@
                     <h3 class="contact-title">
                         Contact Me
                     </h3>
-                    <div><img src="./img/index_img/Gmail.png" alt="mail" class="contact-left-p-img"> ghazarysnrafayel@gmail.com</div>
-                    <div><img src="./img/index_img/contact.png" alt="" class="contact-left-p-img"> +43 650 5 48 48 98</div>
+                    <div><img src="./index_img/Gmail.png" alt="mail" class="contact-left-p-img"> ghazarysnrafayel@gmail.com</div>
+                    <div><img src="./index_img/contact.png" alt="" class="contact-left-p-img"> +43 650 5 48 48 98</div>
 
                     <div class="contact-social-icon">
                         <a href="https://www.facebook.com/rafo.ghazaryan.52/" class="contact-social-icon-a" target="_blank">
-                            <img src="./img/index_img/facebook.png" alt="facebook" class="contact-social-icon-img">
+                            <img src="./index_img/facebook.png" alt="facebook" class="contact-social-icon-img">
                         </a>
                         <a href="https://www.instagram.com/" class="contact-social-icon-a" target="_blank">
-                            <img src="./img/index_img/instagram.png" alt="instagram" class="contact-social-icon-img">
+                            <img src="./index_img/instagram.png" alt="instagram" class="contact-social-icon-img">
                         </a>
                         <a href="https://twitter.com/tweeter?lang=en" class="contact-social-icon-a" target="_blank">
-                            <img src="./img/index_img/twitter.png" alt="twitter" class="contact-social-icon-img">
+                            <img src="./index_img/twitter.png" alt="twitter" class="contact-social-icon-img">
                         </a>
                         <a href="https://www.linkedin.com/feed/" class="contact-social-icon-a" target="_blank">
-                            <img src="./img/index_img/linkedin.png" alt="linkedin" class="contact-social-icon-img">
+                            <img src="./index_img/linkedin.png" alt="linkedin" class="contact-social-icon-img">
                         </a>
                     </div>
      
@@ -318,7 +319,6 @@
         <p class="end-p">All rights reserved</p>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-   <script src="../js/index.js"></script>
+   <script src="./index.js"></script>
 </body>
 </html>
-clear
