@@ -1,0 +1,127 @@
+*{
+  margin: 0px;
+}
+body{
+  background-image:url('./img/pexels-andre-furtado-1162251.jpg');
+  background-attachment: fixed;
+  background-size:cover;
+  font-family: Arial;
+  background-color: lightcyan;
+  font-weight: bold;
+  font-size: 30px;
+  min-height: 2000px;
+}
+header{
+  position: relative;
+}
+#time{
+  font-size: 25px;
+  font-weight: bold;
+  position: fixed;
+  top: 0px ;
+  left: 0px;
+  color: red;
+}
+
+
+#parent-header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;    
+}
+.form-div{
+  text-align: center;
+  flex-basis: 70%;
+  padding: 10px;
+}
+#input-header{
+height: 35px;
+width: 300px;
+cursor: pointer;
+}
+#input-header:hover{
+  box-shadow: 0px 0px 10px 0px;
+  transform: translateY(-6px);
+  transition: 0.5s;
+}
+.button-header{
+  background: none;
+  border: none;
+  font-size: 25px;
+  padding: 5px;
+  width: 100px;
+  cursor: pointer;
+  margin-left: 10px;
+  color: white;
+}
+
+.button-header:hover{
+  box-shadow: 0px 0px 10px 0px;
+  transform: translateY(-6px);
+  transition: 0.5s;
+}
+#main-parent{
+ 
+}
+.div-wind,
+.div-pressure,
+.div-humidity,
+.div-lowest-highest{
+  display:flex;
+  margin: 15px;
+  padding: 10px;
+  font-size: 25px;
+ 
+ box-shadow: 0px 0px 0.9px 0px blue;
+}
+.img-wind-div-2{ 
+ margin-left: 20px;
+}
+.div-wind-child{
+  display: flex;
+}
+.color-silver{
+  margin-bottom: 10px;
+}
+.todayOverview{
+  text-align: center;
+}
+#cityName{
+  margin-left: 50px;
+}
+.div-wind-child-se{
+  margin-left: 60px;
+}
+.div-wind img,
+.div-pressure img,
+.div-humidity img,
+.div-lowest-highest img{
+  width: 50px;
+  object-fit: cover;
+  padding: 2px;
+}
+.Sunrise_Sunset{
+  text-align: center;
+  font-size:30px ;
+  font-weight: bold;
+}
+.div-Sunrise,
+.div-Sunset{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 30px;
+  margin: 20px ;
+ 
+}
+.div-Sunrise img,
+.div-Sunset img{
+ width: 60px;
+}
+#div-canvas{
+  max-width: 800px;
+  margin-top:50px ;
+  text-align: center;
+}
+

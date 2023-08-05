@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>  Portfolio </title>
+    <link rel="stylesheet" href="./header.css">
+    <link rel="stylesheet" href="./about_container.css">
+    <link rel="stylesheet" href="./services_container.css">
+    <link rel="stylesheet" href="./portfolio_container.css">
+    <link rel="stylesheet" href="./contact_container.css">
+    <link rel="stylesheet" href="./game.css">
+</head>
+<body>
+   <div id="container">
+       <header class="header-container">
+        <div class="container-div-h4">
+            <div class="absolute">
+
+                <a href="/shoppingList" class="absolute-a">
+                    <span class="h4-span">SHOPPING</span> LIST
+                    <!-- <span class="h4-span">ING</span> LIST -->
+                </a>
+           </div>
+        </div>
+        <div>
+            <nav>
+                <!--
+                     <img src="" class="nav-logo-img">
+                -->
+              
+                <ul id="side-menu">
+                    <li><a  href="#portfolio">Projects</a></li>
+                    <li><a  href="#services">Service</a></li>
+                    <li><a  href="#contact">Contact</a></li>
+                    <li><a  href="#game">Games</a></li>
+                    <li><a  href="#about">About</a></li>
+                    <!--<li><a  href="#home">Home</a></li>-->
+                    <img src="./index_img/close.png"
+                    
+                         class="header-icon" 
+                         onclick="closeMenu()"
+                         >
+                </ul>
+                <img src="./index_img/menu.png" 
+                     class="header-icon" 
+                     onclick="openMenu()"
+                     >
+            </nav>
+        </div>
+       
+    </header>
+    <div class="text-container">
+        <!--
+            <p>JavaScript Developer</p>
+        -->
+        <h1>Hi, I'm  <span class="h1-span">Rafayel<br></span> from Armenia</h1>
+    </div>
+   </div>
+    <!---------------About-------------------->
+   <div id="about">
+        <div class="about-container">
+            <div class="about-container-row">
+                <div  class="about-col-1">
+                    <img src="./index_img/My_foto.png" alt="about-poto" class="about-col-1-img">
+                </div>
+                <div class="about-col-2">
+                    <div id="div-cv">
+                        <h3 class="about-title">
+                            About Me
+                        </h3>
+                        <a href="./LL_Rafayel_Ghazaryan_2023.pdf" download class="downlood-a">Downlood My CV</a>
+                    </div>
+                    <p class="about-p">
+                        I am Rafayel from Armenia. Now I live in Vienna, Austria. I started studying web development for fun and became too interested in it not to become a professional web developer. Since then I learned a lot on my own watching Youtube courses and took a professional individual course. You can get familiar with my skills, works and services below.                         
+                    </p>
+                   
+                    <div class="about-tab-title-div">
+                        <p class="about-tab-links-p active-link" onclick="openTab('skills')">Skills</p>
+                        <!-- <p class="about-tab-links-p" onclick="openTab('experience')">Experience</p> -->
+                        <p class="about-tab-links-p" onclick="openTab('education')">Education</p>
+                        <p class="about-tab-links-p" onclick="openTab('languages')">Languages</p>
+                    
+                    </div>
+                    <div class="about-tab-content active-tab" id="skills">
+                        <ul>
+                            <li><span>HTML</span></li>
+                            <li><span>CSS</span></li>
+                            <li><span>JavaScript</span></li>
+                            <li><span>NODE JS + ES6</span></li>
+                            <li><span>EXPRESS JS</span></li>
+                            <li><span>REACT JS </span></li>
+                            <li><span>O.O.P</span></li>
+
+                        </ul>
+                    </div>
+                    <div class="about-tab-content " id="languages">
+                        <ul>
+                            <li><span>Amenian</span></li>
+                            <li><span>English</span></li>
+                            <li><span>German</span></li>
+                            <li><span>Russian</span></li>
+                        </ul>
+                    </div>
+                    <div class="about-tab-content" id="experience">
+                        <ul>
+                            <li><a href="#portfolio">Projects</a></li>
+                            <li><a href="#game">Games</a></li>
+                            <li><a href="">Transliteration</a></li>
+                        </ul>
+                    </div>
+                    <div class="about-tab-content" id="education">
+                        <ul>
+                            <li>
+                                <span>
+                                    Course with certificate
+                                </span>
+                                <span>
+                                    <a href="https://www.atelier04.at/kurs/programmiersprache-javascript-grundlagen/klassische-gruppenkurse/"
+                                    class="about-tab-content-a">
+                                     Ateiler 04
+                                 </a>
+                                </span>
+                               
+                            </li>
+                            <li>
+                                <span>
+                                    Self-study JavaScript
+                                </span>
+                                <span>
+                                    <a href="https://www.youtube.com/@meschian"
+                                    class="about-tab-content-a">
+                                     Rouben Meschian
+                                    </a>
+                                </span>
+                               
+                            </li>
+
+                            <li>
+                                <span>
+                                    Self-study CSS
+                                </span>
+                                <span>
+                                    <a href="https://www.youtube.com/watch?v=G3e-cpL7ofc&t=15822s&ab_channel=SuperSimpleDev"
+                                        class="about-tab-content-a">
+                                        SuperSimpleDev
+                                    </a>
+                                </span>
+                             
+                            </li>
+                            <li>
+                                <span>
+                                    Self-study HTML 
+                                </span>
+                                <span>
+                                    <a href="https://www.youtube.com/@hayrapetyansami"
+                                       class="about-tab-content-a">
+                                        Samvel Hayrapetyan
+                                    </a>
+                                </span>
+                              
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="root"></div>
+    <!------- services-------->
+    <!-- <div id="services">
+        <div class="services-container">
+            <h3 class="services-title">My Services</h3>
+            <div class="services-list">
+                <div>
+                    <p>Web Development with your design</p>
+                    <a href="#contact"> For more information please contact me.</a>
+                </div>
+
+                <div>
+                    <p>
+                        Website maintenance
+                    </p>
+                    <a href="#contact">For more information please contact me.</a>
+                </div>
+
+                <div>
+                    <p>
+                        Web applications (JavaScript)
+                    </p>
+                    <a href="#contact">For more information please contact me.</a>
+                </div>
+                <div>
+                    <p>
+                        Teaching of HTML, CSS, JavaScript basics
+                    </p>
+                    <a href="#contact">For more information please contact me.</a>
+                </div>
+            </div>
+        </div> -->
+        <!-- <!-<a href="#" class="portfolio-btn">Home</a>--> 
+     <!-- </div>  -->
+
+    <!---------------My Portfolio---------------->
+    <div id="portfolio">
+        <div class="portfolio-container">
+            <h4 class="portfolio-title">My works</h4>
+            <div class="portfolio-work-list">
+                <div class="portfolio-work">
+                    <div>
+                        <h4 class="portfolio-work-h4">Weather</h4>
+                    </div>
+                    <a href="/weather" class="portfolio-work-a">
+                        <img src="./index_img/Weather.jpg" alt="Weather" class="portfolio-work-img">
+                    </a>
+                </div>
+                <div class="portfolio-work">
+                    <div>
+                        <h4 class="portfolio-work-h4">Today_Overview</h4>
+                    </div>
+                    <a href="/weather_liver" class="portfolio-work-a">
+                        <img src="./index_img/Today_Overview.jpg" alt="Today_Overview" class="portfolio-work-img">
+                    </a>
+                </div>
+                <div class="portfolio-work">
+                    <div>
+                        <h4 class="portfolio-work-h4">Stop_Watch</h4>
+                    </div>
+                    <a href="/stopWatch" class="portfolio-work-a">
+                        <img src="./index_img/Stop_Watch.jpg" alt="Stop_Watch" class="portfolio-work-img">
+                    </a>
+                </div>
+                <div class="portfolio-work">
+                    <div>
+                        <h4 class="portfolio-work-h4">Bill_total</h4>
+                    </div>
+                    <a href="/calculator" class="portfolio-work-a">
+                    <img src="./index_img/Bill_total.jpg" alt="/Bill_total" class="portfolio-work-img">
+                    </a>
+                </div>
+            </div>
+             <!--<a href="#" class="portfolio-btn">Home</a>-->
+        </div>
+    </div>
+    <!------------------Game----------------------->>
+    <div id="game">
+        <div class="game-container">
+            <h4 class="game-title">My Games</h4>
+            <div class="game-work-list">
+                <div class="game-work">
+                    <div>
+                        <h4 class="game-work-h4">Game 1</h4>
+                    </div>
+                    <a href="/game_1" class="game-work-a">
+                        <img src="./index_img/game-1.jpeg" alt="Game-1" class="game-work-img">
+                    </a>
+                </div>
+                <div class="game-work">
+                    <div>
+                        <h4 class="game-work-h4">Game 2</h4>
+                    </div>
+                    <a href="/game_2" class="game-work-a">
+                        <img src="./index_img/game-2.jpeg" alt="game-2" class="game-work-img">
+                    </a>
+                </div>
+                <div class="game-work">
+                    <div>
+                        <h4 class="game-work-h4">Memory Game</h4>
+                    </div>
+                    <a href="/game-memory" class="game-work-a">
+                        <img src="./index_img/memory-game.jpg" alt="game-memory" class="game-work-img">
+                    </a>
+                </div>
+               
+            </div>
+             <!--<a href="#" class="portfolio-btn">Home</a>-->
+        </div>
+    </div>
+
+    <!--------------Contact----------------->
+
+    <div id="contact">
+            <div class="contact-container">
+                <div class="contact-left">
+                    <h3 class="contact-title">
+                        Contact Me
+                    </h3>
+                    <div><img src="./index_img/Gmail.png" alt="mail" class="contact-left-p-img"> ghazarysnrafayel@gmail.com</div>
+                    <div><img src="./index_img/contact.png" alt="" class="contact-left-p-img"> +43 650 5 48 48 98</div>
+
+                    <div class="contact-social-icon">
+                        <a href="https://www.facebook.com/rafo.ghazaryan.52/" class="contact-social-icon-a" target="_blank">
+                            <img src="./index_img/facebook.png" alt="facebook" class="contact-social-icon-img">
+                        </a>
+                        <a href="https://www.instagram.com/" class="contact-social-icon-a" target="_blank">
+                            <img src="./index_img/instagram.png" alt="instagram" class="contact-social-icon-img">
+                        </a>
+                        <a href="https://twitter.com/tweeter?lang=en" class="contact-social-icon-a" target="_blank">
+                            <img src="./index_img/twitter.png" alt="twitter" class="contact-social-icon-img">
+                        </a>
+                        <a href="https://www.linkedin.com/feed/" class="contact-social-icon-a" target="_blank">
+                            <img src="./index_img/linkedin.png" alt="linkedin" class="contact-social-icon-img">
+                        </a>
+                    </div>
+     
+                </div>
+                <div class="contact-rigth">
+                    <form class="contact-rigth-form">
+                        <input type="text" name="Name" placeholder="Your Name" class="contact-rigth-form-input">
+                        <input type="email" name="email" placeholder="Your Email" required class="contact-rigth-form-input">
+                        <textarea name="Message" id=""  rows="6"  placeholder="Your Message" class="contact-rigth-form-textarea"></textarea>
+                        <button type="submit" class="submit-btn">Submit</button>
+                    </form>
+                </div>
+        </div>
+    </div>
+    <div class="end">
+        <p class="end-p">All rights reserved</p>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+   <script src="./index.js"></script>
+</body>
+</html>

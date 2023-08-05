@@ -1,0 +1,98 @@
+ 
+#root  {
+  border: 2px solid rgb(93, 139, 231);
+  width:600px;
+  min-width: 500px;
+  padding: 20px;
+  text-align: center;
+}
+
+   /* form style  */
+   #root #form-header {
+    border-radius: 5px solid red;
+    text-align:start;
+  }
+  #root #form-header input{
+    font-size: 25px;
+    padding: 15px 0px 10px 15px;
+    border-radius: 8px;
+    border-width: 0.5px;
+  }
+  #root #form-header button{
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 30px;
+    font-weight: bold;
+    border: none;
+  }
+  #root #form-header button:hover{
+    box-shadow: 0px 0px 10px 0px ;
+  }
+
+  /*  #root #div-lis   */
+  #root #div-list {
+    width: 600px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 20px;
+    min-height: 60px;
+    margin: 10px;
+    padding: 10px;
+  }
+  #root #div-list button{
+    margin-right: 15px;
+    padding: 10px;
+    border: none;
+    font-size: 25px;
+    font-weight: bold;
+    color: rgb(54, 94, 225);
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  #root #div-list button:hover{
+    box-shadow:0px 0px 10px 0px ;
+  }
+    /*. div label style  */
+  #root label {
+    width: 100%;
+    font-size: 40px;
+    font-weight: bold;
+    position: relative;
+    text-align: start;
+    cursor: pointer;
+  }
+ 
+  #root div label input{
+   width: 40px;
+   height: 40px;
+   margin-left: 40px;
+   position: absolute;
+   right: 30px;
+   cursor: pointer;
+  }
+
+
+
+  /* footer style  */
+  #root #div-footer {
+    font-size: 40px;
+    font-weight: bold;
+    display: block;
+    text-align: start;
+    border:none;
+    margin-left: 55px;
+  }
+  #root #div-footer span{
+   margin-right: 10px;
+  }
+  #root #div-footer button{
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 30px;
+    font-weight: bold;
+    border: none;
+  }
+  #root #div-footer button:hover{
+    box-shadow: 0px 0px 10px 0px ;
+  }
+  

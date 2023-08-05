@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Liver</title>
+    <link rel="stylesheet" href="./weather_liverStyle.css">
+    <link rel="icon" href="./img/Water.png" type="image/icon type">
+    
+</head>
+<body>
+        <header>
+            <div id="time">
+                <p>
+                    <time id="hours">
+                        
+                    </time>
+                    :
+                    <time id="minutes">
+                        
+                    </time>
+                    <time id="session">
+                        
+                    </time>
+               </p>
+            </div>
+            
+            <div id="parent-header">
+                <div class="form-div">
+                    <form id="form-img-input-btn"  >
+                            <input type="text" id="input-header" value="Wien"/>
+                            <button class="button-header"> Search </button>
+                    </form>
+                </div>
+
+            </div>
+        </header>
+
+<section id="memeri">
+   <main>
+        <div class=" todayOverview">
+            <p>
+                Today Overview   <span id="cityName">Vienna</span>
+            </p>
+        </div>
+        <div id="main-parent">
+            
+            <div class="div-wind">
+
+                <div class="img-wind-div-1">
+                    <img src="./img/wind.png">
+                </div>
+
+                <div class="img-wind-div-2">
+                    <div class="color-silver">
+                        Wind
+                    </div>
+                    <div class="div-wind-child">
+                        <div id="wind">
+                            6.9 mph
+                        </div>
+                        <div class="div-wind-child-se">
+                            SE.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="div-lowest-highest">
+
+                <div class="img-wind-div-1">
+                    <img src="./img/celsus.png">
+                </div>
+
+                <div class="img-wind-div-2">
+                    <div class="color-silver">
+                        Lowest / Highest
+                    </div>
+
+                    <div>
+                        <span id="lowest">
+                        51 &#8457
+                        </span>
+                        / 
+                        <span id="highest">
+                        55 &#8457 
+                        </span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="div-pressure">
+                <div class="img-wind-div-1">
+                    <img src="./img/pressure.png">
+                </div>
+                <div class="img-wind-div-2">
+                    <div class="color-silver">
+                        Pressure
+                    </div>
+                    <div id="pressure">
+                        1019 hpa
+                    </div>
+                </div>
+            </div>
+            
+            <div class="div-humidity">
+                <div class="img-wind-div-1">
+                    <img src="./img/Water.png">
+                </div>
+                <div class="img-wind-div-2">
+                    <div class="color-silver">
+                        Humidity
+                    </div>
+                    <div  id="humidity">
+                        88 %
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p>Sunrise & Sunset</p>
+
+        <div class="div-Sunrise">
+                <div>
+                    <img src="./img/Sunrise.png" width="30px">
+                </div>
+                <div>
+                    Sunrise
+                </div>
+                <div>
+                    <time id="hours1"></time>
+                    :
+                    <time id="minutes1"></time>
+                    <time id="session1"></time>
+                </div>
+                <div>
+                    in
+                    <span id="span-sunrise"></span>
+                </div>
+        </div>
+    
+        <div class="div-Sunset">
+                    <div>
+                        <img src="./img/Sunset.png" width="30px">
+                    </div>
+                    <div>
+                        Sunset
+                    </div>
+                    <div>
+                        <time id="hours2"></time>
+                        :
+                        <time id="minutes2"></time>
+                        <time id="session2"></time>
+                    </div>
+                
+                    <div>
+                        in
+                        <span id="span-sunset"></span>
+                    </div>  
+        </div>
+    </main>
+</section>
+   
+
+    </div>
+        <section>
+            <footer>
+                <div class="div-chart-grafik">
+                   
+                </div>
+                <div id="div-canvas">
+                   
+                  </div>
+                </div>
+            </footer>
+        </section>
+   
+    
+<script src="./weather_liverScript.js" ></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>
+
