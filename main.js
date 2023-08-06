@@ -45,11 +45,11 @@ app.get("/shoppingList", (req, res) => {
   res.sendFile(path.resolve("shoppingList.html"));
 });
 
-app.get('/todolist', (req, res) => {
-  
-  fs.promises.readFile(path.resolve('data.json'), 'utf-8').then(json =>{
-    res.send(json);
-  })
+app.get('/todo', (req, res) => {
+  res.send("hello world");
+  // fs.promises.readFile(path.resolve('data.json'), 'utf-8').then(json =>{
+  //   res.send(json);
+  // })
  })
 // app.post('/todo', (req, res) => {
 //   res.send('/todo post')
