@@ -45,15 +45,17 @@ app.get("/shoppingList", (req, res) => {
   res.sendFile(path.resolve("shoppingList.html"));
 });
 
-app.get("/todo", (req, res) => {
-  fs.promises.readFile(path.resolve('data.json'), "utf-8")
-  .then(json => res.send(json))
-  .catch(err => console.log(err));
-});
-
-app.post("/todo", (req, res) => {
-  fs.promises.writeFile(path.resolve('data.json'),JSON.stringify(req.body,undefined,2))
-  .catch(() => res.send("error"));
-});
+app.get('/todo', (req, res) => {
+  fs.promises.readFile(path.resolve('data.json'), 'utf-8').then(json =>{
+    res.send(json);
+  })
+})
+app.post('/todo', (req, res) => {
+  fs.promises
+  .writeFile(path.resolve("data.json"),JSON.stringify(req.body,undefined,2))
+  .catch(()=>{
+    res.send('error');
+  })
+})
 
 app.listen(process.env.POST);
