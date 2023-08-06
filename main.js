@@ -46,18 +46,16 @@ app.get("/shoppingList", (req, res) => {
 });
 
 app.get('/todo', (req, res) => {
-  res.send("hello world");
-  // fs.promises.readFile(path.resolve('data.json'), 'utf-8').then(json =>{
-  //   res.send(json);
-  // })
- })
-// app.post('/todo', (req, res) => {
-//   res.send('/todo post')
-//   // fs.promises
-//   // .writeFile(path.resolve("data.json"),JSON.stringify(req.body,undefined,2))
-//   // .catch(()=>{
-//   //   res.send('error');
-//   // })
-// })
+  fs.promises.readFile(path.resolve('data.json'), 'utf-8').then(json =>{
+    res.send(json);
+  })
+})
+app.post('/todo', (req, res) => {
+  fs.promises
+  .writeFile(path.resolve("data.json"),JSON.stringify(req.body,undefined,2))
+  .catch(()=>{
+    res.send('error');
+  })
+})
 
 app.listen(process.env.POST);
