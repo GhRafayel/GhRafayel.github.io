@@ -1,14 +1,14 @@
 const root = document.getElementById('root');
 let todo = [];
 function App(){
-  fetch('/shoppingList/todo',).then((strim) => strim.json()).then(((json) => {
+  fetch('/todo',).then((strim) => strim.json()).then(((json) => {
       todo = json.map((v) => v = {...v,kod: Math.random()});
       render();
   })).catch((err) =>{
     console.log('This is a error');
   })
   function sendTodo(){
-    fetch('/shoppingList/todo', {
+    fetch('/todo', {
       method: 'POST',
       headers: {
         "content-type": "application/json"
