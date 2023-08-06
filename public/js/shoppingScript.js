@@ -1,7 +1,7 @@
 const root = document.getElementById('root');
 let todo = [];
 function App(){
-  fetch('/todo',).then((strim) => strim.json()).then(((json) => {
+  fetch('/todolist',).then((strim) => strim.json()).then(((json) => {
       // todo = json.map((v) => v = {...v,kod: Math.random()});
       // render();
       console.log(json);
