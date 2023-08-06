@@ -2,7 +2,7 @@
   margin: 0px;
 }
 body{
-  background-image:url('../img/pexels-andre-furtado-1162251.jpg');
+  background-image:url('/public/img/pexels-andre-furtado-1162251.jpg');
   background-attachment: fixed;
   background-size:cover;
   font-family: Arial;

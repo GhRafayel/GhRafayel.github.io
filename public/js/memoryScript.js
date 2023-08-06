@@ -26,7 +26,7 @@ function loop(arr){
     for(let i = 0; i < arr.length; i++){
         let div = document.createElement('div');
         let img = div.appendChild(document.createElement('img'));
-            img.src = `../img/${arr[i]}`;
+            img.src = `/public/img/${arr[i]}`;
         divParent.append(div);
     }
     text.innerHTML = 'You  can start the game' ;       
@@ -67,7 +67,7 @@ function createElement(arr){
     for(let i = 0; i < arr.length; i++) {
         let div = document.createElement('div');
         let img = div.appendChild(document.createElement('img'));
-            img.src = `../img/${arr[i]}`;
+            img.src = `/public/img/${arr[i]}`;
             img.id = Math.random();
             img.style = 'opacity:0;';
         divParent.append(div);
