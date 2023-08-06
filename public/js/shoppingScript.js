@@ -112,5 +112,5 @@ function App(){
     list();
     footer();
   }
-}
+
 App();
