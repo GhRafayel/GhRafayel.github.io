@@ -5,7 +5,7 @@ import path from 'path';
 const app = express();
 
 app.use(express.static("public"));
-app.use(express.urlencoded({extended: true}));
+
 app.use(express.json());
 
 app.get('/', (req, res) => {
@@ -46,18 +46,22 @@ app.get("/shoppingList", (req, res) => {
 });
 
 app.get('/todo', (req, res) => {
-  //res.sendFile(path.resolve("data.json"));
-  fs.promises.readFile(path.resolve('data.json'), 'utf-8').then(json =>{
-    res.send(json);
-  })
-})
-// app.post('/todo', (req, res) => {
-//   fs.promises
-//   .writeFile(path.resolve("data.json"),JSON.stringify(req.body,undefined,2))
-//   .catch(()=>{
-//     res.send('error');
-//   })
-  
-// })
+  fs.promises.readFile(path.resolve('data.json'), 'utf-8').then(json => {
+    console.log(JSON.parse(json));
+    res.send(JSON.parse(json));
+  });
+});
 
-app.listen(process.env.PORT);
+app.post('/todo', (req, res) => {
+  console.log(req.body)
+  fs.promises
+  .writeFile(path.resolve("data.json"),JSON.stringify(req.body,undefined,2))
+  .then(json => {
+    console.log(todo);
+  })
+  .catch((err)=>{
+    res.send(err);
+  });
+});
+
+app.listen(process.env.LOL);
