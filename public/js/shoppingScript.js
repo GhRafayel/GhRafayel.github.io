@@ -1,10 +1,13 @@
 const root = document.getElementById('root');
 let todo = [];
 function App(){
-  fetch('/todo',).then((strim) => strim.json()).then(((json) => {
-      todo = json.map((v) => v = {...v,kod: Math.random()});
-      render();
-  })).catch((err) =>{
+  fetch('/todo',)
+  .then((strim) => console.log(strim))
+  // .then(((json) => {
+  //     todo = json.map((v) => v = {...v,kod: Math.random()});
+  //     render();
+  // }))
+  .catch((err) =>{
     console.log('This is a error');
   })
   function sendTodo(){
