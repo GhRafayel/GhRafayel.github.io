@@ -46,10 +46,10 @@ app.get("/shoppingList", (req, res) => {
 });
 
 app.get('/todo', (req, res) => {
-  res.sendFile(path.resolve("data.json"));
-  // fs.promises.readFile(path.resolve('data.json'), 'utf-8').then(json =>{
-  //   res.send(json);
-  // })
+  //res.sendFile(path.resolve("data.json"));
+  fs.promises.readFile(path.resolve('data.json'), 'utf-8').then(json =>{
+    res.send(json);
+  })
 })
 // app.post('/todo', (req, res) => {
 //   fs.promises
