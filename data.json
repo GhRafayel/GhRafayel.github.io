@@ -1,42 +1,47 @@
 [
   {
     "text": "dfgdfg",
-    "complitet": false,
-    "kod": 0.5151956645006461
+    "complitet": true,
+    "kod": 0.4636389548862039
   },
   {
     "text": "rafo",
     "complitet": false,
-    "kod": 0.7439459737513678
+    "kod": 0.6898619329693736
   },
   {
     "text": "rafo",
     "complitet": false,
-    "kod": 0.5644484376231063
+    "kod": 0.07629678660950989
   },
   {
     "text": "rafo",
     "complitet": false,
-    "kod": 0.8633164107138058
+    "kod": 0.07629319307540006
   },
   {
     "text": "rafo",
     "complitet": true,
-    "kod": 0.42240943078442994
+    "kod": 0.9001290678880238
   },
   {
     "text": "rafo",
     "complitet": false,
-    "kod": 0.46758184142961046
+    "kod": 0.09130202360168216
   },
   {
     "text": "rafo",
     "complitet": false,
-    "kod": 0.1761577383310171
+    "kod": 0.4188290359622018
   },
   {
     "text": "rafo",
     "complitet": false,
-    "kod": 0.47245396783056726
+    "kod": 0.04451590357833046
+  },
+  {
+    "text": "sdfsdf",
+    "complitet": false,
+    "kod": 0.8293016795362902
   }
 ]
