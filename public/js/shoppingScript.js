@@ -10,15 +10,15 @@ function App(){
   .catch((err) =>{
     console.log('This is a error');
   })
-  function sendTodo(){
-    fetch('/todo', {
-      method: 'POST',
-      headers: {
-        "content-type": "application/json"
-      },
-      body: JSON.stringify(todo),
-    })
-  }
+  // function sendTodo(){
+  //   fetch('/todo', {
+  //     method: 'POST',
+  //     headers: {
+  //       "content-type": "application/json"
+  //     },
+  //     body: JSON.stringify(todo),
+  //   })
+  // }
 
   function Header(){
     let form = document.createElement("form");
