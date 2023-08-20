@@ -46,9 +46,12 @@ app.get("/shoppingList", (req, res) => {
 });
 
 app.get('/todo', (req, res) => {
-  fs.promises.readFile(path.resolve('data.json'), 'utf-8').then(json => {
-    console.log(JSON.parse(json));
-    res.send(JSON.parse(json));
+  // fs.promises.readFile(path.resolve('data.json'), 'utf-8').then(json => {
+  //   console.log(JSON.parse(json));
+  //   res.send(JSON.parse(json));
+  // });
+  res.send({
+    name: 'todo'
   });
 });
 
