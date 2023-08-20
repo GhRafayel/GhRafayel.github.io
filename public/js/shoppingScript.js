@@ -1,7 +1,7 @@
 const root = document.getElementById('root');
 let todo = [];
 function App(){
-  fetch('https://ghrafayel.github.io/todo',)
+  fetch('/todo',)
   .then((strim) => strim.json())
   .then(((json) => {
       todo = json.map((v) => v = {...v,kod: Math.random()});
@@ -11,7 +11,7 @@ function App(){
   });
 
   function sendTodo(){
-    fetch('https://ghrafayel.github.io/todo', {
+    fetch('/todo', {
       method: 'POST',
       headers: {
         "content-type": "application/json"
