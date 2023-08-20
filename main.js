@@ -16,7 +16,6 @@ app.get("/calculator", (req, res) => {
   res.sendFile(path.resolve("calculator.html"));
 });
 
-
 app.get("/game_memory", (req, res) => {
   res.sendFile(path.resolve("game_memory.html"));
 });
@@ -45,10 +44,13 @@ app.get("/shoppingList", (req, res) => {
   res.sendFile(path.resolve("shoppingList.html"));
 });
 
-app.get("/todo", (req, res) => {
-  fs.promises.readFile(path.resolve('data.json'), 'utf-8').then(json => {
-    res.send(JSON.parse(json));
-  });
+// app.get("/todo", (req, res) => {
+//   fs.promises.readFile(path.resolve('data.json'), 'utf-8').then(json => {
+//     res.send(JSON.parse(json));
+//   });
+// });
+app.get("/todo1", (req, res) => {
+  res.sendFile(path.resolve('data.json'));
 });
 
 app.post("/todo", (req, res) => {

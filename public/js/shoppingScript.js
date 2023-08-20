@@ -1,7 +1,7 @@
 const root = document.getElementById('root');
 let todo = [];
 function App(){
-  fetch('/todo',{
+  fetch('/todo1',{
     method: 'GET'
   })
   .then((strim) => strim.json())
