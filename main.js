@@ -45,18 +45,13 @@ app.get("/shoppingList", (req, res) => {
   res.sendFile(path.resolve("shoppingList.html"));
 });
 
-app.get('/todo', (req, res) => {
-  // fs.promises.readFile(path.resolve('data.json'), 'utf-8').then(json => {
-  //   console.log(JSON.parse(json));
-  //   res.send(JSON.parse(json));
-  // });
-  res.send({
-    name: 'todo'
+app.get("/todo", (req, res) => {
+  fs.promises.readFile(path.resolve('data.json'), 'utf-8').then(json => {
+    res.send(JSON.parse(json));
   });
 });
 
-app.post('/todo', (req, res) => {
-  console.log(req.body)
+app.post("/todo", (req, res) => {
   fs.promises
   .writeFile(path.resolve("data.json"),JSON.stringify(req.body,undefined,2))
   .then(json => {
@@ -67,4 +62,4 @@ app.post('/todo', (req, res) => {
   });
 });
 
-app.listen(process.env.LOL);
+app.listen(process.env.PORT);
