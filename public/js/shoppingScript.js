@@ -1,29 +1,47 @@
 const root = document.getElementById('root');
+
 let todo = [];
-function App(){
-  fetch('/todo',)
-  .then((strim) => strim.json())
-  .then(((json) => {
-      todo = json.map((v) => v = {...v,kod: Math.random()});
-      render();
-  })).catch((err) =>{
-    console.log(err);
-  });
 
-  function sendTodo(){
-    fetch('/todo', {
-      method: 'POST',
-      headers: {
-        "content-type": "application/json"
-      },
-      body: JSON.stringify(todo),
-    });
-  }
+async function getTodo() {
+  const response = await fetch("/todo");
+  const movies = await response.json();
+  todo = movies;
+  console.log(movies)
+  render();
+}
+getTodo();
 
+async function sendTodo() {
+  const response = await fetch("/todo",{
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(todo)
+  })
+}
+  // todo = json.map((v) => v = {...v,kod: Math.random()});
+  // fetch('/todo',)
+  // .then((strim) => strim.json())
+  // .then(((json) => todo = json))
+  // .then(()=> render())
+  // .catch((err) =>{
+  //   console.log('This is a error');
+  // })
+
+  // function sendTodo(){
+  //   fetch('/todo', {
+  //     method: 'POST',
+  //     headers: {
+  //       "content-type": "application/json"
+  //     },
+  //     body: JSON.stringify(todo),
+  //   })
+  // }
   function Header(){
     let form = document.createElement("form");
     let input = form.appendChild(document.createElement('input'));
-      form.appendChild(document.createElement("button")).textContent = 'Add';
+      form.appendChild(document.createElement("button")).textContent = 'click here';
       form.id = 'form-header';
       input.id = 'form-input';
       input.value = '';
@@ -110,5 +128,5 @@ function App(){
     list();
     footer();
   }
-}
-App();
+
+
