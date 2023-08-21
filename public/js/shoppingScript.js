@@ -7,7 +7,7 @@ function App(){
       todo = json.map((v) => v = {...v,kod: Math.random()});
       render();
   })).catch((err) =>{
-    console.log('This is a error');
+    console.log(err);
   });
 
   function sendTodo(){
