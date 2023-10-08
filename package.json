@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/GhRafayel/GhRafayel.github.io#readme",
   "devDependencies": {
+    "dotenv": "^16.3.1",
     "nodemon": "^3.0.1"
   },
   "dependencies": {

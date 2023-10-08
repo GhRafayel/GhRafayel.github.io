@@ -1,12 +1,17 @@
 [
   {
-    "text": "hfhgf",
-    "complitet": false,
-    "kod": 0.3924207868736007
+    "text": "html",
+    "bul": false,
+    "kod": 0.38037659409605595
   },
   {
-    "text": "jhghjg",
-    "complitet": false,
-    "kod": 0.0228480618157354
+    "text": "js",
+    "bul": false,
+    "kod": 0.1934858673616786
+  },
+  {
+    "text": "css",
+    "bul": false,
+    "kod": 0.9671966617207577
   }
 ]
