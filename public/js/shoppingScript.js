@@ -12,7 +12,10 @@ let todo = [{
 }];
  function App(){
   fetch('/todo',)
-  .then((strim) => console.log( strim.json()))
+  .then((strim) =>  strim.json())
+  .then((json) =>{
+    console.log(json);
+  })
   // .then(((json) => {
   //     //console.log(json.map((v) => v = {...v,kod: Math.random()}));
   //     //render();
