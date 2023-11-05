@@ -1,25 +1,13 @@
 const root = document.getElementById('root');
 
-let todo = [{
-  "text": "sdfsd",
-  "complitet": false,
-  "kod": 0.33218814583057776
-},
-{
-  "text": "dfssdf",
-  "complitet": false,
-  "kod": 0.6051057074550137
-}];
+let todo = [];
  function App(){
   fetch('/todo',)
   .then((strim) =>  strim.json())
-  .then((json) =>{
-    console.log(json);
-  })
-  // .then(((json) => {
-  //     //console.log(json.map((v) => v = {...v,kod: Math.random()}));
-  //     //render();
-  // }))
+  .then(((json) => {
+    todo = json.map((v) => v = {...v,kod: Math.random()});
+    render();
+  }))
   .catch((err) =>{
     console.log('This is a error');
   })
