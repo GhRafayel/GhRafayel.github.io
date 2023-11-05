@@ -4,11 +4,11 @@ const play = document.querySelector(".button-play");
 const won = document.getElementById("result");
 
 const  audio1 = document.createElement("audio");
-audio1.src = "/audio/audio1.wav";
+audio1.src = "../audio/audio1.wav";
 const  audio2 = document.createElement("audio");
-audio2.src = "/audio/audio2.wav";
+audio2.src = "../audio/audio2.wav";
 const  audio3 = document.createElement("audio");
-audio3.src = "/audio/audio3.wav";
+audio3.src = "../audio/audio3.wav";
 
 
 const position1 = document.querySelector(".Position1");
