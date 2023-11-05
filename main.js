@@ -9,7 +9,8 @@ const app = express();
 // npm install dotenv --save-dev
 //app.use((req, res, next) => next () );
 
-app.use(express.static("public"));
+app.use(express.static(path.resolve('./')));
+
 app.use(express.json());
 
 app.get('/', (req, res) => {
@@ -49,9 +50,10 @@ app.get('/shopping', (req, res) => {
 
 app.get('/todo', (req, res) => {
   fs.promises.readFile(path.resolve('data.json'), 'utf-8')
-  .then(json =>{
+  .then(json => {
     res.send(json);
-  })
+  });
+  
 })
 app.post('/todo', (req, res) => {
   fs.promises
