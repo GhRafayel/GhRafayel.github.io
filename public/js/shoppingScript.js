@@ -11,11 +11,13 @@ let todo = [{
   "kod": 0.6051057074550137
 }];
  function App(){
-  fetch('/todo',).then((strim) => strim.json()).then(((json) => {
-    console.log(json)
-      console.log(json.map((v) => v = {...v,kod: Math.random()}));
-      render();
-  })).catch((err) =>{
+  fetch('/todo',)
+  .then((strim) =>console.log( strim.json()))
+  // .then(((json) => {
+  //     //console.log(json.map((v) => v = {...v,kod: Math.random()}));
+  //     //render();
+  // }))
+  .catch((err) =>{
     console.log('This is a error');
   })
 
