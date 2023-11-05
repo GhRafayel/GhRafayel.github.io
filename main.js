@@ -15,7 +15,6 @@ app.use(express.json());
 
 app.get('/', (req, res) => {
   res.sendFile(path.resolve("index.html"));
-
 });
 
 app.get('/calculator', (req, res) => {
@@ -51,7 +50,9 @@ app.get('/shopping', (req, res) => {
 app.get('/todo', (req, res) => {
   fs.promises.readFile(path.resolve('data.json'), 'utf-8')
   .then(json => {
-    res.send(json);
+    res.send({
+      value: json
+    });
   });
   
 })
