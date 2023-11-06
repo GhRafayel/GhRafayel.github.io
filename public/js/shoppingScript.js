@@ -1,26 +1,42 @@
 const root = document.getElementById('root');
 
-let todo = [];
- function App(){
-  fetch('/todo',)
-  .then((strim) =>  strim.json())
-  .then(((json) => {
-    todo = json.map((v) => v = {...v,kod: Math.random()});
-    render();
-  }))
-  .catch((err) =>{
-    console.log('This is a error');
-  })
+let todo = [{
+  "text": "dfsdf",
+  "complitet": false,
+  "kod": 0.717438948802954
+},
+{
+  "text": "sdfsdf",
+  "complitet": false,
+  "kod": 0.5801544770764673
+}];
 
-  function sendTodo(){
-    fetch('/todo', {
-      method: 'POST',
-      headers: {
-        "content-type": "application/json"
-      },
-      body: JSON.stringify(todo),
-    })
-  }
+ function App(){
+  render();
+  fetch('/todo')
+  .then(strim = strim.json())
+  .then((json)=>{
+    console.log(json);
+  })
+  // fetch('/todo',)
+  //   .then((strim) =>  strim.json())
+  //   .then(((json) => {
+  //     todo = json.map((v) => v = {...v,kod: Math.random()});
+  //     render();
+  //   }))
+  //   .catch((err) =>{
+  //     console.log('This is a error');
+  //   })
+
+  // function sendTodo(){
+  //   fetch('/todo', {
+  //     method: 'POST',
+  //     headers: {
+  //       "content-type": "application/json"
+  //     },
+  //     body: JSON.stringify(todo),
+  //   })
+  // }
   function Header(){
     let form = document.createElement("form");
     let input = form.appendChild(document.createElement('input'));
