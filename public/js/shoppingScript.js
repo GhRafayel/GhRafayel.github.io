@@ -14,7 +14,7 @@ let todo = [{
  function App(){
   render();
   fetch('/todo')
-  .then(strim = strim.json())
+  .then((strim) => strim.json())
   .then((json)=>{
     console.log(json);
   })
