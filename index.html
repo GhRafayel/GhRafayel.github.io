@@ -6,319 +6,333 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>  Portfolio </title>
     <link rel="icon" href="./public/img/Armenian.png" type="image/icon type">
-
-    <link rel="stylesheet" href="./public/css/header.css">
-    <link rel="stylesheet" href="./public/css/contact_container.css">
-    <link rel="stylesheet" href="./public/css/services_container.css">
-    <link rel="stylesheet" href="./public/css/portfolio_container.css">
-    <link rel="stylesheet" href="./public/css/contact_container.css">
-    <link rel="stylesheet" href="./public/css/game.css">
-    <link rel="stylesheet" href="./public/css/about_container.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="/public/css/index.css"/>
 
 </head>
-<body>
-
-   <div id="container">
-       <header class="header-container">
-        <div class="container-div-h4">
-            
-            <div class="absolute">
-
-                <a href="/shopping" class="absolute-a">
-                    <span class="h4-span">SHOPPING</span> LIST
-                </a>
-           </div>
-        </div>
-        <div>
-            <nav>
-                <ul id="side-menu">
-                    <li><a  href="#portfolio">Projects</a></li>
-                    <li><a  href="#services">Service</a></li>
-                    <li><a  href="#contact">Contact</a></li>
-                    <li><a  href="#game">Games</a></li>
-                    <li><a  href="#about">About</a></li>
-                    <img src="./public/img/close.png"
-                    
-                         class="header-icon" 
-                         onclick="closeMenu()"
-                         >
-                </ul>
-                <img src="./public/img/menu.png" 
-                     class="header-icon" 
-                     onclick="openMenu()"
-                     >
-            </nav>
-        </div>
-       
-    </header>
-    <div class="text-container">
+<body >
     
-        <h1>Hi, I'm  <span class="h1-span">Rafayel<br></span> from Armenia</h1>
-    </div>
-   </div>
+    <div id="parent">
 
-    <!---------------About-------------------->
-   <div id="about">
-        <div class="about-container">
-            <div class="about-container-row">
-                <div  class="about-col-1">
-                    <img src="./public/img/My_foto.png" alt="about-poto" class="about-col-1-img">
-                </div>
-                <div class="about-col-2">
-                    <div id="div-cv">
-                        <h3 class="about-title">
-                            About Me
-                        </h3>
-                        <a href="./public/img/LL_Rafayel_Ghazaryan_2023.pdf" download class="downlood-a">Downlood My CV</a>
-                    </div>
-                    <p class="about-p">
-                        I am Rafayel from Armenia. Now I live in Vienna, Austria. I started studying web development for fun and became too interested in it not to become a professional web developer. Since then I learned a lot on my own watching Youtube courses and took a professional individual course. You can get familiar with my skills, works and services below.                         
-                    </p>
-                   
-                    <div class="about-tab-title-div">
-                        <p class="about-tab-links-p active-link" onclick="openTab('skills')">Skills</p>
-                        <!-- <p class="about-tab-links-p" onclick="openTab('experience')">Experience</p> -->
-                        <p class="about-tab-links-p" onclick="openTab('education')">Education</p>
-                        <p class="about-tab-links-p" onclick="openTab('languages')">Languages</p>
+        <nav class="navbar navbar-expand-lg ">
+            <div class="container-fluid">
+              <a class="navbar-brand link-info text-white" href="/">Home</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    <li class="nav-item ">
+                        <a class="navbar-brand link-info text-white m-lg-3" aria-current="page" href="#about">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="navbar-brand link-info text-white m-lg-3" href="#games">Games</a>
+                    </li>
+                    <li class="nav-item" >
+                        <a  class="navbar-brand link-info text-white m-lg-3" href="#projects">Projects</a>
+                    </li>
                     
-                    </div>
-                    <div class="about-tab-content active-tab" id="skills">
-                        <ul>
-                            <li><span>HTML</span></li>
-                            <li><span>CSS</span></li>
-                            <li><span>JavaScript</span></li>
-                            <li><span>NODE JS + ES6</span></li>
-                            <li><span>EXPRESS JS</span></li>
-                            <li><span>REACT JS </span></li>
-                            <li><span>O.O.P</span></li>
+                    <li class="nav-item">
+                        <a  class="navbar-brand link-info text-white m-lg-3"  href="#contact">Contact</a>
+                    </li>
 
-                        </ul>
-                    </div>
-                    <div class="about-tab-content " id="languages">
-                        <ul>
-                            <li><span>Amenian</span></li>
-                            <li><span>English</span></li>
-                            <li><span>German</span></li>
-                            <li><span>Russian</span></li>
-                        </ul>
-                    </div>
-                    <div class="about-tab-content" id="experience">
-                        <ul>
-                            <li><a href="#portfolio">Projects</a></li>
-                            <li><a href="#game">Games</a></li>
-                            <li><a href="">Transliteration</a></li>
-                        </ul>
-                    </div>
-                    <div class="about-tab-content" id="education">
-                        <ul>
-                            <li>
-                                <span>
-                                    Course with certificate
-                                </span>
-                                <span>
-                                    <a href="https://www.atelier04.at/kurs/programmiersprache-javascript-grundlagen/klassische-gruppenkurse/"
-                                    class="about-tab-content-a">
-                                     Ateiler 04
-                                 </a>
-                                </span>
-                               
-                            </li>
-                            <li>
-                                <span>
-                                    Self-study JavaScript
-                                </span>
-                                <span>
-                                    <a href="https://www.youtube.com/@meschian"
-                                    class="about-tab-content-a">
-                                     Rouben Meschian
-                                    </a>
-                                </span>
-                               
-                            </li>
-
-                            <li>
-                                <span>
-                                    Self-study CSS
-                                </span>
-                                <span>
-                                    <a href="https://www.youtube.com/watch?v=G3e-cpL7ofc&t=15822s&ab_channel=SuperSimpleDev"
-                                        class="about-tab-content-a">
-                                        SuperSimpleDev
-                                    </a>
-                                </span>
-                             
-                            </li>
-                            <li>
-                                <span>
-                                    Self-study HTML 
-                                </span>
-                                <span>
-                                    <a href="https://www.youtube.com/@hayrapetyansami"
-                                       class="about-tab-content-a">
-                                        Samvel Hayrapetyan
-                                    </a>
-                                </span>
-                              
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                    <li class="nav-item">
+                      <a  class="navbar-brand link-info text-white" href="#shopping-list">Shopping List</a>
+                    </li>
+                    
+                </ul>
+                <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+              </div>
             </div>
-        </div>
-    </div>
-    <div id="root"></div>
-    <!------- services-------->
-    <!-- <div id="services">
-        <div class="services-container">
-            <h3 class="services-title">My Services</h3>
-            <div class="services-list">
-                <div>
-                    <p>Web Development with your design</p>
-                    <a href="#contact"> For more information please contact me.</a>
+        </nav>
+
+        <h1 id="about" class="parnet-h1 ">I'm Rafayel Ghazaryan</h1>
+
+        <div  class="container-xxl" id="about-container">
+            <div class="row">
+
+                <div class="col text-center">
+                    <img src="/public//img//My_foto.png" alt="My_foto"/>
                 </div>
 
-                <div>
-                    <p>
-                        Website maintenance
-                    </p>
-                    <a href="#contact">For more information please contact me.</a>
-                </div>
+                <div class="col pt-2">
+                   
+                  <div class="accordion accordion-flush" id="accordionFlushExample">
 
-                <div>
-                    <p>
-                        Web applications (JavaScript)
-                    </p>
-                    <a href="#contact">For more information please contact me.</a>
-                </div>
-                <div>
-                    <p>
-                        Teaching of HTML, CSS, JavaScript basics
-                    </p>
-                    <a href="#contact">For more information please contact me.</a>
-                </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                          HTML:5
+                        </button>
+                      </h2>
+                      <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <ul class="list-group text-center ">
+                                <li class="list-group-item text-start "> jquery</li>
+                              </ul>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                         CSS
+                        </button>
+                      </h2>
+                      <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <ul class="list-group text-center ">
+                                <li class="list-group-item text-start"> CSS-Bootstap</li>
+                              </ul>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                          JAVASCRIPT
+                        </button>
+                      </h2>
+                      <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <ul class="list-group text-center ">
+                                <code> Object oriented programming</code>
+                                <li class="list-group-item text-start "> Classical inheritance</li>
+                                <li class="list-group-item text-start"> Prototype inheritance</li>
+                                <li class="list-group-item text-start"> Encapsulation</li>
+                                <li class="list-group-item text-start"> Polymorphism</li>
+                              </ul>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                            REACT JS
+                          </button>
+                        </h2>
+                        <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                          <div class="accordion-body">
+                              <ul class="list-group text-center ">
+                                    <li class="list-group-item text-start">  React Redux</li>
+                                    <li class="list-group-item text-start">  React Router</li>
+                                    <li class="list-group-item text-start">  React Bootstrap</li>
+                                </ul>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                            NODE JS
+                          </button>
+                        </h2>
+                        <div id="flush-collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                          <div class="accordion-body">
+                              <ul class="list-group text-center ">
+                                    <li class="list-group-item text-start">  Express JS</li>
+                                </ul>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+                            Database
+                          </button>
+                        </h2>
+                        <div id="flush-collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                          <div class="accordion-body">
+                              <ul class="list-group text-center ">
+                                    <li class="list-group-item text-start"> MySQL</li>
+                                    <li class="list-group-item text-start"> MongoDB</li>
+                                </ul>
+                          </div>
+                        </div>
+                      </div>
+
+                  </div>
+
             </div>
-        </div> -->
-        <!-- <!-<a href="#" class="portfolio-btn">Home</a>--> 
-     <!-- </div>  -->
 
-    <!---------------My Portfolio---------------->
-    <div id="portfolio">
-        <div class="portfolio-container">
-            <h4 class="portfolio-title">My works</h4>
-            <div class="portfolio-work-list">
-                <div class="portfolio-work">
-                    <div>
-                        <h4 class="portfolio-work-h4">Weather</h4>
-                    </div>
-                    <a href="/weather" class="portfolio-work-a">
-                        <img src="./public/img/Weather.jpg" alt="Weather" class="portfolio-work-img">
-                    </a>
+                <div class="col pt-4">
+                    <div class="alert alert-primary" role="alert">
+                        Regular Expression!
+                      </div>
+                      <div class="alert alert-success" role="alert">
+                        Git                    
+                      </div>
+                      
+                      <div class="alert alert-secondary" role="alert">
+                        <div class="accordion-item ">
+                            <h2 class="accordion-header ">
+                              <button class="accordion-button collapsed text-decoration-underline" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven">
+                                Languages 
+                              </button>
+                            </h2>
+                            <div id="flush-collapseSeven" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                              <div class="accordion-body">
+                                  <ul class="list-group text-center mt-4">
+                                        <li class="list-group-item text-start"> Armenian</li>
+                                        <li class="list-group-item text-start"> Russian</li>
+                                        <li class="list-group-item text-start"> English</li>
+                                        <li class="list-group-item text-start"> German</li>
+                                    </ul>
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+
+                      <div class="alert alert-danger" role="alert">
+                        <a href="/public/img/Rafayel Ghazaryan LL.pdf" class="download-a" download>Download SV</a>
+                      </div>
+                     
                 </div>
-                <div class="portfolio-work">
-                    <div>
-                        <h4 class="portfolio-work-h4">Today_Overview</h4>
-                    </div>
-                    <a href="/weatherlive" class="portfolio-work-a">
-                        <img src="./public/img/Today_Overview.jpg" alt="Today_Overview" class="portfolio-work-img">
-                    </a>
-                </div>
-                <div class="portfolio-work">
-                    <div>
-                        <h4 class="portfolio-work-h4">Stop_Watch</h4>
-                    </div>
-                    <a href="/stopWatch" class="portfolio-work-a">
-                        <img src="./public/img/Stop_Watch.jpg" alt="Stop_Watch" class="portfolio-work-img">
-                    </a>
-                </div>
-                <div class="portfolio-work">
-                    <div>
-                        <h4 class="portfolio-work-h4">Bill_total</h4>
-                    </div>
-                    <a href="/calculator" class="portfolio-work-a">
-                    <img src="./public/img/Bill_total.jpg" alt="/Bill_total" class="portfolio-work-img">
-                    </a>
-                </div>
-            </div>
-             <!--<a href="#" class="portfolio-btn">Home</a>-->
-        </div>
-    </div>
-    <!------------------Game----------------------->>
-    <div id="game">
-        <div class="game-container">
-            <h4 class="game-title">My Games</h4>
-            <div class="game-work-list">
-                <div class="game-work">
-                    <div>
-                        <h4 class="game-work-h4">Game 1</h4>
-                    </div>
-                    <a href="/game_1" class="game-work-a">
-                        <img src="./public/img/game-1.jpeg" alt="Game-1" class="game-work-img">
-                    </a>
-                </div>
-                <div class="game-work">
-                    <div>
-                        <h4 class="game-work-h4">Game 2</h4>
-                    </div>
-                    <a href="/game_2" class="game-work-a">
-                        <img src="./public/img/game-2.jpeg" alt="game-2" class="game-work-img">
-                    </a>
-                </div>
-                <div class="game-work">
-                    <div>
-                        <h4 class="game-work-h4">Memory Game</h4>
-                    </div>
-                    <a href="/game_memory" class="game-work-a">
-                        <img src="./public/img/memory-game.jpg" alt="game-memory" class="game-work-img">
-                    </a>
-                </div>
+
+
+
                
             </div>
-             <!--<a href="#" class="portfolio-btn">Home</a>-->
+            
+        </div>
+
+        <h3 class="card-title m-lg-5 text-center" id="projects"> Projects </h3>
+
+        <div class="container-xxl" id="project-container">
+          
+          <div class="row ">
+            <div class="col m-2">
+              <div class="card" style="width: 20rem;height: 25rem; ">
+                <img src="/public/img//Bill_total.jpg" class="card-img-top object-fit-cover "  alt="...">
+                <div class="card-body">
+                  <a href="/Bill_total" class="btn btn-outline-primary">Go to the Bill_total</a>
+                </div>
+              </div>
+            </div>
+            <div class="col m-2">
+              <div class="card" style="width: 20rem;height: 25rem; ">
+                <img src="/public/img/Stop_Watch.jpg" class="card-img-top object-fit-cover " alt="Stop_Watch">
+                <div class="card-body">
+                  <a href="/Stop_Watch" class="btn btn-outline-primary">Go to the Stop_Watch</a>
+                </div>
+              </div>
+            </div>
+            <div class="col m-2 ">
+              <div class="card" style="width: 20rem;height: 25rem; ">
+                <img src="/public/img/Weather.jpg" class="card-img-top object-fit-cover " alt="Weather">
+                <div class="card-body">
+                  <a href="/Weather" class="btn btn-outline-primary">Go to the Weather</a>
+                </div>
+              </div>
+            </div>
+            <div class="col m-2">
+              <div class="card" style="width: 20rem;height: 25rem; ">
+                <img src="/public/img/Today_Overview.jpg" class="card-img-top object-fit-cover " alt="weatherlive">
+                <div class="card-body">
+                  <a href="/weatherlive" class="btn btn-outline-primary">Go to the Weather Live</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+          <h3 class="card-title  m-lg-5 text-center" id="games"> Games </h3>
+
+        <div class="container-xxl" id="games-container">
+          <div class="row">
+            <div class="col m-2">
+              <div class="card" style="width: 20rem;height: 25rem; ">
+                <img src="/public/img/game-1.jpeg" class="card-img-top object-fit-cover " alt="game-1">
+                <div class="card-body">
+                  <a href="/game_1" class="btn btn-outline-primary">Go to the Game-1</a>
+                </div>
+              </div>
+            </div>
+            <div class="col m-2">
+              <div class="card" style="width: 20rem; height: 25rem; ">
+                <img src="/public/img/game-2.jpg" id="game-2-img" class="card-img-top object-fit-cover" alt="game-2">
+                <div class="card-body">
+                  <a href="/game-2" class="btn btn-outline-primary">Go to the Game-2</a>
+                </div>
+              </div>
+            </div>
+            <div class="col m-2 ">
+              <div class="card" style="width: 20rem; height: 25rem; ">
+                <img src="/public/img/memory-game.jpg" id="memory-game-img" class="card-img-top object-fit-cover"  alt="memory-game">
+                <div class="card-body">
+                  <a href="/memory-game" class="btn btn-outline-primary">Go to the Memory-game</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+   
+
+        <div class="container" id="contact-container">
+          <div class="card">
+            <div class="card-header">
+              <h3 id="contact" class="card-title text-center">  Contact Me </h3>
+            </div>
+            <div class="card-body">
+              <blockquote class="blockquote mb-0">
+
+                <div class="btn-group-vertical" role="group" aria-label="Basic mixed styles example">
+                  <a href="" type="button" class="btn btn-danger m-1 text-start">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                      <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+                    </svg>
+                    ghazarysnrafayel@gmail.com
+                  </a>
+                  <button type="button" class="btn btn-warning m-1 text-start">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+                      <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+                    </svg>
+                    +43 650 5 48 48 98
+                  </button>
+
+                <div class="btn-group p-lg-1 w-100" role="group" aria-label="Basic mixed styles example">
+                    <a href="https://github.com/GhRafayel" type="button" class="btn btn-info m-1  w-25">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                      </svg>
+                    </a>
+  
+                    <a href="https://www.facebook.com/rafo.ghazaryan.52" type="button" class="btn btn-primary m-1  w-25">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                        <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+                     </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/rafayel-ghazaryan-b1623426a/" type="button" class="btn btn-success m-1  w-25">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+                        <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+                      </svg>
+                    </a>
+                </div>
+
+                </div>
+                </div> 
+                <footer class="blockquote-footer text-center p-3"> All rights reserved </footer>
+              </blockquote>
+            </div>
+          </div>
         </div>
     </div>
 
-    <!--------------Contact----------------->
-
-    <div id="contact">
-            <div class="contact-container">
-                <div class="contact-left">
-                    <h3 class="contact-title">
-                        Contact Me
-                    </h3>
-                    <div><img src="./public/img/Gmail.png" alt="mail" class="contact-left-p-img"> ghazarysnrafayel@gmail.com</div>
-                    <div><img src="./public/img/contact.png" alt="" class="contact-left-p-img"> +43 650 5 48 48 98</div>
-
-                    <div class="contact-social-icon">
-                        <a href="https://www.facebook.com/rafo.ghazaryan.52/" class="contact-social-icon-a" target="_blank">
-                            <img src="./public/img/facebook.png" alt="facebook" class="contact-social-icon-img">
-                        </a>
-                        <a href="https://www.instagram.com/" class="contact-social-icon-a" target="_blank">
-                            <img src="./public/img/instagram.png" alt="instagram" class="contact-social-icon-img">
-                        </a>
-                        <a href="https://twitter.com/tweeter?lang=en" class="contact-social-icon-a" target="_blank">
-                            <img src="./public/img/twitter.png" alt="twitter" class="contact-social-icon-img">
-                        </a>
-                        <a href="https://www.linkedin.com/feed/" class="contact-social-icon-a" target="_blank">
-                            <img src="./public/img/linkedin.png" alt="linkedin" class="contact-social-icon-img">
-                        </a>
-                    </div>
-     
-                </div>
-                <div class="contact-rigth">
-                    <form class="contact-rigth-form">
-                        <input type="text" name="Name" placeholder="Your Name" class="contact-rigth-form-input">
-                        <input type="email" name="email" placeholder="Your Email" required class="contact-rigth-form-input">
-                        <textarea name="Message" id=""  rows="6"  placeholder="Your Message" class="contact-rigth-form-textarea"></textarea>
-                        <button type="submit" class="submit-btn">Submit</button>
-                    </form>
-                </div>
-        </div>
-    </div>
-    <div class="end">
-        <p class="end-p">All rights reserved</p>
-    </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-   <script src="./public/js/index.js"></script>
 </body>
 </html>
+
+
+ 

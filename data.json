@@ -1,17 +1,22 @@
 [
   {
     "text": "dfsdf",
-    "complitet": false,
-    "kod": 0.8407307741426338
+    "complitet": true,
+    "kod": 0.8293083406797919
   },
   {
     "text": "sdfsdf",
     "complitet": false,
-    "kod": 0.41283638465603856
+    "kod": 0.7451796639110007
   },
   {
     "text": "hghg",
     "complitet": false,
-    "kod": 0.09614308459469267
+    "kod": 0.8206073905365876
+  },
+  {
+    "text": "rafo",
+    "complitet": false,
+    "kod": 0.5361715432190179
   }
 ]

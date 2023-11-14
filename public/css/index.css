@@ -1,0 +1,46 @@
+body  {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+.parnet-h1{
+  padding-top: 120px;
+  text-align: center;
+  font-weight: bold;
+}
+.navbar {
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  background-color: rgb(78, 139, 246);
+  min-height: 80px;
+}
+
+#project-container img{
+  height: 400px;
+  padding: 10px;
+}
+
+#about-container .col{
+min-width: 350px;
+}
+
+#games-container img {
+  height: 400px;
+  padding: 10px;
+}
+
+#about-container img{
+height: 400px;
+padding: 10px;
+}
+
+#game-2-img,
+#memory-game-img{
+max-height: 325px;
+}
+
+#contact-container{
+margin-top: 30px;
+}

@@ -16,7 +16,13 @@
   }
   #parent img{
       height:320px;
+
   }
+  html > body > #parent #div-hero-1{
+    margin-left: 300px;
+    border: 2px solid red;
+  }
+  
   #parent #div-hero-1 div,
   #parent #div-hero-2 div{
       display: flex;
@@ -27,7 +33,6 @@
   .Attack-Hero1,
   .Attack-Hero2{
       border: none;
-
       padding: 20px 40px;
       width: 200px;
       margin:20px;
@@ -40,7 +45,6 @@
   .Help-Hero2{
       margin:20px;
       width: 200px;
-
      border: none;
      padding: 20px 40px;
      background-color: rgb(155, 203, 249);
@@ -87,6 +91,7 @@
       text-align: center;
   }
   @media all and (max-width:700px){
+    
       .button-play,
       .button-reset{
           padding: 10px 15px;
@@ -110,4 +115,5 @@
       body{
           font-size: 30px;
          }
+        
 }

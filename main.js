@@ -17,21 +17,21 @@ app.get('/', (req, res) => {
   res.sendFile(path.resolve("index.html"));
 });
 
-app.get('/calculator', (req, res) => {
-  res.sendFile(path.resolve("calculator.html"));
+app.get('/Bill_total', (req, res) => {
+  res.sendFile(path.resolve("Bill_total.html"));
 });
 
 app.get('/game_1', (req, res) => {
   res.sendFile(path.resolve("game_1.html"));
 });
 
-app.get('/game_2', (req, res) => {
+app.get('/game-2', (req, res) => {
   res.sendFile(path.resolve("game_2.html"));
 });
-app.get('/game_memory', (req, res) => {
+app.get('/memory-game', (req, res) => {
   res.sendFile(path.resolve("game_memory.html"));
 });
-app.get('/stopWatch', (req, res) => {
+app.get('/Stop_Watch', (req, res) => {
   res.sendFile(path.resolve("stopWatch.html"));
 });
 
