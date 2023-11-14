@@ -21,30 +21,31 @@ app.get('/Bill_total', (req, res) => {
   res.sendFile(path.resolve("Bill_total.html"));
 });
 
-app.get('/game_1', (req, res) => {
-  res.sendFile(path.resolve("game_1.html"));
-});
-
-app.get('/game-2', (req, res) => {
-  res.sendFile(path.resolve("game_2.html"));
-});
-app.get('/memory-game', (req, res) => {
-  res.sendFile(path.resolve("game_memory.html"));
-});
 app.get('/Stop_Watch', (req, res) => {
-  res.sendFile(path.resolve("stopWatch.html"));
+  res.sendFile(path.resolve("Stop_Watch.html"));
 });
 
-app.get('/weatherlive', (req, res) => {
-  res.sendFile(path.resolve("weatherlive.html"));
-});
 
 app.get('/weather', (req, res) => {
   res.sendFile(path.resolve('weather.html'));
 });
 
+app.get('/weatherlive', (req, res) => {
+  res.sendFile(path.resolve("weatherlive.html"));
+});
 app.get('/shopping', (req, res) => {
   res.sendFile(path.resolve('shopping.html'));
+});
+
+app.get('/game_1', (req, res) => {
+  res.sendFile(path.resolve("game_1.html"));
+});
+
+app.get('/game_2', (req, res) => {
+  res.sendFile(path.resolve("game_2.html"));
+});
+app.get('/memory-game', (req, res) => {
+  res.sendFile(path.resolve("game_memory.html"));
 });
 
 app.get('/todo', (req, res) => {

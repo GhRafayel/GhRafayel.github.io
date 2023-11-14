@@ -1,6 +1,7 @@
+
 const TotalPerPerson = document.querySelector('.Total-per-Person');
 const people = document.getElementById('span-person');
-const  percent = document.getElementById(' percent');
+const percent = document.getElementById(' percent');
 const summa = document.getElementById('summa');
 const minus = document.getElementById('minus');
 const plus = document.getElementById('plus');
@@ -34,5 +35,4 @@ function bittotal(){
 }
 function create(bitTotal,Tip){
     return (( (bitTotal * Tip) / 100)  + bitTotal) / i;
-    
 }
