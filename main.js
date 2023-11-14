@@ -44,8 +44,8 @@ app.get('/game_1', (req, res) => {
 app.get('/game_2', (req, res) => {
   res.sendFile(path.resolve("game_2.html"));
 });
-app.get('/memory-game', (req, res) => {
-  res.sendFile(path.resolve("game_memory.html"));
+app.get('/game_3', (req, res) => {
+  res.sendFile(path.resolve("game_3.html"));
 });
 
 app.get('/todo', (req, res) => {
