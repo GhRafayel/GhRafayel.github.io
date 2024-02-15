@@ -2,11 +2,16 @@ body  {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
 }
-
-.parnet-h1{
-  padding-top: 120px;
+#about{
+  padding-top: 100px;
   text-align: center;
   font-weight: bold;
+}
+
+.card-header{
+  display: flex;
+  justify-content: space-between;
+ 
 }
 .navbar {
   position: fixed;
@@ -17,24 +22,27 @@ body  {
   min-height: 80px;
 }
 
-#project-container img{
-  height: 400px;
-  padding: 10px;
-}
-
 #about-container .col{
-min-width: 350px;
+  min-width: 350px;
+}
+#about-container img{
+  height: 400px;
+  padding: 10px;
+}
+#project_and_games-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  
+
 }
 
-#games-container img {
+#project_and_games-container img{
   height: 400px;
   padding: 10px;
 }
 
-#about-container img{
-height: 400px;
-padding: 10px;
-}
 
 #game-2-img,
 #memory-game-img{
@@ -43,4 +51,5 @@ max-height: 325px;
 
 #contact-container{
 margin-top: 30px;
-}
+margin-bottom:60px;
+} 

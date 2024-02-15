@@ -5,50 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memory Game</title>
-    <link rel="stylesheet" href="./public/css/game_memoryStyale.css">
+    <link rel="stylesheet" href="./public/css/game_3.css">
+    <link rel="icon" href="/public/img/project.png" type="image/icon type">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
-   <header id="header">
+    <h1 id="h1-title" class="h1 m-5 text-center"> You  can start the game </h1>
+   
+    <div style="text-align: center;">
+        <button type="button" class="btn btn-success" id="animals">Animals</button>
+        <span id="timer">
+        
+        </span>
+        <button type="button" class="btn btn-info" id="numbers"> Numbers </button>
+    </div>
+
+    <div id="level">
+       
+    </div>
     
-        <div class="div-btn-12">
-            <button id="start-btn-12">
-                Level 1
-            </button>
-        </div>
 
-        <div class="div-btn-16">
-                <button id="start-btn-16">
-                    Level 2
-                </button>
-        </div>
+   <div style="width: 100%;display: flex;justify-content: center; ">
+        <div id="div-parent">
 
-        <div class="div-btn-20">
-            <button id="start-btn-20">
-                Level 3
-            </button>
         </div>
+   </div>
+   
 
-        <div class="div-btn-24">
-            <button id="start-btn-24">
-                Level 4
-            </button>
+    
+
+    <div class="d-grid gap-2 text-center">
+        <div class="col">
+            <button id="reset" class="btn btn-primary m-5 w-50 " type="button"> Reset</button>
+
         </div>
-  
-   </header>
-
-    <p id="text"> 
-        You  can start the game
-    </p>
-<div class="grid">
-    <div id="div-parent">
-      
     </div>
-</div>
-    <div class="div-btn-reset">
-        <button id="reset">
-            Reset
-        </button>
-    </div>
-    <script src="./public/js/game_memoryScript.js"></script>
+        
+
+    <script src="./public/js/game_3.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>

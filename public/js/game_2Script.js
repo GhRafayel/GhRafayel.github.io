@@ -1,3 +1,4 @@
+
 const reset = document.querySelector(".button-reset");
 const play = document.querySelector(".button-play");
 

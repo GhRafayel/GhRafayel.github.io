@@ -1,4 +1,4 @@
-body{
+/* body{
   background-color: aqua;
 }
 .wether-body{
@@ -57,4 +57,22 @@ body{
 .wether-div-buttons button:hover{
   cursor: pointer;
   box-shadow: 0px 0px 10px 0px black;
+} */
+
+#form{
+  display: flex;
+  justify-content: center;
+}
+
+#accordionExample span {
+  font-weight: bold;
+  margin-left: 15px;
+ 
+}
+#clearItem{
+  max-width: 150px ;
+
+}
+#parent_accordionExample{
+ align-items: center;
 }

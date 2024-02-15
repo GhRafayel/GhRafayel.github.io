@@ -1,0 +1,53 @@
+
+
+#Stop_Watch_Bill_total_parent{
+  background-color: white; 
+  width: 100%;
+  min-height: 800px;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#summa,
+#procent{
+  width: 350px;
+}
+#form {
+  background-color: rgb(155, 238, 214);
+  height: auto;
+  border: 2px solid gray;
+  padding: 30px;
+  border-radius: 10px;
+}
+#Stop_Watch_col_2{
+  min-width: 350px;
+  background-color: rgb(243, 225, 243);
+  height: auto;
+  border: 2px solid gray;
+  border-radius: 10px;
+  font-size: 25px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content:space-around;
+}
+#lap-text p{
+  font-size: 15px;
+  
+}
+#lap-text {
+  min-height: 100px;
+  margin-top: 10px;
+}
+/* #Stop_Watch_col_2 div {
+  border: 2px solid red;
+} */
+
+
+
+

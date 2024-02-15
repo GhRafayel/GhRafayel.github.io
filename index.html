@@ -11,9 +11,7 @@
 
 </head>
 <body >
-    
     <div id="parent">
-
         <nav class="navbar navbar-expand-lg ">
             <div class="container-fluid">
               <a class="navbar-brand link-info text-white" href="/">Home</a>
@@ -27,9 +25,9 @@
                         <a class="navbar-brand link-info text-white m-lg-3" aria-current="page" href="#about">About</a>
                     </li>
 
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="navbar-brand link-info text-white m-lg-3" href="#games">Games</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item" >
                         <a  class="navbar-brand link-info text-white m-lg-3" href="#projects">Projects</a>
                     </li>
@@ -39,9 +37,8 @@
                     </li>
 
                     <li class="nav-item">
-                      <a  class="navbar-brand link-info text-white" href="#shopping-list">Shopping List</a>
+                      <a  class="navbar-brand link-info text-white" href="/shopping" target="_blank">Shopping List</a>
                     </li>
-                    
                 </ul>
                 <form class="d-flex" role="search">
                   <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -52,12 +49,12 @@
         </nav>
 
         <h1 id="about" class="parnet-h1 ">I'm Rafayel Ghazaryan</h1>
-
+        
         <div  class="container-xxl" id="about-container">
             <div class="row">
 
                 <div class="col text-center">
-                    <img src="/public//img//My_foto.png" alt="My_foto"/>
+                    <img src="/public/img/My_foto.png" alt="My_foto"/>
                 </div>
 
                 <div class="col pt-2">
@@ -67,7 +64,7 @@
                     <div class="accordion-item">
                       <h2 class="accordion-header">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                          HTML:5
+                          HTML 
                         </button>
                       </h2>
                       <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
@@ -194,7 +191,7 @@
                       </div>
 
                       <div class="alert alert-danger" role="alert">
-                        <a href="/public/img/Rafayel Ghazaryan LL.pdf" class="download-a" download>Download CV</a>
+                        <a href="/public/img/Rafayel-Ghazaryan-CV.pdf" class="download-a" download>Download CV</a>
                       </div>
                      
                 </div>
@@ -208,87 +205,91 @@
 
         <h3 class="card-title m-lg-5 text-center" id="projects"> Projects </h3>
 
-        <div class="container-xxl" id="project-container">
-          
-          <div class="row ">
-            <div class="col m-2">
-              <div class="card" style="width: 20rem;height: 25rem; ">
+        <div id="project_and_games-container">
+
+              <div class="card m-4" style="width: 20rem;height: 25rem; ">
                 <img src="/public/img//Bill_total.jpg" class="card-img-top object-fit-cover "  alt="...">
                 <div class="card-body">
-                  <a href="/Bill_total" class="btn btn-outline-primary">Go to the Bill_total</a>
+                  <a href="/Stop_Watch_Bill_total" class="btn btn-outline-primary">Go to the Bill_total</a>
                 </div>
               </div>
-            </div>
-            <div class="col m-2">
-              <div class="card" style="width: 20rem;height: 25rem; ">
+            
+              <div class="card m-4" style="width: 20rem;height: 25rem; ">
                 <img src="/public/img/Stop_Watch.jpg" class="card-img-top object-fit-cover " alt="Stop_Watch">
                 <div class="card-body">
-                  <a href="/Stop_Watch" class="btn btn-outline-primary">Go to the Stop_Watch</a>
+                  <a href="/Stop_Watch_Bill_total" class="btn btn-outline-primary">Go to the Stop_Watch</a>
                 </div>
               </div>
-            </div>
-            <div class="col m-2 ">
-              <div class="card" style="width: 20rem;height: 25rem; ">
+
+              <div class="card m-4" style="width: 20rem;height: 25rem; ">
                 <img src="/public/img/Weather.jpg" class="card-img-top object-fit-cover " alt="Weather">
                 <div class="card-body">
                   <a href="/weather" class="btn btn-outline-primary">Go to the Weather</a>
                 </div>
               </div>
-            </div>
-            <div class="col m-2">
-              <div class="card" style="width: 20rem;height: 25rem; ">
-                <img src="/public/img/Today_Overview.jpg" class="card-img-top object-fit-cover " alt="weatherlive">
+
+              <div class="card m-4" style="width: 20rem;height: 25rem; ">
+                <img src="/public/img/shoping_list.jpeg" class="card-img-top object-fit-cover " alt="weatherlive">
                 <div class="card-body">
-                  <a href="/weatherlive" class="btn btn-outline-primary">Go to the Weather Live</a>
+                  <a href="/shopping" class="btn btn-outline-primary">Go to the Something list</a>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-        
-          <h3 class="card-title  m-lg-5 text-center" id="games"> Games </h3>
 
-        <div class="container-xxl" id="games-container">
-          <div class="row">
-            <div class="col m-2">
-              <div class="card" style="width: 20rem;height: 25rem; ">
+              <div class="card m-4" style="width: 20rem;height: 25rem; ">
                 <img src="/public/img/game-1.jpeg" class="card-img-top object-fit-cover " alt="game-1">
                 <div class="card-body">
                   <a href="/game_1" class="btn btn-outline-primary">Go to the Game-1</a>
                 </div>
               </div>
-            </div>
-            <div class="col m-2">
-              <div class="card" style="width: 20rem; height: 25rem; ">
+
+              <div class="card m-4" style="width: 20rem; height: 25rem; ">
                 <img src="/public/img/game-2.jpg" id="game-2-img" class="card-img-top object-fit-cover" alt="game-2">
                 <div class="card-body">
                   <a href="/game_2" class="btn btn-outline-primary">Go to the Game-2</a>
                 </div>
               </div>
-            </div>
-            <div class="col m-2 ">
-              <div class="card" style="width: 20rem; height: 25rem; ">
+
+              <div class="card m-4" style="width: 20rem; height: 25rem; ">
                 <img src="/public/img/memory-game.jpg" id="memory-game-img" class="card-img-top object-fit-cover"  alt="memory-game">
                 <div class="card-body">
                   <a href="/game_3" class="btn btn-outline-primary">Go to the Memory-game</a>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
 
-   
+              <div class="card m-4" style="width: 20rem; height: 25rem; ">
+                <img src="" id="memory-game-img" class="card-img-top object-fit-cover"  alt="Game-4">
+                
+                <div class="card-body">
+                  <a href="/game_4" class="btn btn-outline-primary">Go to the Game-4</a>
+                </div>
+              </div>
+
+              <!-- <div class="card m-4" style="width: 20rem; height: 25rem; ">
+                <img src="" id="memory-game-img" class="card-img-top object-fit-cover"  alt="Game-5">
+                
+                <div class="card-body">
+                  <a href="#projects" class="btn btn-outline-primary">Go to the Game-4</a>
+                </div>
+              </div> -->
+
+        </div> 
 
         <div class="container" id="contact-container">
           <div class="card">
             <div class="card-header">
-              <h3 id="contact" class="card-title text-center">  Contact Me </h3>
+
+              <h3 id="contact" class="card-title text-center"> Contact Me  </h3>
+              <div id="data">
+                <span id="DMY" class="h4" style="margin-left: 20px;">  </span>
+                <span id="time" class="h4" style="margin-left: 20px;">  </span>
+              </div>
+             
             </div>
             <div class="card-body">
               <blockquote class="blockquote mb-0">
 
                 <div class="btn-group-vertical" role="group" aria-label="Basic mixed styles example">
-                  <a href="" type="button" class="btn btn-danger m-1 text-start">
+                  <a href="https://mail.google.com" type="button" class="btn btn-danger m-1 text-start">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
                       <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
                     </svg>
@@ -318,19 +319,26 @@
                         <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
                       </svg>
                     </a>
+                    
                 </div>
-
                 </div>
+               
                 </div> 
-                <footer class="blockquote-footer text-center p-3"> All rights reserved </footer>
+                
+         
+                <footer class="blockquote-footer text-center p-3">
+                   All rights reserved 
+                  
+                  </footer>
+                
               </blockquote>
             </div>
-          </div>
         </div>
-    </div>
 
+    </div>
+    
+    <script src="/public/js/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </body>
 </html>
 

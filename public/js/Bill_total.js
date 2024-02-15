@@ -1,38 +1,33 @@
 
 const TotalPerPerson = document.querySelector('.Total-per-Person');
-const people = document.getElementById('span-person');
-const percent = document.getElementById(' percent');
-const summa = document.getElementById('summa');
+const how_many_people = document.getElementById('how_many_people');
+
 const minus = document.getElementById('minus');
 const plus = document.getElementById('plus');
-const reset = document.getElementById('reset');
-const submit = document.getElementById('submit');
+
+const summa = document.getElementById('summa');
+const procent = document.getElementById('procent');
 
 let i = 1;
-people.innerHTML = i;
-reset.addEventListener("click",()=>{
-    people.innerHTML = i;
-});
+let j = '00.00 $'
+how_many_people.innerHTML = i;
+TotalPerPerson.innerHTML = j;
+const riset = document.getElementById('ris');
+
+const form = document.getElementById('form').addEventListener('submit',(e) => {
+    e.preventDefault();
+    let total =  (( (Number(summa.value) * Number( procent.value)) / 100)  + Number(summa.value)) / i
+    total <= 0 ? TotalPerPerson.innerHTML = j : TotalPerPerson.innerHTML = total + "$";
+})
+
+riset.addEventListener('click', () =>{
+    i = 1;
+    how_many_people.innerHTML = i;
+    TotalPerPerson.innerHTML = j;
+});    
 minus.addEventListener('click', () =>{
-    people.innerHTML = i-=1;
+    how_many_people.innerHTML = i-=1;
 });
 plus.addEventListener('click', () =>{
-    people.innerHTML = i+=1;
+    how_many_people.innerHTML = i+=1;
 })
-reset.addEventListener("click",()=>{
-    people.innerHTML = i;
-});
-submit.addEventListener('click',()=>{
-    bittotal();
-});
-addEventListener('keydown',(e)=>{
-    if(e.key === 'Enter' ){
-        bittotal();
-    }
-})
-function bittotal(){
-    TotalPerPerson.innerHTML = ` $ ${create(Number(summa.value),Number( percent.value))}`;
-}
-function create(bitTotal,Tip){
-    return (( (bitTotal * Tip) / 100)  + bitTotal) / i;
-}

@@ -6,67 +6,212 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather</title>
-    <link rel="stylesheet" href="./public/css/weatherStyle.css">
+    <link rel="icon" href="/public/img/weather.png" type="image/icon type">
+    <link rel="stylesheet" href="./public/css/weather.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
-<body class="wether-body">
-   
-    <div id="wether-parent">
-        
-        <h1 class="wether-h1">
-            Weather
-        </h1>
+<body">
 
-        <form id="wether-form">
-            <div class="div-input">
-                <input type="text" id="wether-Input" value="wien"/>
-            </div>
-            <div class="wether-div-button">
-                <button id="wether-Button-search">
-                    Search
-                </button>
-            </div>
-        </form>
-     
-       
-       <div class="wether-div-text">
-                <h2 id="wether-City">
-                    Wien
-                </h2>
-                <h2>
-                    Clouds
-                </h2>
-                <p id="wether-Temp">
-                    Temp: 
-                </p>
-                <p id="wether-Min-Temp">
-                    Min Temp: 
-                </p>
-                <p id="wether-Max-Temp">
-                    Max Temp: 
-                </p>
-       </div>
-        <div class="wether-div-buttons">
-                <div>
-                    <button id="wether-f">
-                        F
-                    </button>
-                </div>
-                <div>
-                    <button id="wether-c">
-                        C
-                    </button>
-                </div>
-                <div>
-                    <button id="wether-k">
-                        K
-                    </button>
-                </div>
-            </div>
-    </div>
-   
-   <script src="./public/js/weatherScript.js">
 
-   </script>
+    <div id="weather_parent">
+
+        <div class="container-xxl">
+
+            <div class="row text-center">
+                    <form class="input-group" id="form">
+                        <div class="mb-3 w-75 ">
+                            <label for="exampleInputEmail1" class="form-label "> 
+                                <h1 class="h1-title m-4">What's the weather like </h1>
+                            </label>
+                            <div class="input-group ">
+                                <input id="input"  type="text" class="form-control " placeholder="Search for location" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                <button class="btn btn-outline-primary" type="submit" id="button-addon2">Search</button>
+                            </div>
+                            
+                          </div>
+                    </form>
+            </div>
+
+            <div class="row text-center" id="row_text">
+                    
+              
+            </div>
+            <div class="row m-5">
+                <button id="clear" type="button" class="btn btn-outline-info"> Clear oll</button>
+            </div>
+        </div>
+
+    </div>      
+   
+   
+   <script src="./public/js/weather.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   
-</body>
-</html>
+
+
+   <!--
+    <header>
+        <div id="time">
+            <p>
+                <time id="hours">
+                    
+                </time>
+                :
+                <time id="minutes">
+                    
+                </time>
+                <time id="session">
+                    
+                </time>
+            </p>
+        </div>
+        
+      <div id="parent-header">
+            <div class="form-div">
+                <form id="form-img-input-btn"  >
+                        <input type="text" id="input-header" value="Wien"/>
+                        <button class="button-header"> Search </button>
+                </form>
+            </div>
+
+        </div> 
+        
+    </header>
+
+    <section id="memeri">
+    <main>
+            <div class=" todayOverview">
+                <p>
+                    Today Overview   <span id="cityName">Vienna</span>
+                </p>
+            </div>
+            <div id="main-parent">
+                
+                <div class="div-wind">
+
+                    <div class="img-wind-div-1">
+                        <img src="./public/img/wind.png">
+                    </div>
+
+                    <div class="img-wind-div-2">
+                        <div class="color-silver">
+                            Wind
+                        </div>
+                        <div class="div-wind-child">
+                            <div id="wind">
+                                6.9 mph
+                            </div>
+                            <div class="div-wind-child-se">
+                                SE.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="div-lowest-highest">
+
+                    <div class="img-wind-div-1">
+                        <img src="./public/img/celsus.png">
+                    </div>
+
+                    <div class="img-wind-div-2">
+                        <div class="color-silver">
+                            Lowest / Highest
+                        </div>
+
+                        <div>
+                            <span id="lowest">
+                            51 &#8457
+                            </span>
+                            / 
+                            <span id="highest">
+                            55 &#8457 
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="div-pressure">
+                    <div class="img-wind-div-1">
+                        <img src="./public/img/pressure.png">
+                    </div>
+                    <div class="img-wind-div-2">
+                        <div class="color-silver">
+                            Pressure
+                        </div>
+                        <div id="pressure">
+                            1019 hpa
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="div-humidity">
+                    <div class="img-wind-div-1">
+                        <img src="./public/img/Water.png">
+                    </div>
+                    <div class="img-wind-div-2">
+                        <div class="color-silver">
+                            Humidity
+                        </div>
+                        <div  id="humidity">
+                            88 %
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p>Sunrise & Sunset</p>
+
+            <div class="div-Sunrise">
+                    <div>
+                        <img src="./public/img/Sunrise.png" width="30px">
+                    </div>
+                    <div>
+                        Sunrise
+                    </div>
+                    <div>
+                        <time id="hours1"></time>
+                        :
+                        <time id="minutes1"></time>
+                        <time id="session1"></time>
+                    </div>
+                    <div>
+                        in
+                        <span id="span-sunrise"></span>
+                    </div>
+            </div>
+        
+            <div class="div-Sunset">
+                        <div>
+                            <img src="./public/img/Sunset.png" width="30px">
+                        </div>
+                        <div>
+                            Sunset
+                        </div>
+                        <div>
+                            <time id="hours2"></time>
+                            :
+                            <time id="minutes2"></time>
+                            <time id="session2"></time>
+                        </div>
+                    
+                        <div>
+                            in
+                            <span id="span-sunset"></span>
+                        </div>  
+            </div>
+        </main>
+    </section>
+    
+
+    <section>
+        <footer>
+            <div class="div-chart-grafik">
+                
+            </div>
+            <div id="div-canvas">
+                
+                </div>
+            </div>
+        </footer>
+    </section>
+ -->

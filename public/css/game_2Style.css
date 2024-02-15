@@ -1,12 +1,4 @@
-*{
-  margin: 0px;
- }
- body{
-  font-family: Arial;
-  font-size: 60px;
-  background-color: black;
- }
- 
+
   #parent{
       display: flex;
       justify-content:space-around;
@@ -18,10 +10,7 @@
       height:320px;
 
   }
-  html > body > #parent #div-hero-1{
-    margin-left: 300px;
-    border: 2px solid red;
-  }
+
   
   #parent #div-hero-1 div,
   #parent #div-hero-2 div{
@@ -116,4 +105,4 @@
           font-size: 30px;
          }
         
-}
+} 
