@@ -4,14 +4,15 @@ const play = document.querySelector(".button-play");
 
 const won = document.getElementById("result");
 
-const  audio1 = document.createElement("audio");
-audio1.src = '/public/audio/audio1.wav';
-const  audio2 = document.createElement("audio");
-audio2.src = '/public/audio/audio2.wav';
+
 const  audio3 = document.createElement("audio");
 audio3.src = '/public/audio/audio3.wav';
 
-
+function audioPlayer(audio){
+    const a = document.createElement("audio");
+    a.src = audio
+    a.play();
+}
 const position1 = document.querySelector(".Position1");
 const position2 = document.querySelector(".Position2");
 
@@ -38,19 +39,32 @@ play.addEventListener('click', ()=>{
 
 
     attackHero1.addEventListener('click', ()=>{
+      if(heroRight > 0){
         position2.innerHTML = heroRight -= rendom(); 
-        if(heroRight < 0 ){
+        if(heroRight <= 0 ){
+            
             result('Spiderman has won');
         } 
-        audio1.play();
+        audioPlayer('/public/audio/audio1.wav')}  
+        if(heroRight < 0){
+            position2.innerHTML = 0;
+          }
     });
+
     attackHero2.addEventListener('click', ()=>{
+       if(heroLeft > 0){
         position1.innerHTML = heroLeft -= rendom();
-            if(heroLeft < 0 ){
+            if(heroLeft <= 0 ){
                 result('Batman has won');
             } 
-            audio1.play();
+            audioPlayer('/public/audio/audio1.wav')
+       }
+      if(heroLeft <= 0){
+        position1.innerHTML = 0;
+      }
         
+       
+            
     });
     
     helpHero1.addEventListener('click', ()=>{
@@ -59,7 +73,9 @@ play.addEventListener('click', ()=>{
                 if(heroLeft > 100){
                     position1.innerHTML = heroLeft = 100;
                 }
+                audioPlayer('/public/audio/audio4.wav')
         }
+       
     });
     helpHero2.addEventListener('click', ()=>{
         if(heroRight < 100){
@@ -67,6 +83,7 @@ play.addEventListener('click', ()=>{
                 if(heroRight > 100){
                     position2.innerHTML = heroRight = 100;
                 }
+                audioPlayer('/public/audio/audio4.wav')
         }
     
     });
@@ -78,14 +95,14 @@ play.addEventListener('click', ()=>{
             if(heroRight < 0 ){
                 result('Spiderman has won');
             } 
-            audio1.play();
+            audioPlayer('/public/audio/audio1.wav')
         }
         if(e.key === 'p'){
             position1.innerHTML = heroLeft -= rendom();
             if(heroLeft < 0 ){
                 result('Batman has won');
             } 
-            audio1.play();
+            audioPlayer('/public/audio/audio1.wav')
         }
         if(e.key === 'a'){
             if(heroLeft < 100){
@@ -93,6 +110,8 @@ play.addEventListener('click', ()=>{
                     if(heroLeft > 100){
                         position1.innerHTML = heroLeft = 100;
                     }
+                    audioPlayer('/public/audio/audio4.wav')
+
             }
         }
         if(e.key === 'l'){
@@ -101,6 +120,8 @@ play.addEventListener('click', ()=>{
                     if(heroRight > 100){
                         position2.innerHTML = heroRight = 100;
                     }
+                    audioPlayer('/public/audio/audio4.wav')
+
             }
         }
     })
@@ -115,6 +136,6 @@ function result(result){
 reset.addEventListener('click', ()=>{
     position1.innerHTML =  heroLeft = 100;
     position2.innerHTML =  heroRight = 100;
-    audio3.play();
+    audioPlayer('/public/audio/audio3.wav')
 })
 

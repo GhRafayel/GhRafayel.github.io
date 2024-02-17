@@ -24,12 +24,10 @@ const todoPool = createPool({
 // (async function(){
 //   results =  await todoPool.query(`SHOW TABLES`);
 //   console.log( Array.isArray(results[0])) ;
-//  results[0].forEach(val => {
+//   results[0].forEach(val => {
 //     console.log(Array.isArray(val))
 //      console.log(val)
 //   });
-
-  
 //   return results;
 // })();
 
@@ -132,7 +130,20 @@ app.get('/game_4', (req, res) => {
   res.sendFile(path.resolve("game_4.html"));
 });
 
-app.listen(process.env.PORT);
+
+
+app.post('/send_state', (req, res) => {
+  fs.promises
+  .writeFile(path.resolve("weather.json"),JSON.stringify(req.body,undefined,2))
+  .then((json) => res.send(json));
+});
+app.get('/get_state', (req, res) => {
+  fs.promises.readFile(path.resolve('weather.json'), 'utf-8')
+  .then(json => {
+    res.send(json);
+  });
+});
+
 
 //require dotenv/config 
 // npm install dotenv --save-dev
@@ -151,30 +162,21 @@ app.listen(process.env.PORT);
 // });
 
 
-// app.get('/todo', (req, res) => {
-//   fs.promises.readFile(path.resolve('data.json'), 'utf-8')
-//   .then(json => {
-//     res.send(json);
-//   });
-// });
-// app.post('/todo', (req, res) => {
-//   fs.promises
-//   .writeFile(path.resolve("data.json"),JSON.stringify(req.body,undefined,2))
-//   .then(json => {
-//     console.log(todo);
-//   })
-//   .catch(()=>{
-//     res.send('error');
-//   })
-// });
-// app.post('/send_state', (req, res) => {
-//   fs.promises
-//   .writeFile(path.resolve("weather.json"),JSON.stringify(req.body,undefined,2))
-//   .then((json) => res.send(json));
-// });
-// app.get('/get_state', (req, res) => {
-//   fs.promises.readFile(path.resolve('weather.json'), 'utf-8')
-//   .then(json => {
-//     res.send(json);
-//   });
-// });
+app.get('/todo', (req, res) => {
+  fs.promises.readFile(path.resolve('todo.json'), 'utf-8')
+  .then(json => {
+    res.send(json);
+  });
+});
+app.post('/todo', (req, res) => {
+  fs.promises
+  .writeFile(path.resolve("todo.json"),JSON.stringify(req.body,undefined,2))
+  .then(json => {
+    console.log(todo);
+  })
+  .catch(()=>{
+    res.send('error');
+  })
+});
+
+app.listen(process.env.PORT);

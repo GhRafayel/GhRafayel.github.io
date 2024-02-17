@@ -1,4 +1,4 @@
-
+debugger
 const root = document.getElementById('root');
 
 const _state = {
@@ -166,7 +166,7 @@ function list() {
                 <input class="form-check-input mt-0 p-3"  type="checkbox" ${ val.bul === '1' || val.bul === true ? 'checked' : undefined}>
             </div>
             <div class="col h4 p-1 text-center" id='div_span'>
-              <span  id='text'   title="Double click for change text"> ${val.text} </span>
+              <span  id='text'   title="Double-click to edit the text"> ${val.text} </span>
             </div>
             <div  class="col-auto p-1">
               <button type="button" class="btn btn-outline-success">Remove</button>

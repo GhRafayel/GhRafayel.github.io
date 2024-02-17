@@ -3,19 +3,21 @@
         form: document.getElementById('form'),
         cityName: document.getElementById('input'),
         row_text: document.getElementById('row_text'),
-        arr: undefined,
+        arr: []
+        
     }
-    function get(){
-        fetch('/get_state')
+     function get(){
+       fetch('/get_state')
         .then((strim => strim.json()))
         .then((json) => {
             _state.arr = json
             render(_state.arr);
+            
         })
         .catch((err) => {
-            console.log(err, "Something went wrong")
-        });
-        
+           
+            request();
+        })
     }
     
     _state.form.addEventListener('submit', (e)=>{
@@ -63,14 +65,16 @@
     }
    
     function request(){
+        
         fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${_state.cityName.value === '' ? 'Vienna' : _state.cityName.value}&appid=8109965e7254a469d08a746e8b210e1e&units=imperial&cnt=10`)
         .then(strim => strim.json())
         .then(res =>  {
             if(res.cod === '200'){
+                console.log(res.cod)
                 _state.arr.push(res);
                 _state.arr = _state.arr.filter((obj, index) => _state.arr.findIndex((item) => item.city.id === obj.city.id) === index);
-                send(_state.arr)
                 render(_state.arr)
+                send(_state.arr)
             }
         })
         .catch(error => {
@@ -107,6 +111,7 @@
     }
 
     function render (arr){
+        
         _state.row_text.innerHTML = '';
         arr.map((item,i) => _state.row_text.appendChild(container(item,i)));
         
