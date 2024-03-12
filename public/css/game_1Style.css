@@ -1,13 +1,11 @@
-*{
+
+body{
   margin:0px;
   padding: 0px;
-}
-body{
   font-family: Arial;
   font-size:25px ;
   font-weight: bold;
   color:black;
-  background-color: black;
 }
 #parent {
  background-color: lightblue;
@@ -40,7 +38,9 @@ body{
 .button-won{
   background: none;
   border: none;
+  cursor: pointer;
 }
+
 .div-child{
   display: flex;
   justify-content: space-around;
@@ -53,12 +53,17 @@ body{
   height: 150px;
   object-fit: cover;
 }
-.div-child img {
+ 
+#hover:active{
+  background-color:rgb(169, 222, 241) ;
+}
+ img {
   width: 100px;
   height: 150px;
   object-fit: cover;
- 
 }
+
+
 @media all and (max-width:500px) {
   .scissors-stone-paper img,
   .div-child2 img{

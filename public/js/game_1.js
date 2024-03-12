@@ -16,8 +16,8 @@
     scissors.innerHTML = scissorsNamber;
 
 
-
     btnScissorsr.addEventListener('click', () => {
+        audio('/public/audio/mixkit-gear-fast-lock-tap-2857.wav')
         resoult.innerHTML = '' ;
         rock.innerHTML = ` Scissors ${rockNamber}` ;
         computer = set[ Math.floor(Math.random() * 3)];
@@ -36,6 +36,7 @@
     });
     
     stone.addEventListener('click',  () => {
+        audio('/public/audio/mixkit-gear-fast-lock-tap-2857.wav')
         resoult.innerHTML = '' ;
         rock.innerHTML = ` stone ${rockNamber}` ;
         computer = set[ Math.floor(Math.random() * 3)];
@@ -55,6 +56,8 @@
     });
     
     paper.addEventListener('click', () => {
+        audio('/public/audio/mixkit-gear-fast-lock-tap-2857.wav')
+
         resoult.innerHTML = '' ;
         rock.innerHTML = ` paper ${rockNamber}` ;
         computer = set[ Math.floor(Math.random() * 3)];
@@ -71,19 +74,25 @@
         }
     });
 
-        won.addEventListener('click', () => {
-            if(rockNamber > scissorsNamber){
-                resoult.innerHTML = 'You win!' ;
-            } else if(rockNamber === scissorsNamber){
-                resoult.innerHTML = 'No win!!' ;
-            }
-            else {
-               resoult.innerHTML = 'You lost!' ;
-            }
-            rockNamber = 0;
-            scissorsNamber = 0;
-            rock.innerHTML = 0;
-            scissors.innerHTML = 0;
-        });
+    won.addEventListener('click', () => {
+        if(rockNamber > scissorsNamber){
+            resoult.innerHTML = 'You win!' ;
+        } else if(rockNamber === scissorsNamber){
+            resoult.innerHTML = 'No win!!' ;
+        }
+        else {
+            resoult.innerHTML = 'You lost!' ;
+        }
+        rockNamber = 0;
+        scissorsNamber = 0;
+        rock.innerHTML = 0;
+        scissors.innerHTML = 0;
+    });
+    
+    function audio (url){
+        const audio = document.createElement('audio');
+        audio.src = url;
+        audio.play();
+    }
 
 

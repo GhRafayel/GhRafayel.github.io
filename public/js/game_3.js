@@ -103,22 +103,24 @@ reset.addEventListener('click',()=>{
 })
 
 function choose (e){
-  levelContainer()
+  levelContainer();
     if(e.target.id === 'animals'){
          playArrey = animalImg
          divParent.innerHTML = '';
           started(playArrey)
-          document.getElementById('numbers').removeEventListener('click', choose,false);
+          document.getElementById('numbers')
+          //.removeEventListener('click', choose,false);
     }else if(e.target.id === 'numbers'){
         playArrey = numberImg
         divParent.innerHTML = '';
         started(playArrey);
-        document.getElementById('animals').removeEventListener('click', choose,false);
+        document.getElementById('animals')
+        //.removeEventListener('click', choose,false);
     }
 }
 
 function started(arr){
-  divParent.style = 'width:1150px;'
+  // divParent.style = 'width:1150px;'
 
     document.getElementById('animals').addEventListener('click', choose, false);
     document.getElementById('numbers').addEventListener('click', choose, false);
@@ -139,6 +141,7 @@ function container(el){
 }
 
 function levelContainer(){
+  document.getElementById('level').innerHTML =''; 
   const container = document.createElement('div');
   container.className = " text-center m-5 ";
     container.innerHTML = ` <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
