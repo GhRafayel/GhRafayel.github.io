@@ -16,7 +16,7 @@ const riset = document.getElementById('ris');
 
 const form = document.getElementById('form').addEventListener('submit',(e) => {
     e.preventDefault();
-    let total =  (( (Number(summa.value) * Number( procent.value)) / 100)  + Number(summa.value)) / i
+    let total = Math.floor( (( (Number(summa.value) * Number( procent.value)) / 100)  + Number(summa.value)) / i)
     total <= 0 ? TotalPerPerson.innerHTML = j : TotalPerPerson.innerHTML = total + "$";
 })
 
