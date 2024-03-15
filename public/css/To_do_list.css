@@ -1,0 +1,21 @@
+#cheang_text{
+  width: 100%;
+}
+#text{
+  cursor: pointer;
+}
+#div_span{
+  overflow: hidden;
+  
+}
+.btn.btn-outline-success{
+  width: fit-content;
+}
+#to_do_list_root{
+  overflow: scroll;
+}
+#footer{
+  display: flex;
+  align-items: center;
+  
+}

@@ -1,4 +1,6 @@
-
+#calculator{
+  padding-top: 30px;
+}
 .calculator{
   display: flex;
   justify-content: center;

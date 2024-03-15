@@ -1,0 +1,30 @@
+#Bill_total input{
+
+   width: 90%;
+}
+
+.please_meines_buttons{
+  display: flex;
+  margin: 20px;
+}
+.ris_submit_buttons{
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 40px;
+
+}
+.please_meines_buttons button{
+  background-color: transparent;
+}
+.ris_submit_buttons button{
+  padding: 2px;
+}
+#form {
+  overflow: hidden;
+  margin: 5px;
+  
+  height: 390px;
+  padding: 5px;
+  background-color: rgb(175, 245, 226);
+  
+}
