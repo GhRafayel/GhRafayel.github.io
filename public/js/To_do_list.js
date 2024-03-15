@@ -12,7 +12,7 @@ function header(){
   container.innerHTML = `
   <div class="input-group mb-3">
     <input id="formInput" value="" type="text" class="form-control" placeholder=" Write subjects" aria-label="Recipient's username" aria-describedby="button-addon2">
-    <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Add </button>
+    <button class="btn btn-outline-secondary " type="submit" id="button-addon2">Add </button>
   </div>`;
   
   container.addEventListener('submit', (e)=> {

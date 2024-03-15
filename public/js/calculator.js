@@ -18,6 +18,7 @@ const _data = {
 _data.numbersArray.forEach( btn => btn.addEventListener('click', add , false));
 
 function add(e){
+  audio();
    if( _data.result.innerText.length >= 9){
       if(num > 30)  num-=3 
               else  num-=2  
@@ -34,25 +35,35 @@ function add(e){
 }
 
 function please_or_menus(){
+  audio();
    return _data.result.innerHTML = Number(_data.result.innerHTML)* -1 ;
 }
 
 function clear(){
+  audio();
   _data.result.innerHTML = "0";
 }
 
 function type (val){
+  audio();
   result =  Number(_data.result.innerHTML);
   value = val;
   clear();
 }
 function equals (val1, val2){
+  audio();
   if(value === '/') _data.result.innerHTML = val1 / val2;
   if(value === '*') _data.result.innerHTML = val1 * val2;
   if(value === '-') _data.result.innerHTML = val1 - val2;
   if(value === '+') _data.result.innerHTML = val1 + val2;
   if(value === '%') _data.result.innerHTML = (val1 * val2) / 100;
 
+}
+
+function audio(){
+  const audio = document.createElement('audio');
+  audio.src = "/public/audio/mixkit-gear-fast-lock-tap-2857.wav"
+  audio.play();
 }
 
 _data.please.addEventListener('click', () => type("+"));
