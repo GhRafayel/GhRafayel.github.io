@@ -9,13 +9,13 @@
   font-family: Arial, Helvetica, sans-serif;
 
 }
-.big_box{
+#calculator .big_box{
   overflow: hidden;
   border-radius: 10px;
   border: 1px solid black ;
 }
 
-.result{
+#calculator .result{
   display: flex;
   justify-content: end;
   align-items: center;
@@ -24,7 +24,7 @@
   background-color:#676666;
   font-size: 45px;
 }
-.box_btn{
+#calculator .box_btn{
   background-color: #1C1C1C;
   font-size: 45px;
 }
@@ -38,53 +38,53 @@
 #calculator button:hover{
   background-color:rgb(50, 50, 50) ;
 }
-.linia{
+#calculator .linia{
   display: flex;
   justify-content: center;
 }
-.box_btn div:nth-child(1) button{
+#calculator .box_btn div:nth-child(1) button{
   background-color: rgb(28, 28, 28);
   
 }
-.box_btn div:nth-child(1) button:hover{
+#calculator .box_btn div:nth-child(1) button:hover{
   background-color:  rgb(60, 60, 60);
   
 }
 
-.box_btn div:nth-child(1) button:nth-child(4){
+#calculator .box_btn div:nth-child(1) button:nth-child(4){
   background-color: rgb(255, 153, 0);
 }
 
-button:nth-child(4){
+#calculator button:nth-child(4){
   background-color: rgb(255, 153, 0);
   width: 60px;
 }
-button{
+#calculator button{
   background-color:  rgb(80, 80, 80);
   color: rgb(214, 213, 213);
 }
 
-.box_btn div:nth-child(5){
+#calculator .box_btn div:nth-child(5){
   justify-content: end;
   border-bottom: none;
 }
 
-.box_btn div:nth-child(5) button:nth-child(1){
+#calculator .box_btn div:nth-child(5) button:nth-child(1){
   width: 120px;
   border-left: none;
 }
 
-.box_btn div:nth-child(5) button:nth-child(3){
+#calculator .box_btn div:nth-child(5) button:nth-child(3){
   border-right: none;
   background-color: rgb(255, 153, 0);
 }
-.linia button:nth-child(4):hover{
+#calculator .linia button:nth-child(4):hover{
   background-color: green ;
 }
-.box_btn div:nth-child(5) button:nth-child(3):hover{
+#calculator .box_btn div:nth-child(5) button:nth-child(3):hover{
   background-color: green ;
 
 }
-.box_btn div:nth-child(1) button:nth-child(4):hover{
+#calculator .box_btn div:nth-child(1) button:nth-child(4):hover{
   background-color: green ;
 }
