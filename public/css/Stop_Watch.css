@@ -1,23 +1,116 @@
 
 
-#Stop_Watch_col_2{
-  margin: 5px;
-  background-color: rgb(243, 225, 243);
-  overflow: hidden;
-  height: 390px;
+
+#stopWatch{
+  width:100% ;  
+  height: 100%;
+  background-color: black;
+  color: white;
+  margin-right: 5px;
+  display: flex;
+  justify-content: center;
+}
+#S_parent{
+  width: 450px;
+  height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  background-color: black;
+  color: white;
+  
+}
+ 
+.stopWatch_1div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
+}
+#S_parent_lap{
+  height: 100%;
+  overflow-y: scroll;
+}
+
+#S_parent p {  
+  font-size:70px;
+  font-weight:100;
+  font-family: 'Courier New', Courier, monospace;
+  margin-bottom: 0px;
+
+}
+#S_parent .lap_btn-split-total div:first-child {
+  display: flex;
+  width: 320px;
+  color: gray;
+  justify-content: space-between;
+} 
+#S_parent .lap_btn-split-total span{
+  width: 100px;
+  text-align: start;
+}
+#S_parent-btn{
   text-align: center;
-  justify-content:space-around;
+  height: 100px;
 }
-#Stop_Watch_col_2 button {
-  padding: 2px;
+#S_parent-btn button{
+  border: none;
+  width: 120px;
+  margin-right: 10px;
+  border-radius: 6px;
+  color: white;
 }
-#lap-text p{
-  font-size: 15px;
+#S_parent-btn .active{
+  display: none;
 }
-#lap-text {
-  min-height: 100px;
-  margin-top: 10px;
+
+#S_parent-btn button:nth-child(1){
+  background-color: rgb(74, 74, 74);
+  color: gray;
+
+}
+#S_parent-btn button:nth-child(2){
+  background-color: rgb(128, 128, 128);;
+}
+#S_parent-btn button:nth-child(3){
+  background-color: rgb(247, 11, 11);
+}
+#S_parent-btn button:nth-child(4){
+    background-color: rgb(3, 122, 3);
+}
+#S_parent-btn button:nth-child(1):active{
+  background-color: rgb(155, 155, 155);
+}
+#S_parent-btn button:nth-child(2):active{
+  background-color: rgb(155, 155, 155);
+
+}
+#S_parent-btn button:nth-child(3):active{
+  background-color: rgb(242, 59, 59);
+
+}
+#S_parent-btn button:nth-child(4):active{
+  background-color: rgb(18, 159, 18);
+
+}
+#lap_split_total span{
+  width: 100px;
+  text-align: center;
+}
+#S_parent_lap div span{
+  width: 100px;
+  text-align: center;
+}
+
+#lap_split_total,
+#S_parent_lap div{
+  display: flex;
+  justify-content: space-evenly;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 100;  
+}
+#S_parent_lap hr{
+  margin: 4px;
+  width: 74%;
+  
 }

@@ -1,87 +1,161 @@
 
-const _state = {
-    _milisecondelement: document.getElementById('milisecound'),
-    _secondelement: document.getElementById('secound'),
-    _minuteelement: document.getElementById('minute'),
+const lap_btn = document.getElementById('lap_btn');
+const reset_btn = document.getElementById('reset_btn');
+const start_btn = document.getElementById('start_btn');
+const Stop_btn = document.getElementById('Stop_btn');
 
-    _startButton: document.getElementById('button-start'),
-    _stopButton:  document.getElementById('button-stop'),
-    _resetButton: document.getElementById('button-reset'),
-
-    _lap: document.getElementById('lap-button'),
-    _lap_text: document.getElementById('lap-text'),
-
-    _data: [],
-    _milisecond: 0,
-    _second: 0,
-    _minute: 0,
-    _interval: undefined,
-}
+const milS_sec_min = document.getElementById('milS_sec_min');
+const S_parent_lap = document.getElementById('S_parent_lap');
 
 
-_state._startButton.addEventListener('click',()=>{
-    clearInterval(_state._interval);
-    _state._interval = setInterval(teimer, 10)
-}); 
 
-_state._stopButton.addEventListener('click',()=>{
-    clearInterval(_state._interval)
-});
+let splitArray = [];
+let totalArray = [];
+
+let milisecond = 0;
+let seconds = 0;
+let minutes = 0;
+let interval;
+
+let milisecond_2 = 0;
+let seconds_2 = 0;
+let minutes_2 = 0;
+let interval_2;
+let bool = false;
+
+
+start_btn.addEventListener('click', (e) => { 
+ 
+  bool = true;
+  lap_btn.className = 'lap ';
+  lap_btn.style = 'color: white;';
+  start_btn.className = 'lap active';
+  reset_btn.className = 'lap active'
+  Stop_btn.className = 'lap'
+
+  clearInterval(interval);
+  clearInterval(interval_2);
+
+  interval = setInterval(teimer, 10);
+  interval_2 = setInterval(teimer_2,10);
   
-_state._resetButton.addEventListener('click',()=>{
-    
-    clearInterval(_state._interval)
-    _state._lap_text.innerHTML = '';
-    _state._milisecond = "0";
-    _state._second = "0";
-    _state._minute = "0";
-    _state._milisecondelement.innerHTML = "00"
-    _state._secondelement.innerHTML = "00"
-    _state._minuteelement.innerHTML = "00"
-});  
+});
 
-function teimer(){
-    
-    _state._milisecond++;
-    _state._milisecond <= 9 ?
-        _state._milisecondelement.innerHTML = '0' + _state._milisecond :
-        _state._milisecondelement.innerHTML =  _state._milisecond;
+  lap_btn.addEventListener('click', (e) => { 
+    if(bool === true){
+       splitArray.push(`${minutes_2 <= 9 ? "0" + minutes_2 : minutes_2}:${ seconds_2 <= 9 ? "0" + seconds_2 : seconds_2},${ milisecond_2 <= 9 ? "0" + milisecond_2 : milisecond_2}`);
+       splitArray.reverse();
+       totalArray.push(`${minutes <= 9 ? "0" + minutes : minutes}:${ seconds  <= 9 ? "0" + seconds : seconds},${ milisecond <= 9 ? "0" + milisecond : milisecond}`);
+        milisecond_2 = 0;
+        seconds_2 = 0;
+        minutes_2 = 0;
+  
+        clearInterval(interval_2);
+        interval_2 = setInterval(teimer_2,10);
+      
+        S_parent_lap.innerHTML = '';
+      
+        totalArray.map((ele,i) => {
+          const divHr = document.createElement('div');
+          divHr.innerHTML = `<hr>`;
+          S_parent_lap.appendChild(divHr);
+          const div = document.createElement("div");
+          div.id = `${splitArray[i]}`
+            div.innerHTML = `
+            <span> Lap ${i+1}</span> 
+            <span id="split">${splitArray[i]}</span> 
+            <span>${ele}</span>`
+            S_parent_lap.appendChild(div);
+      });
 
-        if(_state._milisecond > 99){
-            _state._second++;
-            _state._secondelement.innerHTML = "0" + _state._second;
-            _state._milisecond = 0;
-            _state._milisecondelement.innerHTML = '0' + _state._milisecond 
-        }
-        _state._second <= 9 ?
-        _state._secondelement.innerHTML =  '0' + _state._second :
-        _state._secondelement.innerHTML =  _state._second;
+      if(splitArray.length >= 2){
+        const splitArraySortet = splitArray.sort();
+        document.getElementById(splitArraySortet[0]).style = 'color:rgb(61, 241, 61)';
+        document.getElementById(splitArraySortet[splitArraySortet.length-1]).style = 'color:red';
 
-        if(_state._second > 59){
-        _state._minute++;
-        _state._minuteelement.innerHTML = "0" + _state._minute;
-        _state._second = 0;
-        _state._secondelement.innerHTML = "0" + _state._second;
-        }
+      }
+
+    }
+  
+  });
+
+
+reset_btn.addEventListener('click', (e) => { 
+  bool = false;
+  lap_btn.style = " color: gray;"
+  lap_btn.className = 'lap ';
+  start_btn.className = 'lap ';
+  reset_btn.className = 'lap active'
+  Stop_btn.className = 'lap active'
+
+   
+  clearInterval(interval);
+  clearInterval(interval_2);
+
+  milS_sec_min.innerHTML = "00:00,00";
+  S_parent_lap.innerHTML = '';
+  document.getElementById('no_span').innerHTML = '';
+  document.getElementById('split_span').innerHTML = '';
+  document.getElementById('total_span').innerHTML = '';
+
+  splitArray = [];
+  totalArray = [];
+
+  milisecond = 0;
+  seconds = 0;
+  minutes = 0;
+
+  milisecond_2 = 0;
+  seconds_2 = 0;
+  minutes_2 = 0;
+
+});
+
+Stop_btn.addEventListener('click',  (e) => {
+  lap_btn.className = 'lap active';
+  start_btn.className = 'lap ';
+  reset_btn.className = 'lap'
+  Stop_btn.className = 'lap active'
+  clearInterval(interval);
+  clearInterval(interval_2);
+
+ });
+
+ function teimer(){
     
-        _state._minute < 9 ?
-        _state._minuteelement.innerHTML =  '0' + _state._minute :
-        _state._minuteelement.innerHTML =  _state._minute;
+    milisecond++;
+    if(milisecond > 99){
+        seconds++;
+        milisecond = 0;
+    }
+    if(seconds > 59){
+        minutes++;
+        seconds = 0;
+    }
+      document.getElementById("no_span").innerHTML = `Lap ${totalArray.length +1}`;
+      document.getElementById('total_span').innerHTML = `${minutes <= 9 ? "0" + minutes : minutes}:${ seconds <= 9 ? "0" + seconds : seconds},${ milisecond <= 9 ? "0" + milisecond : milisecond}`;
+      milS_sec_min.innerHTML = `${minutes <= 9 ? "0" + minutes : minutes}:${ seconds <= 9 ? "0" + seconds : seconds},${ milisecond <= 9 ? "0" + milisecond : milisecond}`
 }
 
-_state._lap.addEventListener('click', (e) => {
-    
-    if(_state._milisecondelement.innerHTML !== "00"){
-       _state._lap_text.innerHTML = '';
-       
-        if(_state._data.length > 4){
-            _state._data.shift()
-        }
-        _state._data.push(` ${_state._minuteelement.innerHTML} - ${_state._secondelement.innerHTML} - ${_state._milisecondelement.innerHTML}`)
-        _state._data.map((el, i) => {
-            return _state._lap_text.appendChild(document.createElement('p'))
-            .innerHTML = ` ${i+1} Lap ${el}`
-        })
+function teimer_2(){
+  milisecond_2++;
+  if(milisecond_2 > 99){
+    seconds_2++; 
+     milisecond_2 = 0;
     }
-   
-})
+  if(seconds_2 > 59){
+    minutes_2++;
+    seconds_2 = 0;
+  }
+  return document.getElementById('split_span').innerHTML = `${minutes_2 <= 9 ? "0" + minutes_2 : minutes_2}:${ seconds_2 <= 9 ? "0" + seconds_2 : seconds_2},${ milisecond_2 <= 9 ? "0" + milisecond_2 : milisecond_2}`
+}
+
+
+
+
+ 
+
+ 
+
+
+
