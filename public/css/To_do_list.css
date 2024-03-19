@@ -1,22 +1,31 @@
 #cheang_text{
   width: 100%;
+  
+
 }
 #text{
   cursor: pointer;
+  
 }
 #div_span{
   overflow: hidden;
+  
   
 }
 .btn.btn-outline-success{
   width: fit-content;
 }
 #to_do_list_root{
-  overflow: scroll;
-  
-}
-#footer{
+  height: 100%;
   display: flex;
-  align-items: center;
-  
+  flex-direction: column;
+  overflow: hidden;
+  justify-content: space-around;
 }
+
+#footer{
+
+  display: flex;
+  align-items: end;
+}
+

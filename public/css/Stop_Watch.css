@@ -39,19 +39,24 @@
   margin-bottom: 0px;
 
 }
+
 #S_parent .lap_btn-split-total div:first-child {
+  
   display: flex;
   width: 320px;
   color: gray;
   justify-content: space-between;
 } 
+
 #S_parent .lap_btn-split-total span{
   width: 100px;
   text-align: start;
 }
 #S_parent-btn{
   text-align: center;
+  padding-top: 10px;
   height: 100px;
+
 }
 #S_parent-btn button{
   border: none;

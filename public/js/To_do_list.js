@@ -35,7 +35,7 @@ function header(){
 function list() {
   todo.map(val => {
   const container = document.createElement('div');
-        container.className = 'row mb-3 m-3';
+        container.className = 'row mb-3 m-4 active';
         container.id = val.id;
         container.innerHTML = 
         `

@@ -11,7 +11,6 @@ const S_parent_lap = document.getElementById('S_parent_lap');
 
 let splitArray = [];
 let totalArray = [];
-
 let milisecond = 0;
 let seconds = 0;
 let minutes = 0;
@@ -62,7 +61,7 @@ start_btn.addEventListener('click', (e) => {
           const div = document.createElement("div");
           div.id = `${splitArray[i]}`
             div.innerHTML = `
-            <span> Lap ${i+1}</span> 
+            <span> Lap ${totalArray.length - i}</span> 
             <span id="split">${splitArray[i]}</span> 
             <span>${ele}</span>`
             S_parent_lap.appendChild(div);
