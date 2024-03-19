@@ -103,9 +103,6 @@
         audio.play();
     }
 
-    
-   
-
     function foo (){
         
         You.src = srsArray[index];
@@ -116,10 +113,6 @@
         
     }
 
-     interval = setInterval( foo, 600);
+    interval = setInterval( foo, 600);
 
 
-
-     // You.innerHTML = You_Nambers;
-    // compRobot.innerHTML = computer_Nambers;
-     //let set = [btnScissorsr, stone, paper];
