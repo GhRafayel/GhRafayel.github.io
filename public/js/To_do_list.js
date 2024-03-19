@@ -32,10 +32,16 @@ function header(){
  
   return root.appendChild(container);
 };
-function list() {
+function list(){
+  const continer = document.createElement("div");
+  continer. id = 'scroll'
+
+ root.appendChild(continer);
+}
+function listItem() {
   todo.map(val => {
   const container = document.createElement('div');
-        container.className = 'row mb-3 m-4 active';
+        container.className = 'row mb-3 m-3';
         container.id = val.id;
         container.innerHTML = 
         `
@@ -84,7 +90,7 @@ function list() {
         App();
        
     });
-      root.appendChild(container);
+     document.getElementById('scroll').appendChild(container);
   });
 };
 function footer(){
@@ -113,6 +119,7 @@ function App(){
   root.innerHTML = "";
   header();
   list();
+  listItem();
   footer()
 }
 App();

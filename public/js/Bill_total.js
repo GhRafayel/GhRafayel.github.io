@@ -26,7 +26,8 @@ riset.addEventListener('click', () =>{
     TotalPerPerson.innerHTML = j;
 });    
 minus.addEventListener('click', () =>{
-    how_many_people.innerHTML = i-=1;
+    if(i > 1) how_many_people.innerHTML = i-=1;
+    
 });
 plus.addEventListener('click', () =>{
     how_many_people.innerHTML = i+=1;
