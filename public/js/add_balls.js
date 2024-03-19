@@ -6,7 +6,7 @@ const ctx = canvas.getContext('2d');
 
 let deita = { balls:[] }
 
-console.log(deita.balls)
+
 function drow(){
   ctx.clearRect(0, 0, canvas.width, canvas.height);
     deita.balls.forEach(function(ball){

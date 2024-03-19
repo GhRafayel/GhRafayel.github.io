@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="/public/css/Bill_totol.css">
     <link rel="stylesheet" href="/public/css/To_do_list.css">
     <link rel="stylesheet" href="/public/css/W_A_S_T.css">
-    <link rel="stylesheet" href="./public/css/add_balls.css">
+    <link rel="stylesheet" href="/public/css/add_balls.css">
+    <link rel="stylesheet" href="/public/css/game_1.css">
     <!-- <link rel="stylesheet" href="./public/css/new.css"> -->
 
 
@@ -294,11 +295,69 @@
                 </div>
               </div>
 
-              <div class="card m-4" style="width: 20rem;height: 25rem; ">
-                <img src="/public/img/game-1.jpeg" class="card-img-top object-fit-cover " alt="game-1">
-                <div class="card-body">
-                  <a href="/game_1" class="btn btn-outline-primary"> Game-1</a>
-                </div>
+              <div id="game-1" class="card m-4" style="width: 30rem;height: 25rem; ">
+
+                  <div id="game-1_parent">
+
+                        <div class="scissors-stone-paper">
+                      
+                              <div  class="div-scissors">
+                                  <button class="button-scissors">
+                                      <img  src="/public/img/scissors.png" class="img-scissors" alt="scissors">
+                                  </button>
+                              </div>
+                      
+                              <div class="div-stone">
+                                  <button class="button-stone">
+                                     <img src="/public/img/stone.png" class="img-stone" alt="stone" >
+                                  </button>
+                              </div>
+                      
+                              <div   class="div-paper">
+                                  <button  class="button-paper">
+                                      <img src="/public/img/paper.png" class="img-paper" alt="paper" >
+                                  </button>
+                              </div>
+                              
+                        </div>
+                        
+                        <div class="game-1_div-child">
+                            <div>
+                                <div id="You_Comouter">
+                                    <span > You </span>
+                                </div>
+                               
+                                <div id="Your_points"> </div>
+                            </div>
+
+                            <div>
+                              <img id="people" src="/public/img/scissors.png" alt="head">
+                            </div>
+
+                            <div>
+                              <img id="compRobot" src="/public/img/paper.png" alt="Robot">
+                          </div>
+                          
+                            <div>
+                                <div id="Your_Comouter">
+                                    <spa > Comouter </spa>
+                                </div>
+                               
+                                <div id="Comouter_points"> </div>
+                            </div>
+                        </div>
+                        <div id="resoult"> </div>
+                        
+                        <div class="game-1_div-child2">
+                            <p class="p">
+                                Who has won
+                            </p>
+                            <button class="button-won">
+                              <img   src="/public/img/finish.png" alt="button">
+                            </button>
+                        </div>
+
+                  </div>
               </div>
 
               <div class="card m-4" style="width: 20rem; height: 25rem; ">
@@ -483,6 +542,7 @@
     <script src="/public/js/To_do_list.js"></script>
     <script src="/public/js/W_A_S_T.js"></script>
     <script src="./public/js/add_balls.js"></script> 
+    <script src="./public/js/game_1.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>

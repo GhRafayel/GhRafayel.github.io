@@ -2,91 +2,99 @@
     const  btnScissorsr =  document.querySelector('.button-scissors');
     const  stone  =  document.querySelector('.button-stone');
     const  paper =  document.querySelector('.button-paper');
+
     const  won    =  document.querySelector('.button-won');
 
-    let set = [btnScissorsr, stone, paper];
+    const You = document.getElementById('people');
+    const compRobot = document.getElementById('compRobot');
 
-    let rock = document.querySelector('.Rock');
-    let scissors = document.querySelector('.Comouter');
-    let resoult = document.querySelector('.resoult');
-    let computer ;
-    let rockNamber = 0;
-    let scissorsNamber = 0;
-    rock.innerHTML = rockNamber;
-    scissors.innerHTML = scissorsNamber;
+    const Your_points =  document.getElementById('Your_points');
+    const Comouter_points = document.getElementById('Comouter_points');
 
+    const resoult = document.getElementById('resoult');
+    
+    let srsArray = ['/public/img/scissors.png', '/public/img/stone.png', '/public/img/paper.png' ];
+    let index = 0   
+    let Your_Nambers= 0;
+    let computer_Nambers = 0;
+    
+    function innerHTML (num1,num2){
+        Comouter_points.innerHTML = computer_Nambers > 1 ? `  ${computer_Nambers} Points` : ` ${computer_Nambers} Point` ;
+        Your_points.innerHTML = Your_Nambers > 1 ? ` Points ${Your_Nambers}` : `Point ${Your_Nambers}` ;
+        
+        You.src = srsArray[num1];
+        compRobot.src = srsArray[num2];
+
+        
+    }
 
     btnScissorsr.addEventListener('click', () => {
+        clearInterval(interval);
         audio('/public/audio/mixkit-gear-fast-lock-tap-2857.wav')
+        let computer =  Math.floor(Math.random() * 3);
         resoult.innerHTML = '' ;
-        rock.innerHTML = ` Scissors ${rockNamber}` ;
-        computer = set[ Math.floor(Math.random() * 3)];
-
-        if(computer === btnScissorsr){
-            scissors.innerHTML =  `Scissors ${scissorsNamber }`;
-            rock.innerHTML = `Scissors ${rockNamber }`;
+        
+         if(computer === 1){
+            computer_Nambers += 1
         }
-         if(computer === stone){
-            scissors.innerHTML =  `stone ${scissorsNamber  += 1}`;
+         if(computer === 2){
+           Your_Nambers += 1;
         }
-         if(computer === paper){
-            rock.innerHTML = `Scissors ${rockNamber  += 1}`;
-            scissors.innerHTML =  `paper ${scissorsNamber}`;
-        }
+        innerHTML(0,computer);
     });
+
     
     stone.addEventListener('click',  () => {
+        clearInterval(interval);
         audio('/public/audio/mixkit-gear-fast-lock-tap-2857.wav')
+        let computer =  Math.floor(Math.random() * 3);
         resoult.innerHTML = '' ;
-        rock.innerHTML = ` stone ${rockNamber}` ;
-        computer = set[ Math.floor(Math.random() * 3)];
+        
+        if(computer === 0){
+           Your_Nambers+= 1;
+        }     
+        if(computer === 2){
+            computer_Nambers  += 1;
+        }
+        innerHTML(1,computer);
 
-        if(computer === stone){
-            scissors.innerHTML =  `stone ${scissorsNamber}`;
-            rock.innerHTML = `stone ${rockNamber }`;
-        }
-         if(computer === btnScissorsr){
-            scissors.innerHTML = `Scissors ${scissorsNamber }`;
-            rock.innerHTML = `stone ${rockNamber += 1}`;
-        }
-         if(computer === paper){
-            scissors.innerHTML =  `paper ${scissorsNamber +=1}`;
-            rock.innerHTML = `stone ${rockNamber }`;
-        }
+       
     });
     
     paper.addEventListener('click', () => {
+        clearInterval(interval);
         audio('/public/audio/mixkit-gear-fast-lock-tap-2857.wav')
-
+        let computer =  Math.floor(Math.random() * 3);
         resoult.innerHTML = '' ;
-        rock.innerHTML = ` paper ${rockNamber}` ;
-        computer = set[ Math.floor(Math.random() * 3)];
+        
+        if(computer === 0){
+            computer_Nambers  += 1;
+        }
+        if(computer === 1){
+          Your_Nambers+= 1;
+        }
+        innerHTML(2,computer);
 
-        if(computer === btnScissorsr){
-            scissors.innerHTML =  `Scissors ${scissorsNamber +=1}`;
-        }
-        if(computer === stone){
-            scissors.innerHTML =  `stone ${scissorsNamber }`;
-            rock.innerHTML = `paper ${rockNamber += 1}`;
-        }
-        if(computer === paper){
-            scissors.innerHTML =  `paper ${scissorsNamber }`;
-        }
+        
     });
 
     won.addEventListener('click', () => {
-        if(rockNamber > scissorsNamber){
+        clearInterval(interval);
+        interval = setInterval( foo, 400);
+        if(Your_Nambers > computer_Nambers){
             resoult.innerHTML = 'You win!' ;
-        } else if(rockNamber === scissorsNamber){
+        } else if(Your_Nambers === computer_Nambers){
             resoult.innerHTML = 'No win!!' ;
         }
         else {
             resoult.innerHTML = 'You lost!' ;
         }
-        rockNamber = 0;
-        scissorsNamber = 0;
-        rock.innerHTML = 0;
-        scissors.innerHTML = 0;
+        Your_Nambers= 0;
+        computer_Nambers = 0;
+        Your_points.innerHTML = 0;
+        Comouter_points.innerHTML = 0;
+        
+
     });
     
     function audio (url){
@@ -95,4 +103,23 @@
         audio.play();
     }
 
+    
+   
 
+    function foo (){
+        
+        You.src = srsArray[index];
+       
+        index++;
+        if(index >= 3) index = 0;
+        compRobot.src = srsArray[index]
+        
+    }
+
+     interval = setInterval( foo, 600);
+
+
+
+     // You.innerHTML = You_Nambers;
+    // compRobot.innerHTML = computer_Nambers;
+     //let set = [btnScissorsr, stone, paper];
