@@ -1,4 +1,3 @@
-debugger
 const root = document.getElementById('root');
 
 const _state = {

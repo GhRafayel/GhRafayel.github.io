@@ -18,7 +18,7 @@ const _data = {
 _data.numbersArray.forEach( btn => btn.addEventListener('click', add , false));
 
 function add(e){
-  audio();
+  audio('/public/audio/mixkit-gear-fast-lock-tap-2857.wav');
    if( _data.result.innerText.length >= 9){
       if(num > 30)  num-=3 
               else  num-=2  
@@ -35,23 +35,23 @@ function add(e){
 }
 
 function please_or_menus(){
-  audio();
+  audio('/public/audio/mixkit-gear-fast-lock-tap-2857.wav');
    return _data.result.innerHTML = Number(_data.result.innerHTML)* -1 ;
 }
 
 function clear(){
-  audio();
+  audio('/public/audio/mixkit-gear-fast-lock-tap-2857.wav');
   _data.result.innerHTML = "0";
 }
 
 function type (val){
-  audio();
+  audio('/public/audio/mixkit-gear-fast-lock-tap-2857.wav');
   result =  Number(_data.result.innerHTML);
   value = val;
   clear();
 }
 function equals (val1, val2){
-  audio();
+  audio('/public/audio/mixkit-gear-fast-lock-tap-2857.wav');
   if(value === '/') _data.result.innerHTML = val1 / val2;
   if(value === '*') _data.result.innerHTML = val1 * val2;
   if(value === '-') _data.result.innerHTML = val1 - val2;
@@ -60,11 +60,6 @@ function equals (val1, val2){
 
 }
 
-function audio(){
-  const audio = document.createElement('audio');
-  audio.src = "/public/audio/mixkit-gear-fast-lock-tap-2857.wav"
-  audio.play();
-}
 
 _data.please.addEventListener('click', () => type("+"));
 _data.menus.addEventListener('click',() => type("-"));
