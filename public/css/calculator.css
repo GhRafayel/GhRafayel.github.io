@@ -1,5 +1,6 @@
 #calculator{
-  padding-top: 30px;
+  padding-top: 10px;
+  
 }
 .calculator{
   display: flex;
@@ -10,12 +11,14 @@
 
 }
 #calculator .big_box{
-  overflow: hidden;
+  overflow-x: scroll; 
   border-radius: 10px;
   border: 1px solid black ;
+  
 }
 
 #calculator .result{
+  max-width: 240px;
   display: flex;
   justify-content: end;
   align-items: center;
@@ -23,6 +26,7 @@
   height: 80px;
   background-color:#676666;
   font-size: 45px;
+  
 }
 #calculator .box_btn{
   background-color: #1C1C1C;

@@ -1,76 +1,117 @@
-const _data = {
-  result: document.getElementById('result'),
-  divide: document.getElementById('divide'),
-  AC: document.getElementById('AC'),
-  percent: document.getElementById('percent'),
-  comma: document.getElementById('comma'),
-  menus: document.getElementById('menus'),
-  please: document.getElementById('please'),
-  equals: document.getElementById('equals'),
-  multiplication: document.getElementById('multiplication' ),
-  please_or_menus: document.getElementById('+/_'),
-  numbersArray: [...document.getElementsByTagName('button')].filter(el => el.id === 'number'),
-}
- let num = 45;
- let result;
- let value;
+const buttons = [...document.getElementsByTagName('button')];
+const display = document.getElementById('display');
+const numbersButton = buttons.filter(btn => btn.id === 'number');
+const mathButton = buttons.filter(btn => btn.id === '-' || btn.id === '+' || btn.id === '/' || btn.id === '*');
+const please_menus = document.getElementById('please_or_menus');
+const equals = document.getElementById('equals');
+const AC = document.getElementById('AC');
+const percent = document.getElementById('%');
 
-_data.numbersArray.forEach( btn => btn.addEventListener('click', add , false));
+let resolt = '';
+let bol = false;
+let font = 99;
 
-function add(e){
-  audio('/public/audio/mixkit-gear-fast-lock-tap-2857.wav');
-   if( _data.result.innerText.length >= 9){
-      if(num > 30)  num-=3 
-              else  num-=2  
-   }
+buttons.forEach(btn => btn.addEventListener('click', (e) => audio('/public/audio/mixkit-gear-fast-lock-tap-2857.wav')));
 
-   _data.result.style = `font-size: ${num}px`;
+numbersButton.forEach(elem=>  elem.addEventListener('click', addNumber,  false));
+mathButton.forEach(   elem=>  elem.addEventListener('click',  math, false));
 
-  if(_data.result.innerHTML === '0' && e.target.innerHTML !== '.'){
-   
-    _data.result.innerHTML = e.target.innerHTML;
-  } else{
-    _data.result.innerHTML += e.target.innerHTML;
+
+please_menus.addEventListener('click',(e)=> {
+  resolt = Number(resolt) * -1;
+  display.innerHTML = resolt;
+});
+
+equals.addEventListener('click',()=> {
+if(resolt.length >= 1){
+    let a = resolt.split('');
+    if(a[a.length - 1] !== '%'){
+          if(a[a.length - 1] === '+' || a[a.length - 1] === '-' || a[a.length - 1] === '*'  || a[a.length - 1] === '/'){
+            delete a[a.length - 1];
+            resolt = eval(a.join(''));
+            display.innerHTML = resolt;
+          }else{
+            resolt =  eval(resolt);
+            display.innerHTML = resolt
+          }
+    }else{
+      delete a[a.length - 1];
+     display.innerHTML = ( Number(resolt = a.join('')) * Number(display.innerHTML )) / 100 + '%';
+    }
   }
-}
+});
 
-function please_or_menus(){
-  audio('/public/audio/mixkit-gear-fast-lock-tap-2857.wav');
-   return _data.result.innerHTML = Number(_data.result.innerHTML)* -1 ;
-}
+AC.addEventListener('click', (e)=> {
+   resolt = '';
+   bol = false;
+   font = 99;
+   display.innerHTML = '0';
+   display.style = `font-size: ${font}%`;
+})
 
-function clear(){
-  audio('/public/audio/mixkit-gear-fast-lock-tap-2857.wav');
-  _data.result.innerHTML = "0";
-}
-
-function type (val){
-  audio('/public/audio/mixkit-gear-fast-lock-tap-2857.wav');
-  result =  Number(_data.result.innerHTML);
-  value = val;
-  clear();
-}
-function equals (val1, val2){
-  audio('/public/audio/mixkit-gear-fast-lock-tap-2857.wav');
-  if(value === '/') _data.result.innerHTML = val1 / val2;
-  if(value === '*') _data.result.innerHTML = val1 * val2;
-  if(value === '-') _data.result.innerHTML = val1 - val2;
-  if(value === '+') _data.result.innerHTML = val1 + val2;
-  if(value === '%') _data.result.innerHTML = (val1 * val2) / 100;
-
-}
-
-
-_data.please.addEventListener('click', () => type("+"));
-_data.menus.addEventListener('click',() => type("-"));
-_data.divide.addEventListener('click',() => type("/"));
-_data.multiplication.addEventListener('click', () => type("*"));
-_data.percent.addEventListener('click', () => type("%"));
-
-_data.equals.addEventListener("click",()=>{
-  equals( result, Number(_data.result.innerHTML));
+percent.addEventListener('click', (e)=>{ 
+  resolt = eval(resolt) + e.target.id;
+  display.innerHTML = '0';
 });
 
 
-_data.please_or_menus.addEventListener('click', please_or_menus,false);
-_data.AC.addEventListener('click',clear,false);
+
+function math(evn){
+  if(resolt.length >=1){
+
+  try{
+    display.innerHTML = eval(resolt);
+    if(display.innerHTML.length >= 17) {
+      display.style = `font-size:${font/2-5}%; `;
+    }
+      
+  }
+  catch{
+    console.log(Error);
+  }
+  resolt += evn.target.id;
+  bol = true;
+  let a = resolt.split('');
+  if(a[a.length - 1] === '+' || a[a.length - 1] === '-' || a[a.length - 1] === '*'  || a[a.length - 1] === '/'){
+        if( a[a.length - 2] === '+' || a[a.length - 2] === '-' || a[a.length - 2] === '*'  || a[a.length - 2] === '/'){
+            delete a[a.length - 2];
+            resolt = a.join('');
+        }
+  }
+}
+  
+}
+
+
+
+ function addNumber(evn){
+      let a = resolt.split('');
+      if(a[a.length - 1] !== '%'){
+         resolt += evn.target.innerHTML;
+      }
+     if(Number(display.innerHTML.length) <= 18){
+        if(display.innerText.length >= 9){
+          if(font > 70)  font -= 6.3
+          else if(font > 50) font -= 5
+            display.style = `font-size:${font}%; `;
+        }
+        if(bol === true) clear();
+      
+         if(display.innerHTML === '0' && evn.target.innerHTML !== '.'){
+            display.innerHTML = evn.target.innerHTML;
+         } else{
+            display.innerHTML += evn.target.innerHTML;
+        }
+        bol = false;
+    }
+
+  
+ }
+
+
+
+function clear(){
+  display.innerHTML = '0';
+}
+
+
