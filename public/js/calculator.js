@@ -26,17 +26,18 @@ equals.addEventListener('click',()=> {
 if(resolt.length >= 1){
     let a = resolt.split('');
     if(a[a.length - 1] !== '%'){
+      debugger
           if(a[a.length - 1] === '+' || a[a.length - 1] === '-' || a[a.length - 1] === '*'  || a[a.length - 1] === '/'){
             delete a[a.length - 1];
-            resolt = eval(a.join(''));
+            resolt = String(eval(a.join('')));
             display.innerHTML = resolt;
           }else{
-            resolt =  eval(resolt);
+            resolt =  String(eval(resolt));
             display.innerHTML = resolt
           }
     }else{
       delete a[a.length - 1];
-     display.innerHTML = ( Number(resolt = a.join('')) * Number(display.innerHTML )) / 100 + '%';
+      display.innerHTML = ( Number(resolt = a.join('')) * Number(display.innerHTML )) / 100 + '%';
     }
   }
 });
