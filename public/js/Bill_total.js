@@ -18,7 +18,7 @@ const form = document.getElementById('form').addEventListener('submit',(e) => {
     e.preventDefault();
     let total = Math.floor( (( (Number(summa.value) * Number( procent.value)) / 100)  + Number(summa.value)) / i)
     total <= 0 ? TotalPerPerson.innerHTML = j : TotalPerPerson.innerHTML = total + "$";
-})
+});
 
 riset.addEventListener('click', () =>{
     i = 1;
@@ -31,4 +31,4 @@ minus.addEventListener('click', () =>{
 });
 plus.addEventListener('click', () =>{
     how_many_people.innerHTML = i+=1;
-})
+});

@@ -1,3 +1,4 @@
+
 const buttons = [...document.getElementsByTagName('button')];
 const display = document.getElementById('display');
 const numbersButton = buttons.filter(btn => btn.id === 'number');
@@ -11,18 +12,19 @@ let resolt = '';
 let bol = false;
 let font = 99;
 
-buttons.forEach(btn => btn.addEventListener('click', (e) => audio('/public/audio/mixkit-gear-fast-lock-tap-2857.wav')));
 
 numbersButton.forEach(elem=>  elem.addEventListener('click', addNumber,  false));
 mathButton.forEach(   elem=>  elem.addEventListener('click',  math, false));
 
 
 please_menus.addEventListener('click',(e)=> {
+  audio('/public/audio/mixkit-gear-fast-lock-tap-2857.wav')
   resolt = Number(resolt) * -1;
   display.innerHTML = resolt;
 });
 
 equals.addEventListener('click',()=> {
+  audio('/public/audio/mixkit-gear-fast-lock-tap-2857.wav')
 if(resolt.length >= 1){
     let a = resolt.split('');
     if(a[a.length - 1] !== '%'){
@@ -43,6 +45,7 @@ if(resolt.length >= 1){
 });
 
 AC.addEventListener('click', (e)=> {
+  audio('/public/audio/mixkit-gear-fast-lock-tap-2857.wav')
    resolt = '';
    bol = false;
    font = 99;
@@ -51,6 +54,7 @@ AC.addEventListener('click', (e)=> {
 })
 
 percent.addEventListener('click', (e)=>{ 
+  audio('/public/audio/mixkit-gear-fast-lock-tap-2857.wav')
   resolt = eval(resolt) + e.target.id;
   display.innerHTML = '0';
 });
@@ -58,6 +62,7 @@ percent.addEventListener('click', (e)=>{
 
 
 function math(evn){
+  audio('/public/audio/mixkit-gear-fast-lock-tap-2857.wav')
   if(resolt.length >=1){
 
   try{
@@ -86,6 +91,7 @@ function math(evn){
 
 
  function addNumber(evn){
+  audio('/public/audio/mixkit-gear-fast-lock-tap-2857.wav')
       let a = resolt.split('');
       if(a[a.length - 1] !== '%'){
          resolt += evn.target.innerHTML;
@@ -112,6 +118,7 @@ function math(evn){
 
 
 function clear(){
+  audio('/public/audio/mixkit-gear-fast-lock-tap-2857.wav')
   display.innerHTML = '0';
 }
 
