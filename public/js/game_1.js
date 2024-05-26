@@ -1,4 +1,4 @@
-    
+
     const  btnScissorsr =  document.querySelector('.button-scissors');
     const  stone  =  document.querySelector('.button-stone');
     const  paper =  document.querySelector('.button-paper');

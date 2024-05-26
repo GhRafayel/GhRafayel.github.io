@@ -13,6 +13,7 @@ function audioPlayer(audio){
     a.src = audio
     a.play();
 }
+
 const position1 = document.querySelector(".Position1");
 const position2 = document.querySelector(".Position2");
 
@@ -35,8 +36,6 @@ function rendom(){
 play.addEventListener('click', ()=>{
     position1.innerHTML = heroLeft;
     position2.innerHTML = heroRight;
-
-
 
     attackHero1.addEventListener('click', ()=>{
       if(heroRight > 0){

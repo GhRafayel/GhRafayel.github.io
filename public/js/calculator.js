@@ -12,7 +12,6 @@ let resolt = '';
 let bol = false;
 let font = 99;
 
-
 numbersButton.forEach(elem=>  elem.addEventListener('click', addNumber,  false));
 mathButton.forEach(   elem=>  elem.addEventListener('click',  math, false));
 
@@ -28,7 +27,6 @@ equals.addEventListener('click',()=> {
 if(resolt.length >= 1){
     let a = resolt.split('');
     if(a[a.length - 1] !== '%'){
-      debugger
           if(a[a.length - 1] === '+' || a[a.length - 1] === '-' || a[a.length - 1] === '*'  || a[a.length - 1] === '/'){
             delete a[a.length - 1];
             resolt = String(eval(a.join('')));

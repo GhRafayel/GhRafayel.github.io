@@ -85,3 +85,9 @@ max-height: 325px;
 #contact-container div{
   min-width: fit-content;
 }
+nav .btn-secondary.dropdown-toggle {
+  background-color: black;
+}
+nav .dropdown-menu{
+text-align: center;
+}

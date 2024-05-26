@@ -34,11 +34,11 @@ loop();
 
 function Ball(){
   this.r = rendome(5,30);
-  this.x = rendome(this.r,canvas.width - this.r );
+  this.x = rendome(this.r,canvas.width  - this.r );
   this.y = rendome(this.r,canvas.height - this.r );
 
-  this.xDelta = rendome(-5,5) ;
-  this.yDelta = rendome(-5,5)  ;
+  this.xDelta = rendome(-5,5);
+  this.yDelta = rendome(-5,5);
 
   this.color = `rgb(${rendome(0,255)},
                     ${rendome(0,255)},
@@ -70,5 +70,6 @@ function Ball(){
 
 button.addEventListener('click', () => {
   let ball = new Ball();
+  console.log(ball);
   deita.balls.push(ball);
 });
