@@ -67,9 +67,10 @@ function Ball(){
   }
   
 }
-
+for(let i = 0; i < 5; i++) {
+  deita.balls.push(new Ball());
+}
 button.addEventListener('click', () => {
   let ball = new Ball();
-  console.log(ball);
   deita.balls.push(ball);
 });
