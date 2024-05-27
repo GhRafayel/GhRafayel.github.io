@@ -12,6 +12,11 @@ function data(){
 
   document.getElementById('time').innerHTML = hour + ':' + minute + ':' + second 
 }
+function audio (url){
+  const audio = document.createElement('audio');
+  audio.src = url;
+  audio.play();
+}
 
 
 

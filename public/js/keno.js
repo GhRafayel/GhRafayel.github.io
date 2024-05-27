@@ -126,6 +126,7 @@ function keno_toBet(){
     else{
      return  alert(" Choose a number");
     }
+    audio("/public/audio/bet.mp3");
     keno_bet = {};
   }else{
    return  alert('You donot have a enough money');
@@ -178,7 +179,7 @@ function keno_start(e){
       
 }
 function keno_chooseNumber(number,e) {
-
+  audio("/public/audio/click4.wav")
  if(keno_bet[number] === undefined){
     if(Object.values(keno_bet).length <= 9 ){
         keno_bet[number] = number;

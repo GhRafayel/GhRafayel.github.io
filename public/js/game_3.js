@@ -176,7 +176,7 @@ function createElement(arr){
 }
 
 function fo(e) {
-  play('mixkit-gear-fast-lock-tap-2857.wav');
+  play('click1.wav');
   e.target.style = 'opacity:1;';
   arr.push(e.target);
   if(arr.length === 2 ){

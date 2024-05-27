@@ -30,7 +30,7 @@
 
     btnScissorsr.addEventListener('click', () => {
         clearInterval(interval);
-        audio('/public/audio/mixkit-gear-fast-lock-tap-2857.wav')
+        audio('/public/audio/click1.wav')
         let computer =  Math.floor(Math.random() * 3);
         resoult.innerHTML = '' ;
         
@@ -46,7 +46,7 @@
     
     stone.addEventListener('click',  () => {
         clearInterval(interval);
-        audio('/public/audio/mixkit-gear-fast-lock-tap-2857.wav')
+        audio('/public/audio/click1.wav')
         let computer =  Math.floor(Math.random() * 3);
         resoult.innerHTML = '' ;
         
@@ -63,7 +63,7 @@
     
     paper.addEventListener('click', () => {
         clearInterval(interval);
-        audio('/public/audio/mixkit-gear-fast-lock-tap-2857.wav')
+        audio('/public/audio/click1.wav')
         let computer =  Math.floor(Math.random() * 3);
         resoult.innerHTML = '' ;
         
@@ -97,11 +97,7 @@
 
     });
     
-    function audio (url){
-        const audio = document.createElement('audio');
-        audio.src = url;
-        audio.play();
-    }
+  
 
     function foo (){
         
