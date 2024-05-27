@@ -37,7 +37,6 @@
   max-width:600px ;
   display: flex;
   justify-content: space-between;
-
 }
 
 #keno_div-3 {
@@ -45,7 +44,6 @@
   background-color: rgb(41, 44, 41);
   display: flex;
   flex-wrap: nowrap;
-  
 }
 #keno #keno_numbers_div{
  width: 60%; 

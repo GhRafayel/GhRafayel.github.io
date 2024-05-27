@@ -17,7 +17,6 @@ const keno_circulationList = document.getElementById('keno_circulation');
 const keno_btn_start = document.getElementById('keno_btn_start');
 const keno_play_rules = document.getElementById('keno_play_rules');
 const keno_repeat = document.getElementById('keno_repeat');
-
 const keno_data = [];
 let last_Index ;
 let keno_bet = {};
