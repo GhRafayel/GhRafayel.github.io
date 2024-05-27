@@ -105,7 +105,7 @@ function keno_App(){
 }
 
 function keno_toBet(){
-  if( (keno_total_balance - keno_input_value())  >= 1 && keno_input_value() > 0){
+  if( (keno_total_balance - keno_input_value())  >= 0 && keno_input_value() > 0){
     if(Object.values(keno_bet).length  >= 1){
        keno_numbersArray.forEach( val => { 
           if(keno_bet[val.innerHTML] !== undefined){
