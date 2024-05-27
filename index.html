@@ -227,7 +227,7 @@
 
         <div id="project_and_games-container">
 
-              <div class="card m-4" style="width: fit-content; height:fit-content; ">
+              <div id="keno_container" class="card m-4" style="width: fit-content; height:fit-content; ">
                   
                   <div id="keno">
                     
@@ -392,7 +392,8 @@
                             
                             <div id="keno_buttons_group">
                                   <div>
-                                      <button id="keno_play_rules" class="btn btn-info">  Rules </button>
+                                    <button id="keno_repeat" type="button" class="btn btn-info">Repeat</button>
+                                     
                                       <button id="keno_auto_bet_minus" type="button" class="btn btn-info">-</button>
                                       <button id="keno_auto_bet_button" type="button" class="btn btn-info">   <span id="keno_auto_bet_count">Auto 1</span> </button>
                                       <button id="keno_auto_bet_plus" type="button" class="btn btn-info">+</button>
@@ -400,16 +401,17 @@
                                     
                                     <div>
                                       <button id="keno_btn_start" type="button" class="btn btn-warning"> Start</button> 
-                                      <button id="keno_minus" class="btn btn-warning">-</button>
-                                      <span   id="keno_bet_mony">$ 1</span>
-                                      <button id="keno_plus" class="btn btn-warning">+</button>
-
-
+                                      <input id="keno_bet_mony" type="number" placeholder="$"  min="1"/>
                                     </div>
                                     <div> 
 
-                                    <button id="keno_repeat" type="button" class="btn btn-info">Repeat</button>
-
+                                    
+                                    <button id="keno_play_rules" class="btn btn-info">  
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
+                                          <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492M5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0"/>
+                                          <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115z"/>
+                                        </svg>
+                                    </button>
                                     <button id="keno_add_bet" type="button" class="btn btn-danger"> Add Bet</button>
 
 
@@ -438,7 +440,7 @@
                     </div>
                 
                     <div id="keno_child-4">  
-                    
+                     
                         <div>
 
                         <img src="/public/img/keno_ruls.jpg" alt="keno.png" width="100%">
@@ -451,128 +453,7 @@
     
               </div>
 
-              <div id="add_balls" class="card m-4 p-2" style="width: 30rem; height: 25rem; ">
-                        
-                          
-                <div class="div-canvas" >
-                    <canvas id="canvas" width="440px">
-            
-                    </canvas>
-                </div>
-                <div class="div-buttob">
-                  <button id="add_btn" class="btn btn-success p-2">
-                    Add Balls                      
-                  </button>
-                </div>
-
-              </div>
-
-              <div class="card m-4 p-2" style="width: 30rem; height: 25rem; overflow-y: scroll;">
-                <div id="stopWatch">
-                
-                    <div id="S_parent">
-                      <div class="stopWatch_1div">
-                        <p id="milS_sec_min">
-                            00:00,00
-                        </p>
-
-                        <div class="lap_btn-split-total">
-                          <div>
-                            <span>Lap No</span><span>Split</span><samn>Total</samn>
-
-                          </div>
-                          <div id="div_hr"><hr style=" margin: 0px;"></div>
-
-                        </div>
-
-
-                      </div>
-
-                      <div id="lap_split_total">
-
-                              <span id="no_span"> </span>
-                              <span id="split_span"></span>
-                              <span id="total_span"></span>
-                      </div>
-
-                      <div id="S_parent_lap">
-                        
-                        
-                        
-
-                      </div>
-
-                      <div id="S_parent-btn">
-                        <button id="lap_btn"   class="lap ">Lap</button>
-                        <button id="reset_btn" class="lap  active">Reset</button>
-                        <button id="Stop_btn"  class="lap  active">Stop</button>
-                        <button id="start_btn" class="lap ">Start</button>
-                      </div>
-                    
-                    </div> 
-                </div>
-                
-              </div>
-
-              <div class="card m-4" style="width: 20rem;height: 25rem; ">
-
-                  <div id="Bill_total">
-
-                      <form id="form">
-
-                          <div >
-                            <label for="exampleInputEmail1" class="form-label"> Bill_total </label>
-                            <input type="text"  class="form-control " placeholder="$ Summa" id="summa" aria-describedby="emailHelp">
-                          </div>
-
-                          <div >
-                            <label for="exampleInputPassword1" class="form-label"> Tip </label>
-                            <input  type="text"  class="form-control " placeholder="Wie viele %" id="procent">
-                          </div>
-
-                          <div class="please_meines_buttons">
-                            <div id="please_meines">
-                              <h5>People</h5>
-                                <button id="plus" type="button" class=" " > 
-                                  +
-                                </button>
-  
-                                <span id="how_mony_people"></span>
-  
-                                <button id="minus" type="button" class=""  > 
-                                  -
-                                </button>
-                            </div>
-                             
-  
-                        
-                          <div class="col text-end">
-                              <h5 >Per person</h5>
-                              <p class="Total-per-Person ">$</p>
-                          </div>
-                          
-                        </div>
-
-                          <div class="ris_submit_buttons">
-      
-                            <div class="">
-                                <button id="ris" type="reset" class="btn btn-outline-primary " >Riset</button>
-                            </div>
-                            <div class="">
-                                <button  type="submit" class="btn btn-outline-primary">Submit</button>
-                            </div>
-                            
-                        </div>
-                      </form>
-
-                     
-    
-                     
-
-                  </div>
-
-              </div>
-
+             
               <div id="calculator" class="card m-4" style="width: 20rem; height: 25rem; ">
                 <div class="calculator">
 
@@ -622,7 +503,131 @@
               </div>
               </div>
 
-              <div class="card m-4" style="width: 20rem;height: 25rem; ">
+              
+              <div class="card m-4 p-2" style="width: 30rem; height: 25rem; overflow-y: scroll;">
+                <div id="stopWatch">
+                
+                    <div id="S_parent">
+                      <div class="stopWatch_1div">
+                        <p id="milS_sec_min">
+                            00:00,00
+                        </p>
+
+                        <div class="lap_btn-split-total">
+                          <div>
+                            <span>Lap No</span><span>Split</span><samn>Total</samn>
+
+                          </div>
+                          <div id="div_hr"><hr style=" margin: 0px;"></div>
+
+                        </div>
+
+
+                      </div>
+
+                      <div id="lap_split_total">
+
+                              <span id="no_span"> </span>
+                              <span id="split_span"></span>
+                              <span id="total_span"></span>
+                      </div>
+
+                      <div id="S_parent_lap">
+                        
+                        
+                        
+
+                      </div>
+
+                      <div id="S_parent-btn">
+                        <button id="lap_btn"   class="lap ">Lap</button>
+                        <button id="reset_btn" class="lap  active">Reset</button>
+                        <button id="Stop_btn"  class="lap  active">Stop</button>
+                        <button id="start_btn" class="lap ">Start</button>
+                      </div>
+                    
+                    </div> 
+                </div>
+                
+              </div>
+
+              <div id="add_balls" class="card m-4 p-2" style="width: 30rem; height: 25rem; ">
+                        
+                          
+                <div class="div-canvas" >
+                    <canvas id="canvas" width="440px">
+            
+                    </canvas>
+                </div>
+                <div class="div-buttob">
+                  <button id="add_btn" class="btn btn-success p-2">
+                    Add Balls                      
+                  </button>
+                </div>
+
+              </div>
+              
+
+             
+              <div id="Bill" class="card m-4" style="width: 20rem;height: 25rem; ">
+
+                <div id="Bill_total">
+
+                    <form id="form">
+
+                        <div >
+                          <label for="exampleInputEmail1" class="form-label"> Bill_total </label>
+                          <input type="text"  class="form-control " placeholder="$ Summa" id="summa" aria-describedby="emailHelp">
+                        </div>
+
+                        <div >
+                          <label for="exampleInputPassword1" class="form-label"> Tip </label>
+                          <input  type="text"  class="form-control " placeholder="Wie viele %" id="procent">
+                        </div>
+
+                        <div class="please_meines_buttons">
+                          <div id="please_meines">
+                            <h5>People</h5>
+                              <button id="plus" type="button" class=" " > 
+                                +
+                              </button>
+
+                              <span id="how_many_people"> 1 </span>
+
+                              <button id="minus" type="button" class=""  > 
+                                -
+                              </button>
+                          </div>
+                           
+
+                      
+                        <div class="col text-end">
+                            <h5 >Per person</h5>
+                            <p class="Total-per-Person ">$ 00.00</p>
+                        </div>
+                        
+                      </div>
+
+                        <div class="ris_submit_buttons">
+    
+                          <div class="">
+                              <button id="ris" type="reset" class="btn btn-outline-primary " >Riset</button>
+                          </div>
+                          <div class="">
+                              <button  type="submit" class="btn btn-outline-primary">Submit</button>
+                          </div>
+                          
+                      </div>
+                    </form>
+
+                   
+  
+                   
+
+                </div>
+
+              </div>
+              <div id="to_do_list" class="card m-4" style="width: 20rem;height: 25rem; ">
                   <div id="to_do_list_root">
                     
                     
@@ -696,32 +701,26 @@
                 </div>
               </div>
 
-              <div class="card m-4" style="width: 20rem; height: 25rem; ">
+              <div id="gane_3" class="card m-4" style="width: 20rem; height: 25rem; ">
                 <img src="/public/img/memory-game.jpg" id="memory-game-img" class="card-img-top object-fit-cover"  alt="memory-game">
                 <div class="card-body">
                   <a href="/game_3" class="btn btn-outline-primary"> Memory-game</a>
                 </div>
               </div>
 
-              <div class="card m-4" style="width: 20rem;height: 25rem; ">
+              <!-- <div id="shoping_list" class="card m-4" style="width: 20rem;height: 25rem; ">
                 <img src="/public/img/shoping_list.jpeg" class="card-img-top object-fit-cover " alt="weatherlive">
                 <div class="card-body">
                   <a href="/shopping" class="btn btn-outline-primary">Lists</a>
                 </div>
-              </div>
-
-              <!-- <div class="card m-4" style="width: 20rem; height: 25rem; ">
-                <img src="/public/img/game-2.jpg" id="game-2-img" class="card-img-top object-fit-cover" alt="game-2">
-                <div class="card-body">
-                  <a href="/game_2" class="btn btn-outline-primary"> Game-2</a>
-                </div>
               </div> -->
-              <div class="card m-4" style="width: 20rem;height: 25rem; ">
+<!-- 
+              <div id="weather_" class="card m-4" style="width: 20rem;height: 25rem; ">
                 <img src="/public/img/Weather.jpg" class="card-img-top object-fit-cover " alt="Weather">
                 <div class="card-body">
                   <a href="/weather" class="btn btn-outline-primary"> Weather</a>
                 </div>
-              </div>
+              </div> -->
 
           
         </div> 

@@ -1,56 +1,40 @@
-const keno_numbersArray = [...document.getElementsByClassName("keno_click")].filter(item => item.className === "keno_click");
+const keno_numbersArray = [...document.getElementsByClassName("keno_click")];
 
 const keno_div_2_ball_div = document.querySelector(".keno_div_2_ball_div");
 const keno_div_2_first = document.querySelector(".keno_div_2_first");
-
-
 const keno_addBet = document.getElementById('keno_add_bet');
 const keno_betList = document.getElementById('keno_bet_list');
-
 const keno_balance = document.getElementById('keno_balance');
 const keno_win = document.getElementById('keno_win');
 const keno_bet_quantity = document.getElementById('keno_bet_quantity');
-
 const keno_bet_mony = document.getElementById('keno_bet_mony');
 const keno_total_bet = document.getElementById('keno_total_bet');
-
 const keno_auto_bet_button = document.getElementById('keno_auto_bet_button');
 const keno_auto_bet_plus = document.getElementById('keno_auto_bet_plus');
 const keno_auto_bet_minus = document.getElementById('keno_auto_bet_minus');
-
 const keno_auto_bet_count = document.getElementById('keno_auto_bet_count'); 
-
 const keno_circulationList = document.getElementById('keno_circulation');
-
-
 const keno_btn_start = document.getElementById('keno_btn_start');
-const keno_plus = document.getElementById('keno_plus');
-const keno_minus = document.getElementById('keno_minus');
 const keno_play_rules = document.getElementById('keno_play_rules');
 const keno_repeat = document.getElementById('keno_repeat');
 
 const keno_data = [];
 let last_Index ;
 let keno_bet = {};
-let keno_repeat_color = {};
 let keno_total_balance = 1000;
-let keno_mony = 1;
 let keno_count = 0;
 let keno_auto_bet_number = 1;
 let keno_how_much_beted = 0;
-
 let keno_interval;
 let keno_playingInterval;
 let keno_waitingInterval;
 
-let keno_min = 0; keno_sec = 60 ;
+let keno_min = 0; keno_sec = 45 ;
 let keno_bol = false;
 
 let style;
-keno_btn_start.addEventListener("click",keno_App);
 
-keno_plus.addEventListener("click", keno_plus_minus);
-keno_minus.addEventListener("click",keno_plus_minus);
+
 
 keno_auto_bet_minus.addEventListener("click",keno_plus_minus);
 keno_auto_bet_plus.addEventListener("click", keno_plus_minus);
@@ -68,14 +52,16 @@ function Keno_object(){
 }
 
 function keno_App(){
-  
   keno_data.push(new Keno_object());
-  keno_bet = {};
   last_Index = keno_data.length - 1;
   keno_auto_bet_button.addEventListener("click",random_number_to_bet);
   keno_div_2_ball_div.innerHTML = '';
   keno_div_2_first.innerHTML = '';
   keno_betList.innerHTML = '';
+  keno_numbersArray.forEach( val => {
+    val.id = '';
+    val.style = 'background-color: rgb(92, 174, 92);'
+  });
   keno_bet_quantity.innerHTML = "$0";
   keno_win.innerHTML = "$0";
   keno_how_much_beted = 0;
@@ -87,22 +73,11 @@ function keno_App(){
 }
  function keno_playing() { 
     let arr = [];
-    keno_bet = {};
     clearInterval(keno_playingInterval);   
     keno_removeEventListeners();
-    keno_numbersArray.forEach( val => {
-      if(val.id !== ''){
-        keno_repeat_color[val.id] = val.id;
-        val.style = 'background-color: grey;'
-      }else{
-        val.id = '';
-        val.style = 'background-color: rgb(92, 174, 92);'
-      }
-     
-    });
+    keno_numbersArray.forEach( val => { if(val.id === '') { val.style = 'background-color: rgb(92, 174, 92);'} });
     keno_playingInterval = setInterval( ()=>{
       if(arr.length >= 1) keno_rundom_balls_span(arr);
-
       let keno_rundom_numbr = keno_mathRandom(1,81);        
       if(keno_data[last_Index].circulation[keno_rundom_numbr] === undefined){
         keno_count++;
@@ -129,62 +104,52 @@ function keno_App(){
     },2000);
   
 }
-function keno_start(e){
-  keno_chooseNumber(Number(e.target.innerHTML),e);
-      
-}
 
 function keno_toBet(){
-  
-   if(Object.values(keno_bet).length  >= 1){
-     keno_data[last_Index]
-     .bet.push(
-       {
-       beted_numbers: Object.values(keno_bet),
-       mony: keno_mony,
-       id: Math.random(),
-      });
-     how_much_beted("+" ,keno_mony);
-     keno_create_bets_element( keno_data[last_Index].bet,false);
-   }
-   else{
-    return  alert(" Choose a number");
-   }
-   debugger
-   keno_numbersArray.forEach( val => { 
-    
-    if(keno_bet[val.innerHTML] !== undefined){
-      val.id = val.innerHTML;
-      val.style = 'background-color:grey;';
+  if( (keno_total_balance - keno_input_value())  >= 1 && keno_input_value() > 0){
+    if(Object.values(keno_bet).length  >= 1){
+       keno_numbersArray.forEach( val => { 
+          if(keno_bet[val.innerHTML] !== undefined){
+            val.id = val.innerHTML;
+            val.style = 'background-color:grey;';
+          }
+        });
+      keno_data[last_Index]
+      .bet.push(
+        {
+        beted_numbers: Object.values(keno_bet),
+        money:  keno_input_value(),
+        id: Math.random(),
+       });
+      how_much_beted("+" ,keno_input_value());
+      keno_create_bets_element( keno_data[last_Index].bet,false);
     }
-   });
-   keno_bet = {};
+    else{
+     return  alert(" Choose a number");
+    }
+    keno_bet = {};
+  }else{
+   return  alert('You donot have a enough money');
+  }
    
  
 }
 
-
 function keno_to_repeat_bets(){
-  debugger
- keno_numbersArray.forEach(val => {
-  if(keno_repeat_color[val.innerHTML] !== undefined){
-    val.style = 'background-color:grey;';
-    val.id = val.innerHTML
-  }
- })
+  
  for(let i = last_Index - 1; i >= 0; i--){
   if(keno_data[i].bet.length > 0){
       keno_data[i].bet.forEach(objects => {
-        keno_bet = {...objects.beted_numbers}
-        keno_toBet();
+          objects.beted_numbers.forEach( bet => keno_bet[bet] = bet);
+          keno_toBet();
         });
         i = -1;
  }
 }
-  keno_repeat_color = {};
   keno_repeat.removeEventListener("click", keno_to_repeat_bets);
   keno_create_bets_element(keno_data[last_Index].bet,false);
 }
+
 function keno_rundom_balls_span(array){
   keno_div_2_ball_div.innerHTML = '';
   keno_div_2_first.innerHTML = '';
@@ -206,14 +171,20 @@ function checking_bets(rundom){
     }
   });
 }
+function keno_input_value(){
+  return Number(document.getElementById("keno_bet_mony").value)
+}
+function keno_start(e){
+  keno_chooseNumber(Number(e.target.innerHTML),e);
+      
+}
 function keno_chooseNumber(number,e) {
 
  if(keno_bet[number] === undefined){
     if(Object.values(keno_bet).length <= 9 ){
         keno_bet[number] = number;
        if(e.target.style.backgroundColor !== "blue" ) style = e.target.style.backgroundColor
-        e.target.style = "background-color: blue"
-        e.target.id = number;
+          e.target.style = "background-color: blue"
     }else{
       alert("Add your bet it can't be more then 10");
      }
@@ -221,21 +192,17 @@ function keno_chooseNumber(number,e) {
   
     delete  keno_bet[number];
             e.target.style.backgroundColor = style;
-            e.target.id = "";
  }
 }
-function how_much_beted(math,mony){
+function how_much_beted(math,money){  
+    if(math === "+"){
+      keno_bet_quantity.innerHTML = `$:${keno_how_much_beted += money }`;
+      keno_balance.innerHTML = keno_total_balance  -= money ;
+    }else{
+      keno_bet_quantity.innerHTML = `$:${keno_how_much_beted -= money }`;
+      keno_balance.innerHTML = keno_total_balance  += money ;
+    }
   
-
-  if(math === "+"){
-    keno_bet_quantity.innerHTML = `$:${keno_how_much_beted += mony }`;
-    keno_balance.innerHTML = keno_total_balance  -= mony ;
-  }else{
-    keno_bet_quantity.innerHTML = `$:${keno_how_much_beted -= mony }`;
-    keno_balance.innerHTML = keno_total_balance  += mony ;
-  }
-  
-
 }
 function keno_how_much_win(array){
   
@@ -267,7 +234,7 @@ function keno_create_bets_element(bet_array,bool){
                   </svg>
             </button>`
           }
-            <span id="keno_mony_span">$ ${bool === true ? value.win : value.mony }</span>
+            <span id="keno_mony_span">$ ${bool === true ? value.win : value.money }</span>
         </div>
 
         <div id="keno_beted_numbers">
@@ -293,7 +260,7 @@ function keno_counting_win(){
       switch(value.beted_numbers.length) {
         case 1:
           if(array === 1){
-            value.win = value.mony * 3;
+            value.win = value.money * 3;
           }else{
             value.win = 0;
 
@@ -301,9 +268,9 @@ function keno_counting_win(){
           break;
         case 2:
           if(array === 1){
-            value.win = value.mony * 1;
+            value.win = value.money * 1;
           }else if(array === 2){
-            value.win = value.mony * 10;
+            value.win = value.money * 10;
           }else{
             value.win = 0;
 
@@ -311,9 +278,9 @@ function keno_counting_win(){
           break;
         case 3:
           if(array === 2){
-            value.win = value.mony * 2;
+            value.win = value.money * 2;
           }else if(array === 3){
-            value.win = value.mony * 45;
+            value.win = value.money * 45;
           }else{
             value.win = 0;
 
@@ -321,13 +288,13 @@ function keno_counting_win(){
         break;
         case 4:
           if(array === 2){
-            value.win = value.mony * 1;
+            value.win = value.money * 1;
           } 
           if(array === 3){
-            value.win = value.mony * 10;
+            value.win = value.money * 10;
           }
           if(array === 4){
-            value.win = value.mony * 100;
+            value.win = value.money * 100;
           }else{
             value.win = 0;
 
@@ -336,16 +303,16 @@ function keno_counting_win(){
         break;
         case 5:
           if(array === 2){
-            value.win = value.mony * 1;
+            value.win = value.money * 1;
           } 
           if(array === 3){
-            value.win = value.mony * 3;
+            value.win = value.money * 3;
           }
           if(array === 4){
-            value.win = value.mony * 30;
+            value.win = value.money * 30;
           }
           if(array === 5){
-            value.win = value.mony * 150;
+            value.win = value.money * 150;
           }else{
             value.win = 0;
 
@@ -354,16 +321,16 @@ function keno_counting_win(){
         case 6:
             
           if(array === 3){
-            value.win = value.mony * 2;
+            value.win = value.money * 2;
           }
           if(array === 4){
-            value.win = value.mony * 15;
+            value.win = value.money * 15;
           }
           if(array === 5){
-            value.win = value.mony * 60;
+            value.win = value.money * 60;
           }
           if(array === 6){
-            value.win = value.mony * 500;
+            value.win = value.money * 500;
           }else{
             value.win = 0;
 
@@ -371,22 +338,22 @@ function keno_counting_win(){
         break;
         case 7:
           if(array === 0){
-            value.win = value.mony * 1;
+            value.win = value.money * 1;
           }
           if(array === 3){
-            value.win = value.mony * 2;
+            value.win = value.money * 2;
           }
           if(array === 4){
-            value.win = value.mony * 4;
+            value.win = value.money * 4;
           }
           if(array === 5){
-            value.win = value.mony * 20;
+            value.win = value.money * 20;
           }
           if(array === 6){
-            value.win = value.mony * 80;
+            value.win = value.money * 80;
           }
           if(array === 7){
-            value.win = value.mony * 1000;
+            value.win = value.money * 1000;
           }else{
             value.win = 0;
 
@@ -394,22 +361,22 @@ function keno_counting_win(){
         break;
         case 8:
           if(array === 0){
-            value.win = value.mony * 1;
+            value.win = value.money * 1;
           }
           if(array === 4){
-            value.win = value.mony * 5;
+            value.win = value.money * 5;
           }
           if(array === 5){
-            value.win = value.mony * 15;
+            value.win = value.money * 15;
           }
           if(array === 6){
-            value.win = value.mony * 50;
+            value.win = value.money * 50;
           }
           if(array === 7){
-            value.win = value.mony * 200;
+            value.win = value.money * 200;
           }
           if(array === 8){
-            value.win = value.mony * 2000;
+            value.win = value.money * 2000;
           }else{
             value.win = 0;
 
@@ -417,25 +384,25 @@ function keno_counting_win(){
         break;
         case 9:
           if(array === 0){
-            value.win = value.mony * 2;
+            value.win = value.money * 2;
           }
           if(array === 4){
-            value.win = value.mony * 2;
+            value.win = value.money * 2;
           }
           if(array === 5){
-            value.win = value.mony * 10;
+            value.win = value.money * 10;
           }
           if(array === 6){
-            value.win = value.mony * 25;
+            value.win = value.money * 25;
           }
           if(array === 7){
-            value.win = value.mony * 125;
+            value.win = value.money * 125;
           }
           if(array === 8){
-            value.win = value.mony * 1000;
+            value.win = value.money * 1000;
           }
           if(array === 9){
-            value.win = value.mony * 5000;
+            value.win = value.money * 5000;
           }else{
             value.win = 0;
 
@@ -443,25 +410,25 @@ function keno_counting_win(){
         break;
         case 10:
             if(array === 0){
-              value.win = value.mony * 2;
+              value.win = value.money * 2;
             }
             if(array === 5){
-              value.win = value.mony * 5;
+              value.win = value.money * 5;
             }
             if(array === 6){
-              value.win = value.mony * 30;
+              value.win = value.money * 30;
             }
             if(array === 7){
-              value.win = value.mony * 100;
+              value.win = value.money * 100;
             }
             if(array === 8){
-              value.win = value.mony * 300;
+              value.win = value.money * 300;
             }
             if(array === 9){
-              value.win = value.mony * 2000;
+              value.win = value.money * 2000;
             }
             if(array === 10){
-              value.win = value.mony * 10000;
+              value.win = value.money * 10000;
             }else{
               value.win = 0;
 
@@ -485,7 +452,7 @@ function clear_bet(e){
       
         return true;
       }
-      how_much_beted("-",obj.mony);
+      how_much_beted("-",obj.money);
       return false;
     });
   
@@ -495,11 +462,6 @@ function clear_bet(e){
 }
 function keno_timeInterval(keno_min,keno_sec,keno_func){
   clearInterval(keno_interval);
-  keno_numbersArray.forEach( val => {
-    val.id = '';
-    val.style = 'background-color: rgb(92, 174, 92);'
-  });
-
   keno_interval = setInterval(()=> {
     keno_sec--;
     if(keno_sec < 1 && keno_min !== 0){
@@ -521,7 +483,7 @@ function keno_add_circulation(){
                     <span > ${Object.values(keno_data[last_Index].circulation).join(' ')} </span>`;
     document.getElementById('keno_circulation').appendChild(li);
   keno_min = 0;
-  keno_timeInterval(0,20,keno_App);
+  keno_timeInterval(0,15,keno_App);
 }
 function keno_removeEventListeners(){
   keno_repeat.removeEventListener("click", keno_to_repeat_bets);
@@ -535,21 +497,27 @@ function keno_mathRandom(min,max){
 }
 function random_number_to_bet(){
   
-  for(let i = 0; i < keno_auto_bet_number;){
-   let rundom =  keno_mathRandom(1,81);
-   if(keno_bet[rundom] === undefined) {
-      keno_bet[rundom] = rundom;
-      i++;
+  if( (keno_total_balance - keno_input_value())  >= 0){
+    for(let i = 0; i < keno_auto_bet_number;){
+      let rundom =  keno_mathRandom(1,81);
+      if(keno_bet[rundom] === undefined) {
+         keno_bet[rundom] = rundom;
+         i++;
+        }
+        keno_numbersArray.forEach(val => {
+         if(val.innerHTML === String(rundom)){
+           val.id = 'grey';
+         }
+        })
+   
      }
-     keno_numbersArray.forEach(val => {
-      if(val.innerHTML === String(rundom)){
-        val.id = 'grey';
-      }
-     })
+       
+     keno_toBet();
+  }else{
+    alert('You donot have enough money!');
 
   }
-    
-  keno_toBet();
+  
 
 }
 function keno_time (keno_min,keno_sec){
@@ -558,16 +526,9 @@ function keno_time (keno_min,keno_sec){
   document.getElementById("keno_sec").innerHTML = keno_sec < 10 ? `0${keno_sec}` : keno_sec;
 }
 function keno_plus_minus(e){
-  if(e.target.id === "keno_auto_bet_minus" || e.target.id === "keno_auto_bet_plus" ){
-      if(e.target.innerHTML === '-' && keno_auto_bet_number > 1) keno_auto_bet_number--;
-      else if(e.target.innerHTML === "+" && keno_auto_bet_number < 10)  keno_auto_bet_number++;
-      keno_auto_bet_count.innerHTML = `Auto ${keno_auto_bet_number}`;
-
-  }else if(e.target.id === "keno_plus" || e.target.id === "keno_minus"){
-        if(e.target.innerHTML === '-' && keno_mony > 1) {keno_mony--;}
-        else if(e.target.innerHTML === '+' && keno_mony < keno_total_balance) keno_mony++;
-        keno_bet_mony.innerHTML = `$ ${keno_mony}`;
-  }
+    if(e.target.innerHTML === '-' && keno_auto_bet_number > 1) keno_auto_bet_number--;
+    else if(e.target.innerHTML === "+" && keno_auto_bet_number < 10)  keno_auto_bet_number++;
+    keno_auto_bet_count.innerHTML = `Auto ${keno_auto_bet_number}`;
 }
  function keyframes(rundam_number,array){
   
@@ -620,7 +581,7 @@ function keno_plus_minus(e){
   
 
 
-
+keno_App();
 
 
 

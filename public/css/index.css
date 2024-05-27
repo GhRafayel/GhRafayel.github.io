@@ -91,3 +91,13 @@ nav .btn-secondary.dropdown-toggle {
 nav .dropdown-menu{
 text-align: center;
 }
+.card.m-4{
+  min-width:400px ;
+}
+
+@media   screen and (max-width: 600px){
+  #project_and_games-container{
+    justify-content: center;
+
+  }
+}
