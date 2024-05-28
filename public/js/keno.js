@@ -136,16 +136,25 @@ function keno_toBet(){
 }
 
 function keno_to_repeat_bets(){
-  
+  debugger
+ 
  for(let i = last_Index - 1; i >= 0; i--){
+  
+
   if(keno_data[i].bet.length > 0){
+    if( keno_total_balance - (keno_data[i].bet.length *  keno_input_value() )  >= 0){
       keno_data[i].bet.forEach(objects => {
-          objects.beted_numbers.forEach( bet => keno_bet[bet] = bet);
-          keno_toBet();
-        });
-        i = -1;
+
+        objects.beted_numbers.forEach( bet => keno_bet[bet] = bet);
+        keno_toBet();
+      });
+      i = -1;
+    }else{
+      return alert("You have not enough money");
+    }
+      
+   }
  }
-}
   keno_repeat.removeEventListener("click", keno_to_repeat_bets);
   keno_create_bets_element(keno_data[last_Index].bet,false);
 }
