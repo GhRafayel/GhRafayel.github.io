@@ -104,7 +104,7 @@ function keno_App(){
         keno_counting_win();
 
       };
-    },300);
+    },1500);
   
 }
 function keno_toBet(){
