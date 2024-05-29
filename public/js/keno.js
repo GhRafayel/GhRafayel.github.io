@@ -72,6 +72,7 @@ function keno_App(){
 }
  function keno_playing() { 
     let arr = [];
+    keno_bet = {};
     clearInterval(keno_playingInterval);   
     keno_removeEventListeners();
     keno_numbersArray.forEach( val => { if(val.id === '') { val.style = 'background-color: rgb(92, 174, 92);'} });
@@ -135,11 +136,8 @@ function keno_toBet(){
  
 }
 
-function keno_to_repeat_bets(){
-  debugger
- 
+function keno_to_repeat_bets(){ 
  for(let i = last_Index - 1; i >= 0; i--){
-  
 
   if(keno_data[i].bet.length > 0){
     if( keno_total_balance - (keno_data[i].bet.length *  keno_input_value() )  >= 0){
