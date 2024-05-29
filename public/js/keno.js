@@ -14,7 +14,7 @@ const keno_auto_bet_plus = document.getElementById('keno_auto_bet_plus');
 const keno_auto_bet_minus = document.getElementById('keno_auto_bet_minus');
 const keno_auto_bet_count = document.getElementById('keno_auto_bet_count'); 
 const keno_circulationList = document.getElementById('keno_circulation');
-const keno_btn_start = document.getElementById('keno_btn_start');
+const keno_fast = document.getElementById('keno_fast');
 const keno_play_rules = document.getElementById('keno_play_rules');
 const keno_repeat = document.getElementById('keno_repeat');
 const keno_data = [];
@@ -28,13 +28,13 @@ let keno_interval;
 let keno_playingInterval;
 let keno_waitingInterval;
 
-let keno_min = 0; keno_sec = 45 ;
+let keno_min = 0; keno_sec = 45 ; 
+let fast = 1;
 let keno_bol = false;
 
 let style;
 
-
-
+keno_fast.addEventListener('click', () => fast = keno_sec);
 keno_auto_bet_minus.addEventListener("click",keno_plus_minus);
 keno_auto_bet_plus.addEventListener("click", keno_plus_minus);
 
@@ -51,6 +51,7 @@ function Keno_object(){
 }
 
 function keno_App(){
+  fast = 1;
   keno_data.push(new Keno_object());
   last_Index = keno_data.length - 1;
   keno_auto_bet_button.addEventListener("click",random_number_to_bet);
@@ -59,20 +60,22 @@ function keno_App(){
   keno_betList.innerHTML = '';
   keno_numbersArray.forEach( val => {
     val.id = '';
-    val.style = 'background-color: rgb(92, 174, 92);'
+    val.style = 'background-color: rgb(92, 174, 92);';
+    val.addEventListener("click",keno_chooseNumber);
   });
   keno_bet_quantity.innerHTML = "$0";
   keno_win.innerHTML = "$0";
   keno_how_much_beted = 0;
   keno_div_2_ball_div.style = 'display: flex; height:30px';
   keno_div_2_first.style = 'height: fit-content;';
-  keno_numbersArray.forEach( val => val.addEventListener("click",keno_start));
-  keno_addBet.addEventListener("click",keno_toBet);
+  keno_addBet.addEventListener("click", keno_toBet);
   keno_timeInterval( keno_min, keno_sec, keno_playing);
 }
+
  function keno_playing() { 
     let arr = [];
     keno_bet = {};
+    
     clearInterval(keno_playingInterval);   
     keno_removeEventListeners();
     keno_numbersArray.forEach( val => { if(val.id === '') { val.style = 'background-color: rgb(92, 174, 92);'} });
@@ -101,10 +104,9 @@ function keno_App(){
         keno_counting_win();
 
       };
-    },2000);
+    },300);
   
 }
-
 function keno_toBet(){
   if( (keno_total_balance - keno_input_value())  >= 0 && keno_input_value() > 0){
     if(Object.values(keno_bet).length  >= 1){
@@ -135,7 +137,6 @@ function keno_toBet(){
    
  
 }
-
 function keno_to_repeat_bets(){ 
  for(let i = last_Index - 1; i >= 0; i--){
 
@@ -156,7 +157,6 @@ function keno_to_repeat_bets(){
   keno_repeat.removeEventListener("click", keno_to_repeat_bets);
   keno_create_bets_element(keno_data[last_Index].bet,false);
 }
-
 function keno_rundom_balls_span(array){
   keno_div_2_ball_div.innerHTML = '';
   keno_div_2_first.innerHTML = '';
@@ -181,13 +181,10 @@ function checking_bets(rundom){
 function keno_input_value(){
   return Number(document.getElementById("keno_bet_mony").value)
 }
-function keno_start(e){
-  keno_chooseNumber(Number(e.target.innerHTML),e);
-      
-}
-function keno_chooseNumber(number,e) {
-  audio("/public/audio/click4.wav")
- if(keno_bet[number] === undefined){
+function keno_chooseNumber(e) {
+  let number = Number(e.target.innerHTML);
+ if(keno_bet[number] === undefined ){
+    audio("/public/audio/click4.wav");
     if(Object.values(keno_bet).length <= 9 ){
         keno_bet[number] = number;
        if(e.target.style.backgroundColor !== "blue" ) style = e.target.style.backgroundColor
@@ -196,7 +193,6 @@ function keno_chooseNumber(number,e) {
       alert("Add your bet it can't be more then 10");
      }
  }else {
-  
     delete  keno_bet[number];
             e.target.style.backgroundColor = style;
  }
@@ -477,15 +473,17 @@ function clear_bet(e){
 function keno_timeInterval(keno_min,keno_sec,keno_func){
   clearInterval(keno_interval);
   keno_interval = setInterval(()=> {
-    keno_sec--;
+    keno_sec-= fast;
     if(keno_sec < 1 && keno_min !== 0){
-      keno_min--;
-      keno_sec = 59;
+        keno_min--;
+        keno_sec = 59;
     }
+
     keno_time(keno_min,keno_sec);
+
     if(keno_min < 1 && keno_sec < 1) {
-      clearInterval(keno_interval);
-      keno_func();
+        clearInterval(keno_interval);
+        keno_func();
     };
 
   },1000);
@@ -501,7 +499,7 @@ function keno_add_circulation(){
 }
 function keno_removeEventListeners(){
   keno_repeat.removeEventListener("click", keno_to_repeat_bets);
-  keno_numbersArray.forEach( val => val.removeEventListener("click",keno_start));
+  keno_numbersArray.forEach( val => val.removeEventListener("click",keno_chooseNumber));
   keno_auto_bet_button.removeEventListener("click",random_number_to_bet);
   keno_addBet.removeEventListener("click",keno_toBet);
 
@@ -535,7 +533,7 @@ function random_number_to_bet(){
 
 }
 function keno_time (keno_min,keno_sec){
-  
+  keno_sec < 0 ? keno_sec = 0 : keno_sec;
   document.getElementById("keno_min").innerHTML = keno_min < 10 ? `0${keno_min}:`: keno_min;
   document.getElementById("keno_sec").innerHTML = keno_sec < 10 ? `0${keno_sec}` : keno_sec;
 }

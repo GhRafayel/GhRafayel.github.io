@@ -143,7 +143,7 @@ align-items: center;
  color: green;
 }
 
-#keno_btn_start,
+#keno_fast,
 #keno_play_rules,
 #keno_repeat{
   width: 80px;
@@ -222,9 +222,6 @@ align-items: center;
 }
 #keno_child-4{
   display: none;
-}
-#keno_child-4 img{
-  
 }
  .keyframes{
   height: 30px;
@@ -372,7 +369,7 @@ align-items: center;
     width: 100px;
     
   }
-  #keno_btn_start,
+  #keno_fast,
   #keno_play_rules,
   #keno_repeat{
     width: 140px;
