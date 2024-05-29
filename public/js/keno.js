@@ -51,7 +51,7 @@ function Keno_object(){
 }
 
 function keno_App(){
-  fast = 1;
+  
   keno_data.push(new Keno_object());
   last_Index = keno_data.length - 1;
   keno_auto_bet_button.addEventListener("click",random_number_to_bet);
@@ -98,10 +98,12 @@ function keno_App(){
       } 
       if(keno_count === 20) {
         clearInterval(keno_playingInterval);
+        fast = 1;
         keno_repeat.addEventListener("click", keno_to_repeat_bets);
         keno_add_circulation();
         keno_count = 0;
         keno_counting_win();
+
 
       };
     },1500);

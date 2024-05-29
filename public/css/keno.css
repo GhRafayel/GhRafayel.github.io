@@ -82,6 +82,7 @@
 #keno .dropdown-menu{
   width: 225px; 
   min-height: 120px;
+  max-height: 150px;
   overflow-y: scroll;
 }
 #keno .dropdown-menu li {
