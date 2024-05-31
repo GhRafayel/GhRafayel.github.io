@@ -1,16 +1,18 @@
+const game_3_root = document.getElementById('game_3_root_div');
+const game_3_reset = document.getElementById('game_3_reset_btn');
 
-const start = document.getElementById('start-btn');
-const divParent = document.getElementById('div-parent');
+const game_3_anumals = document.getElementById('game_3_anumals_btn');
+const game_3_numbers = document.getElementById('game_3_numbers_btn');
 
-const reset = document.getElementById('reset');
-const title = document.getElementById('h1-title');
+const game3_level_btn_1 = document.getElementById('game3_level_btn_1');
+const game3_level_btn_2 = document.getElementById('game3_level_btn_2');
+const game3_level_btn_3 = document.getElementById('game3_level_btn_3');
+const game3_level_btn_4 = document.getElementById('game3_level_btn_4');
+const game3_level_btn_5 = document.getElementById('game3_level_btn_5');
 
 
-let playArrey ;
-let imgArrey = [];
-let arr = [];
-
-const numberImg = [
+const game3 = {
+  Numbers:[
     "number1.jpeg",
     "number2.png",
     "number3.png",
@@ -20,192 +22,177 @@ const numberImg = [
     "number7.png",
     "number8.png",
     "number9.png",
-];
-const animalImg  = [
-    'Rabbit.jpeg',
-    'Deer.jpeg',
-    'Elephant.jpeg',
-    'Fox.jpeg',
-    'Giraffe.jpg',
-    'Monkey.jpeg',
-    'Panda.jpeg',
-    'Parrot.jpeg',
-    'Pig.jpeg',
-    'Rhinoceros.jpeg',
-    'Tiger.jpeg',
-    'Zebra.jpeg'
-    ];
-
-function play(src) {
-  const audio = document.createElement('audio');
-  audio.src = `/public/audio/${src}`;
-  audio.play();
-  
+    "number10.png",
+    "number11.png",
+    "number12.png"
+ ],
+ Animals:[
+  'Rabbit.jpeg',
+  'Deer.jpeg',
+  'Elephant.jpeg',
+  'Fox.jpeg',
+  'Giraffe.jpg',
+  'Monkey.jpeg',
+  'Panda.jpeg',
+  'Parrot.jpeg',
+  'Pig.jpeg',
+  'Rhinoceros.jpeg',
+  'Tiger.jpeg',
+  'Zebra.jpeg'
+ ],
+ playArray: undefined,
+ bool: true,
+ inspection:{},
+ win: 0,
+ level: 8,
+ 
 }
 
-function sortAnimal(arr){
-  const randomly = () => Math.random() - 0.5;
-  return arr.sort(randomly);
+game_3_reset.addEventListener('click',()=> {
+  game3.playArray = undefined;
+  gaem_3_create_img_element(game3.Animals.concat(game3.Numbers));
+  audio('/public/audio/audio4.wav');
+  game_3_root.style = `
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  `
+
+});
+
+game_3_anumals.addEventListener('click',game3_start);
+game_3_numbers.addEventListener('click',game3_start);
+
+function game3_start(e){
+  game3.playArray = e.target.innerHTML;
+  game3_level_btn_1.addEventListener('click',()=> game3_level(8));
+  game3_level_btn_2.addEventListener('click',()=> game3_level(6));
+  game3_level_btn_3.addEventListener('click',()=> game3_level(4));
+  game3_level_btn_4.addEventListener('click',()=> game3_level(2));
+  game3_level_btn_5.addEventListener('click',()=> game3_level(0));
+  game3_level(game3.level);
+  game3_add_click();
 }
 
-function listning(){
-  const btn_12 = document.getElementById('start-btn-12');
-  const btn_16 = document.getElementById('start-btn-16');
-  const btn_20 = document.getElementById('start-btn-20');
-  const btn_24 = document.getElementById('start-btn-24');
-
-  btn_12.addEventListener('click', () => {
-    if(playArrey !== undefined){
-      divParent.style = 'width:700px; border: 2px solid black; padding:10px'
-      let newArry = sortAnimal(playArrey);
-      createElement(sortAnimal(newArry.slice(6) .concat(newArry.slice(6))));
-    } else {
-      title.innerHTML = 'Choose your favorite images...'
-    }
-  });
-
-  btn_16.addEventListener('click', () => {
-    if(playArrey !== undefined){
-      divParent.style = 'width:900px; border: 2px solid red; padding:10px'
-      let newArry = sortAnimal(playArrey);
-      createElement(sortAnimal(newArry.slice(4).concat(newArry.slice(4))));
-    } else {
-      title.innerHTML = 'Choose your favorite images...'
-    }
-  });
-
-  btn_20.addEventListener('click', () => { 
-    if(playArrey !== undefined){
-      divParent.style = 'width:1100px; border: 2px solid green; padding:10px'
-      let newArry = sortAnimal(playArrey);
-      createElement(sortAnimal(newArry.slice(2).concat(newArry.slice(2))));
-    } else {
-      title.innerHTML = 'Choose your favorite images...'
-    }
-  });
-
-  btn_24.addEventListener('click', () => {
-    if(playArrey !== undefined){
-      divParent.style = 'width:1100px; border: 2px solid green; padding:2px'
-      createElement(sortAnimal(playArrey.concat(playArrey)));
-    } else {
-      title.innerHTML = 'Choose your favorite images...'
-    }
-  });
-
+function game3_add_click(){
+  [...document.getElementsByClassName('game3_click')]
+         .forEach( img => {
+          img.style = "opacity: 0;";
+          img.addEventListener('click', game3_style);
+         });
 }
 
-reset.addEventListener('click',()=>{
-  playArrey = undefined;
-  divParent.style = 'width:1100px; padding:2px'
-  document.getElementById('level').innerHTML = '';
-  started(animalImg.concat(numberImg));
-})
+function game3_style(eve){
+ 
+  eve.target.style.opacity = 1;
 
-function choose (e){
-  levelContainer();
-    if(e.target.id === 'animals'){
-         playArrey = animalImg
-         divParent.innerHTML = '';
-          started(playArrey)
-          document.getElementById('numbers')
-          //.removeEventListener('click', choose,false);
-    }else if(e.target.id === 'numbers'){
-        playArrey = numberImg
-        divParent.innerHTML = '';
-        started(playArrey);
-        document.getElementById('animals')
-        //.removeEventListener('click', choose,false);
-    }
-}
-
-function started(arr){
-  // divParent.style = 'width:1150px;'
-
-    document.getElementById('animals').addEventListener('click', choose, false);
-    document.getElementById('numbers').addEventListener('click', choose, false);
-
-    title.innerHTML = 'You  can start the game' ; 
-    divParent.innerHTML = '';
-    arr.map(el => container(el))
-    .forEach( item => {
-        divParent.appendChild(item);
-    });
-    return divParent;
-}
-
-function container(el){
-    const   container = document.createElement('div');
-            container.innerHTML =  `<img src="/public/img/${el}" alt="img" id="${Math.random()}" class="img-thumbnail"/> `
-    return container;
-}
-
-function levelContainer(){
-  document.getElementById('level').innerHTML =''; 
-  const container = document.createElement('div');
-  container.className = " text-center m-5 ";
-    container.innerHTML = ` <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-    <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
-    <label id="start-btn-12" class="btn btn-outline-primary" for="btnradio1"> Level 1</label>
-
-    <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-    <label id="start-btn-16" class="btn btn-outline-primary" for="btnradio2">Level 2</label>
-
-    <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
-    <label id="start-btn-20" class="btn btn-outline-primary" for="btnradio3">Level 3</label>
-
-    <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off">
-    <label id="start-btn-24" class="btn btn-outline-primary" for="btnradio4">Level 4</label>
-</div>`
-
- document.getElementById('level').appendChild(container);
- listning();
-}
-
-function createElement(arr){
-
-    title.innerHTML = ' The game has started';
-    divParent.innerHTML = '';
-
-    arr.map( el => container(el)).forEach(el => {
-        divParent.appendChild(el);
-    });    
+  if(game3.bool === true && game3.inspection[eve.target.src] === undefined) {
+    audio('/public/audio/click1.wav');
+     game3.inspection[eve.target.src] = eve.target.id;
+     document.getElementById(eve.target.id).removeEventListener('click', game3_style);
+     game3.bool = !game3.bool 
+  }else if(game3.bool === false && game3.inspection[eve.target.src] === undefined){
+    audio('/public/audio/click3.wav');
+    game3.bool = !game3.bool 
+    game3.inspection = {};
+    [...document.getElementsByClassName('game3_click')] .forEach( img => img.removeEventListener('click', game3_style));
+    setTimeout(()=>{
+      game3_add_click();
+    },1500);
+    game3.inspection = {};
+  }else {
     
-    imgArrey.push(...document.getElementsByTagName('img'));
-    imgClick();
-}
-
-function fo(e) {
-  play('click1.wav');
-  e.target.style = 'opacity:1;';
-  arr.push(e.target);
-  if(arr.length === 2 ){
-    imgArrey.forEach( value => value.removeEventListener('click', fo, false))
-    if(arr[0].src === arr[1].src && arr[0].id !== arr[1].id){
-          openElement(arr[0].src);
-          arr = [];
-      } else {
-          arr = [];
-          setTimeout(()=> imgClick() ,1000)
-      }
+    game3.inspection[eve.target.src + 1] = eve.target.id;
+    Object.values(game3.inspection).forEach(value => {
+     const element =  document.getElementById(value);
+     element.style.opacity = 1;
+     element.className = "img-thumbnail";
+     element.removeEventListener('click', game3_style);
+    });
+    game3.win -= 2;
+    audio('/public/audio/click5.wav');
+    game3_add_click();
+    game3.inspection = {};
+    game3.bool = true;
+  }
+  
+  if(game3.win <= 0){
+    audio('/public/audio/ambient-piano-logo-165357.mp3');
+    game3_level(game3.level -=2);
   }
 }
 
-function imgClick(){
-  imgArrey.forEach((v)=> {
-          v.style = 'opacity:0; cursor:pointer;';
-          v.addEventListener('click', fo, false);
-      })
-} 
-function openElement(a){
-  if(a !== undefined){
-    imgArrey.forEach( value => value.removeEventListener('click', fo, false))
-    imgArrey = imgArrey.filter(item =>  item.src !== a );
-    imgClick();
+function game3_level(num){
+  
+  switch (num){
+    case 8 :
+      game_3_root.style = `
+      display: grid;
+      grid-template-columns:  repeat(2, auto) ;
+      grid-template-rows: auto;
+      
+      `
+    break;
+    case 6:
+      game_3_root.style = `
+      display: grid;
+      grid-template-columns:  repeat(4, auto) ;
+      grid-template-rows: auto;
+      
+      `
+    break;
+    case 4:
+      game_3_root.style = `
+      display: grid;
+      grid-template-columns:  repeat(4, auto) ;
+      grid-template-rows: auto;
+      
+      `
+    break;
+    case 2:
+      game_3_root.style = `
+      display: grid;
+      grid-template-columns:  repeat(5, auto) ;
+      grid-template-rows: auto;
+      
+      `
+    break;
+    case 0:
+      game_3_root.style = `
+      display: grid;
+      grid-template-columns:  repeat(6, auto) ;
+      grid-template-rows: auto;
+      
+      `
+    break;
   }
-      if(imgArrey.length === 0){
-        title.innerHTML = 'You Won' ;
-    }      
+  audio('/public/audio/click1.wav');
+  if(game3.playArray !== undefined){
+    let currently_array = game3_sort_using_arrya(game3[game3.playArray]);
+    gaem_3_create_img_element(game3_sort_using_arrya(currently_array.slice(num) .concat(currently_array.slice(num))));
+  } else {
+    alert('Choose your favorite images...');
+  }
+  game3_add_click();
 }
 
-started(animalImg.concat(numberImg));
+function game3_sort_using_arrya(array){
+  const randomly = () => Math.random() - 0.5;
+  return array.sort(randomly);
+}
+
+function gaem_3_create_img_element(array){
+  game3.win = array.length;
+  game_3_root.innerHTML = "";
+  array.map( img => {
+    const div = document.createElement('div');
+    div.style = "border: 1px solid black; border-radius:50%; margin: 2px;"
+    div.innerHTML = `<img id="${Math.random()}" src="/public/img/${img}" alt="${img}" class="img-thumbnail game3_click"/>`
+    game_3_root.appendChild(div);
+  })
+}
+
+gaem_3_create_img_element(game3.Animals.concat(game3.Numbers))
+
