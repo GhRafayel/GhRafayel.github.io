@@ -45,21 +45,23 @@ const game3 = {
  inspection:{},
  win: 0,
  level: 8,
+ interval:undefined,
  
 }
 
 game_3_reset.addEventListener('click',()=> {
-  game3.playArray = undefined;
-  gaem_3_create_img_element(game3.Animals.concat(game3.Numbers));
-  audio('/public/audio/audio4.wav');
+  clearTimeout(game3.interval);
   game_3_root.style = `
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-
   `
-
+  game3.playArray = undefined;
+  game3.level = 8;
+  gaem_3_create_img_element(game3.Animals.concat(game3.Numbers));
+  audio('/public/audio/audio4.wav');
+  
 });
 
 game_3_anumals.addEventListener('click',game3_start);
@@ -72,8 +74,9 @@ function game3_start(e){
   game3_level_btn_3.addEventListener('click',()=> game3_level(4));
   game3_level_btn_4.addEventListener('click',()=> game3_level(2));
   game3_level_btn_5.addEventListener('click',()=> game3_level(0));
-  game3_level(game3.level);
   game3_add_click();
+  game3_level(game3.level);
+
 }
 
 function game3_add_click(){
@@ -98,7 +101,7 @@ function game3_style(eve){
     game3.bool = !game3.bool 
     game3.inspection = {};
     [...document.getElementsByClassName('game3_click')] .forEach( img => img.removeEventListener('click', game3_style));
-    setTimeout(()=>{
+    game3.interval = setTimeout(()=>{
       game3_add_click();
     },1500);
     game3.inspection = {};
@@ -125,57 +128,58 @@ function game3_style(eve){
 }
 
 function game3_level(num){
-  
-  switch (num){
-    case 8 :
-      game_3_root.style = `
-      display: grid;
-      grid-template-columns:  repeat(2, auto) ;
-      grid-template-rows: auto;
-      
-      `
-    break;
-    case 6:
-      game_3_root.style = `
-      display: grid;
-      grid-template-columns:  repeat(4, auto) ;
-      grid-template-rows: auto;
-      
-      `
-    break;
-    case 4:
-      game_3_root.style = `
-      display: grid;
-      grid-template-columns:  repeat(4, auto) ;
-      grid-template-rows: auto;
-      
-      `
-    break;
-    case 2:
-      game_3_root.style = `
-      display: grid;
-      grid-template-columns:  repeat(5, auto) ;
-      grid-template-rows: auto;
-      
-      `
-    break;
-    case 0:
-      game_3_root.style = `
-      display: grid;
-      grid-template-columns:  repeat(6, auto) ;
-      grid-template-rows: auto;
-      
-      `
-    break;
-  }
   audio('/public/audio/click1.wav');
   if(game3.playArray !== undefined){
     let currently_array = game3_sort_using_arrya(game3[game3.playArray]);
     gaem_3_create_img_element(game3_sort_using_arrya(currently_array.slice(num) .concat(currently_array.slice(num))));
+    switch (num){
+      case 8 :
+        game_3_root.style = `
+        display: grid;
+        grid-template-columns:  repeat(2, auto) ;
+        grid-template-rows: auto;
+        
+        `
+      break;
+      case 6:
+        game_3_root.style = `
+        display: grid;
+        grid-template-columns:  repeat(4, auto) ;
+        grid-template-rows: auto;
+        
+        `
+      break;
+      case 4:
+        game_3_root.style = `
+        display: grid;
+        grid-template-columns:  repeat(4, auto) ;
+        grid-template-rows: auto;
+        
+        `
+      break;
+      case 2:
+        game_3_root.style = `
+        display: grid;
+        grid-template-columns:  repeat(5, auto) ;
+        grid-template-rows: auto;
+        
+        `
+      break;
+      case 0:
+        game_3_root.style = `
+        display: grid;
+        grid-template-columns:  repeat(6, auto) ;
+        grid-template-rows: auto;
+        
+        `
+      break;
+    }
+    game3_add_click();
   } else {
     alert('Choose your favorite images...');
   }
-  game3_add_click();
+ 
+  
 }
 
 function game3_sort_using_arrya(array){
@@ -191,8 +195,7 @@ function gaem_3_create_img_element(array){
     div.style = "border: 1px solid black; border-radius:50%; margin: 2px;"
     div.innerHTML = `<img id="${Math.random()}" src="/public/img/${img}" alt="${img}" class="img-thumbnail game3_click"/>`
     game_3_root.appendChild(div);
-  })
+  });
 }
 
 gaem_3_create_img_element(game3.Animals.concat(game3.Numbers))
-

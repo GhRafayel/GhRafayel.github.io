@@ -55,7 +55,6 @@ app.delete('/deleteList/:id', (req, res) => {
   .catch(err => res.send(err));
 });
 
-
 app.post('/createItem',(req, res) => {
   const {name, text} = req.body;
    todoPool.query(`
@@ -69,8 +68,6 @@ app.post('/deleteItem', (req, res) => {
    todoPool.query(`DELETE FROM ${name} WHERE id=?`,[id])
    .then(resp => res.send({resp}))
 });
-
-
 
 app.put('/updateItemChecked/:id', (req, res) => {
   const {name,bul} = req.body;
