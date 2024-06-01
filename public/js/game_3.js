@@ -123,7 +123,8 @@ function game3_style(eve){
   
   if(game3.win <= 0){
     audio('/public/audio/ambient-piano-logo-165357.mp3');
-    game3_level(game3.level -=2);
+    setTimeout(()=> game3_level(game3.level -=2),2500)
+    
   }
 }
 
