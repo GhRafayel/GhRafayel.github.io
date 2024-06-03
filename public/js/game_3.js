@@ -79,10 +79,13 @@ function game3_start(e){
 
 }
 
-function game3_add_click(){
+function game3_add_click(num){
   [...document.getElementsByClassName('game3_click')]
          .forEach( img => {
-          img.style = "opacity: 0;";
+          num === 8 ? img.style = "opacity: 0; width: 100px; height: 100px; " :
+          num === 6 ? img.style = "opacity: 0; width: 90px; height: 90px; " :
+          num === 4 ? img.style = "opacity: 0; width: 65px; height: 65px; " :
+          img.style = "opacity: 0;"
           img.addEventListener('click', game3_style);
          });
 }
@@ -102,11 +105,10 @@ function game3_style(eve){
     game3.inspection = {};
     [...document.getElementsByClassName('game3_click')] .forEach( img => img.removeEventListener('click', game3_style));
     game3.interval = setTimeout(()=>{
-      game3_add_click();
+      game3_add_click(game3.level);
     },1500);
     game3.inspection = {};
   }else {
-    
     game3.inspection[eve.target.src + 1] = eve.target.id;
     Object.values(game3.inspection).forEach(value => {
      const element =  document.getElementById(value);
@@ -116,7 +118,7 @@ function game3_style(eve){
     });
     game3.win -= 2;
     audio('/public/audio/click5.wav');
-    game3_add_click();
+    game3_add_click(game3.level);
     game3.inspection = {};
     game3.bool = true;
   }
@@ -129,53 +131,24 @@ function game3_style(eve){
 }
 
 function game3_level(num){
+  game3.level = num;
   audio('/public/audio/click1.wav');
   if(game3.playArray !== undefined){
     let currently_array = game3_sort_using_arrya(game3[game3.playArray]);
     gaem_3_create_img_element(game3_sort_using_arrya(currently_array.slice(num) .concat(currently_array.slice(num))));
-    switch (num){
-      case 8 :
-        game_3_root.style = `
-        display: grid;
-        grid-template-columns:  repeat(2, auto) ;
-        grid-template-rows: auto;
-        
-        `
-      break;
-      case 6:
-        game_3_root.style = `
-        display: grid;
-        grid-template-columns:  repeat(4, auto) ;
-        grid-template-rows: auto;
-        
-        `
-      break;
-      case 4:
-        game_3_root.style = `
-        display: grid;
-        grid-template-columns:  repeat(4, auto) ;
-        grid-template-rows: auto;
-        
-        `
-      break;
-      case 2:
-        game_3_root.style = `
-        display: grid;
-        grid-template-columns:  repeat(5, auto) ;
-        grid-template-rows: auto;
-        
-        `
-      break;
-      case 0:
-        game_3_root.style = `
-        display: grid;
-        grid-template-columns:  repeat(6, auto) ;
-        grid-template-rows: auto;
-        
-        `
-      break;
-    }
-    game3_add_click();
+    num === 0 ? game_3_root.style = ` display: grid;
+                                      grid-template-columns:repeat(6, auto);
+                                      grid-template-rows: auto;`
+                                      :
+     num === 2 ? game_3_root.style = ` display: grid;
+                                       grid-template-columns:repeat(5, auto);
+                                       grid-template-rows: auto;` 
+                                      :
+                 game_3_root.style = `display: grid;
+                                      grid-template-columns:  repeat(4, auto) ;
+                                      grid-template-rows: auto;`
+                                      
+    game3_add_click(game3.level);
   } else {
     alert('Choose your favorite images...');
   }

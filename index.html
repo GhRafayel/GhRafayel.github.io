@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="/public/css/keno.css">
     <link rel="stylesheet" href="/public/css/game_3.css">
 
+
 </head>
 <body>
     <div id="parent">
@@ -225,7 +226,9 @@
 
         <h3 class="card-title m-lg-5 text-center" id="projects"> Projects </h3>
 
+        
         <div id="project_and_games-container">
+              
 
               <div id="keno_container" class="card m-4" style="width: fit-content; height:fit-content; ">
                   
@@ -486,6 +489,8 @@
                 </div>
               </div>
 
+              
+
               <div id="game-1" class="card m-4" style="width: 30rem;height: 25rem; ">
 
                 <div id="game-1_parent">
@@ -549,6 +554,41 @@
                       </div>
 
                 </div>
+              </div>
+
+              <div id="weather_parent">
+
+
+                <form  id="weater_form">
+                  <input id="weather_input" type="text" value="Vienna"/>
+                </form>
+                
+                <div id="weater_root"> 
+
+                  <div>
+                    <span id="weather_celsius" > </span>
+                  </div>
+
+                  <div id="weather_info">
+                    <div >
+                      <span>Wind</span>
+                      <span id="weather_wind"></span>
+                       
+                    </div>
+                    <div>
+                      <span>Min temp</span>
+                      <span id="weather_minTemp"> </span>
+                    </div>
+                    <div>
+                      <span>Max temp</span>
+                      <span id="weather_maxTemp"></span>  
+                    </div>
+                  </div>
+                  
+                </div>
+
+                <video id="weather_video" autoplay  muted loop   ></video>
+            
               </div>
                
               <div class="card m-4 p-2" style="width: 30rem; height: 25rem; overflow-y: scroll;">
@@ -730,7 +770,8 @@
                   </div>
 
               </div>
-             
+   
+            
 
               <!-- <div id="shoping_list" class="card m-4" style="width: 20rem;height: 25rem; ">
                 <img src="/public/img/shoping_list.jpeg" class="card-img-top object-fit-cover " alt="weatherlive">
@@ -748,7 +789,7 @@
 
           
         </div> 
-        
+       
 
         <div  id="contact-container" >
               <div > 

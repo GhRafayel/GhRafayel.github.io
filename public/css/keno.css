@@ -91,8 +91,6 @@
   display: flex;
   justify-content: space-evenly;
 }
-
-
 #keno .dropdown-menu  span{
   border-bottom: 1px solid #000;
 }
@@ -111,7 +109,6 @@
   text-align: center;
   font-size: 11px;
 }
-
 #keno #keno_buttons_group  {
 padding:  5px  1px;
 display: flex;
@@ -130,13 +127,11 @@ align-items: center;
 #keno #keno_buttons_group  button{
   padding: 3px 10px;
 }
-
 #keno_auto_bet_button{
   max-height: 30px;
   width: fit-content;
   font-size: 13px;
 }
-
 #keno_bet_mony{
  width: 140px;
  text-align: center;

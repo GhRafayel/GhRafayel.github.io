@@ -1,81 +1,61 @@
-/* body{
-  background-color: aqua;
-}
-.wether-body{
-  font-size: 20px;
-  display: flex;
-  justify-content: center;
- align-items: center;
-}
-#wether-parent{
-  border:5px solid lightblue;
-  text-align: center;
-  width: 400px;
-  padding: 20px;
-}
-.wether-h1{
-  text-align: center;
-  color: rgb(213, 184, 56);
-}
 
-#wether-Button-search{
-  margin-top: 20px;
-  margin-bottom: 10px;
-  padding: 10px 15px;
+
+#weather_parent{
+  font-family: Arial, Helvetica, sans-serif;
+
+  position: relative;
+  text-align: center;  
+  border-radius: 20px;
+  
+}
+#weater_form{
+  width: 100%;
+  height: 30px;
+  position: absolute;
+  top: 40px;
+  z-index: 1;
+  border-radius: 10px;
+}
+#weater_form input{
+  border: none;
+  text-align: center;
+  border-radius: 20px;
+  font-size: 28px;
+  opacity: 0.5;
+  color:black;
+}
+#weater_root{
+  width: 100%;
+  height: 280px;
+  position: absolute;
+  top: 120px;
+  z-index: 1;
+  border-radius: 20px;
+}
+#weather_video{
+  filter: brightness(80%);
+  object-fit: cover;
+  object-position: center;
+  border-radius: 20px;
+  width: 20rem;
+  height: 23rem;
+}
+#weather_celsius{
+  font-size: 70px; 
   color: white;
-  background-color: black;
-  border: none;
-  cursor: pointer;
 }
-.wether-input{
-  width:350px;
-  padding: 10px ;
-}
-.wether-div-input{
-  overflow: hidden;
-}
-#wether-City{
-  background-color: rgb(237, 234, 234);
-  height:  60px;
-  margin-top: 0px;
-  border-bottom:0.5px solid black ;
-  text-align: center;
-  padding-top: 10px;
-}
-.wether-div-buttons{
-  display: flex;
-  justify-content: space-between;
-}
-.wether-div-buttons button{
-  padding: 5px 20px ;
-  border: none;
-  border-radius: 50px;
-  background-color: rgb(81, 147, 239);
-  font-size: 25px;
-  font-weight: bold;
-}
-.wether-div-buttons button:hover{
-  cursor: pointer;
-  box-shadow: 0px 0px 10px 0px black;
-} */
-/* 
-#form{
-  display: flex;
-  justify-content: center;
-}
-
-#accordionExample span {
-  font-weight: bold;
-  margin-left: 15px;
+#weather_info  {
+ display: flex;
+ justify-content: space-evenly;
+ color: white;
+ font-size: 20px; 
+ margin-top: 40px;
  
-}
-#clearItem{
-  max-width: 150px ;
 
 }
-#parent_accordionExample{
- align-items: center;
-} */
 
 
- 
+
+
+
+
