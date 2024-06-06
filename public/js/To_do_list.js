@@ -7,7 +7,7 @@ let todo = [
 
 function header(){
   const container = document.createElement('form');
-  container.className = 'row g-3 m-3';
+  container.className = 'row g-3 ';
   container.id = 'header_form'
   container.innerHTML = `
   <div class="input-group mb-3">
@@ -17,10 +17,9 @@ function header(){
   
   container.addEventListener('submit', (e)=> {
     e.preventDefault();
-    
     let text = container.querySelector('input');
       if(text.value.trim().length >= 2){
-          todo.push({
+          todo.unshift({
             id: Math.random() * 1,
             text: text.value,
             bul: false
@@ -103,7 +102,7 @@ function footer(){
           <span class="h4"> ${todo.length} / ${checked.length} </span>  
         </div>
         <div class="col-auto ">
-          <button type="button" class="btn btn-outline-success">Clear complitet</button>
+          <button type="button" class="btn btn-outline-success">Clear completed</button>
 
         </div>
         
@@ -121,5 +120,6 @@ function App(){
   list();
   listItem();
   footer()
+ 
 }
 App();

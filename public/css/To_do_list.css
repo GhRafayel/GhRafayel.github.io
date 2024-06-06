@@ -1,7 +1,13 @@
+#to_do_list{
+  text-align: center;
+  padding-top: 10px;
+  font-size: 25px;
+}
 #cheang_text{
   width: 100%;
-  
-
+}
+#header_form{
+  margin: 0px;
 }
 #text{
   cursor: pointer;
@@ -9,8 +15,6 @@
 }
 #div_span{
   overflow: hidden;
-  
-  
 }
 .btn.btn-outline-success{
   width: fit-content;
@@ -22,7 +26,6 @@
   overflow: hidden;
   justify-content: space-around;
 }
-
 #footer{
   display: flex;
   align-items: end;
@@ -31,6 +34,9 @@
   height: 300px;
   overflow-y: scroll;
   border-bottom: 0.1px solid black;
+  font-size: 10px;
 
 }
+
+
 
