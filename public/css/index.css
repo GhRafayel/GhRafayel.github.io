@@ -20,13 +20,6 @@ body  {
 .download-a:hover{
   box-shadow: 0px 3px 0px 0px ;
 }
-
-#about{
-  padding-top: 100px;
-  text-align: center;
-  font-weight: bold;
-}
-
 .card-header{
   display: flex;
   justify-content: space-between;
@@ -40,31 +33,39 @@ body  {
   background-color: rgb(78, 139, 246);
   min-height: 80px;
 }
+#about{
+  background-color: black;
+  border-radius: 10px;
+  padding: 10px ;
+}
+#about_img_container{
+  display: flex;
+  min-width: 300px;
+  justify-content: space-between;
+}
+h1 {
+  color: white;
+  margin-bottom: 20px;
+}
+.languages{
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0px;
+  
+}
 
-#about-container .col{
-  margin-bottom: 30px;
-  min-width: 350px;
-}
-#about-container img{
-  height: 400px;
-  padding: 10px;
-}
 #project_and_games-container {
+  padding-top: 150px;
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-}
-
-#project_and_games-container img{
-  height: 400px;
-  padding: 10px;
-}
-
-
-#game-2-img,
-#memory-game-img{
-max-height: 325px;
+  background-image: url("/public/img/background2.jpg");
+  background-color: lightblue;
+  background-position: cover;
+  background-repeat:no-repeat ;
+  background-size: 100%;
+  background-repeat:repeat ;
 }
 
 #contact-container{
