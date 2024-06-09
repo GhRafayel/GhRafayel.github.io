@@ -6,6 +6,9 @@ body  {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
 }
+#parent{
+  position: relative;
+}
 .download-a{
   text-decoration: none;
   font-size: 20px;
@@ -27,12 +30,16 @@ body  {
 }
 .navbar {
   position: fixed;
-  z-index: 5;
+  z-index: 2;
+  top: 0;
   left: 0;
   right: 0;
   background-color: rgb(78, 139, 246);
   min-height: 80px;
 }
+nav .dropdown-menu{
+  text-align: center;
+  }
 #about{
   background-color: black;
   border-radius: 10px;
@@ -54,7 +61,7 @@ h1 {
 }
 
 #project_and_games-container {
-  padding-top: 150px;
+  padding-top: 300px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -88,13 +95,21 @@ h1 {
 nav .btn-secondary.dropdown-toggle {
   background-color: black;
 }
-nav .dropdown-menu{
-text-align: center;
-}
+
 .card.m-4{
   min-width:400px ;
 }
-
+#clock{
+ position: absolute;
+ text-align: center;
+ font-size: 30px;
+ width: 100%;
+ top: 100px;
+ color: rgb(0, 0, 0);
+ text-shadow: white 0px -0px 12px; 
+ font-weight: bold;
+ font-style: oblique;
+}
 @media   screen and (max-width: 600px){
   #project_and_games-container{
     justify-content: center;
