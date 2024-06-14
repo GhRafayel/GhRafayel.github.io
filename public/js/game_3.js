@@ -59,53 +59,53 @@ game_3_reset.addEventListener('click',()=> {
   `
   game3.playArray = undefined;
   game3.level = 8;
-  gaem_3_create_img_element(game3.Animals.concat(game3.Numbers));
+  gaem3CreateImgElement(game3.Animals.concat(game3.Numbers));
   audio('/public/audio/audio4.wav');
   
 });
 
-game_3_anumals.addEventListener('click',game3_start);
-game_3_numbers.addEventListener('click',game3_start);
+game_3_anumals.addEventListener('click',game3Start);
+game_3_numbers.addEventListener('click',game3Start);
 
-function game3_start(e){
+function game3Start(e){
   game3.playArray = e.target.innerHTML;
-  game3_level_btn_1.addEventListener('click',()=> game3_level(8));
-  game3_level_btn_2.addEventListener('click',()=> game3_level(6));
-  game3_level_btn_3.addEventListener('click',()=> game3_level(4));
-  game3_level_btn_4.addEventListener('click',()=> game3_level(2));
-  game3_level_btn_5.addEventListener('click',()=> game3_level(0));
-  game3_add_click();
-  game3_level(game3.level);
+  game3_level_btn_1.addEventListener('click',()=> game3Level(8));
+  game3_level_btn_2.addEventListener('click',()=> game3Level(6));
+  game3_level_btn_3.addEventListener('click',()=> game3Level(4));
+  game3_level_btn_4.addEventListener('click',()=> game3Level(2));
+  game3_level_btn_5.addEventListener('click',()=> game3Level(0));
+  game3AddClick();
+  game3Level(game3.level);
 
 }
 
-function game3_add_click(num){
+function game3AddClick(num){
   [...document.getElementsByClassName('game3_click')]
          .forEach( img => {
           num === 8 ? img.style = "opacity: 0; width: 100px; height: 100px; " :
           num === 6 ? img.style = "opacity: 0; width: 90px; height: 90px; " :
           num === 4 ? img.style = "opacity: 0; width: 65px; height: 65px; " :
           img.style = "opacity: 0;"
-          img.addEventListener('click', game3_style);
+          img.addEventListener('click', game3Style);
          });
 }
 
-function game3_style(eve){
+function game3Style(eve){
  
   eve.target.style.opacity = 1;
 
   if(game3.bool === true && game3.inspection[eve.target.src] === undefined) {
     audio('/public/audio/click1.wav');
      game3.inspection[eve.target.src] = eve.target.id;
-     document.getElementById(eve.target.id).removeEventListener('click', game3_style);
+     document.getElementById(eve.target.id).removeEventListener('click', game3Style);
      game3.bool = !game3.bool 
   }else if(game3.bool === false && game3.inspection[eve.target.src] === undefined){
     audio('/public/audio/click3.wav');
     game3.bool = !game3.bool 
     game3.inspection = {};
-    [...document.getElementsByClassName('game3_click')] .forEach( img => img.removeEventListener('click', game3_style));
+    [...document.getElementsByClassName('game3_click')] .forEach( img => img.removeEventListener('click', game3Style));
     game3.interval = setTimeout(()=>{
-      game3_add_click(game3.level);
+      game3AddClick(game3.level);
     },1500);
     game3.inspection = {};
   }else {
@@ -114,28 +114,28 @@ function game3_style(eve){
      const element =  document.getElementById(value);
      element.style.opacity = 1;
      element.className = "img-thumbnail";
-     element.removeEventListener('click', game3_style);
+     element.removeEventListener('click', game3Style);
     });
     game3.win -= 2;
     audio('/public/audio/click5.wav');
-    game3_add_click(game3.level);
+    game3AddClick(game3.level);
     game3.inspection = {};
     game3.bool = true;
   }
   
   if(game3.win <= 0){
     audio('/public/audio/ambient-piano-logo-165357.mp3');
-    setTimeout(()=> game3_level(game3.level -=2),2500)
+    setTimeout(()=> game3Level(game3.level -=2),2500)
     
   }
 }
 
-function game3_level(num){
+function game3Level(num){
   game3.level = num;
   audio('/public/audio/click1.wav');
   if(game3.playArray !== undefined){
-    let currently_array = game3_sort_using_arrya(game3[game3.playArray]);
-    gaem_3_create_img_element(game3_sort_using_arrya(currently_array.slice(num) .concat(currently_array.slice(num))));
+    let currently_array = game3SortUsingArrya(game3[game3.playArray]);
+    gaem3CreateImgElement(game3SortUsingArrya(currently_array.slice(num) .concat(currently_array.slice(num))));
     num === 0 ? game_3_root.style = ` display: grid;
                                       grid-template-columns:repeat(6, auto);
                                       grid-template-rows: auto;`
@@ -148,7 +148,7 @@ function game3_level(num){
                                       grid-template-columns:  repeat(4, auto) ;
                                       grid-template-rows: auto;`
                                       
-    game3_add_click(game3.level);
+    game3AddClick(game3.level);
   } else {
     alert('Choose your favorite images...');
   }
@@ -156,12 +156,12 @@ function game3_level(num){
   
 }
 
-function game3_sort_using_arrya(array){
+function game3SortUsingArrya(array){
   const randomly = () => Math.random() - 0.5;
   return array.sort(randomly);
 }
 
-function gaem_3_create_img_element(array){
+function gaem3CreateImgElement(array){
   game3.win = array.length;
   game_3_root.innerHTML = "";
   array.map( img => {
@@ -172,4 +172,4 @@ function gaem_3_create_img_element(array){
   });
 }
 
-gaem_3_create_img_element(game3.Animals.concat(game3.Numbers))
+gaem3CreateImgElement(game3.Animals.concat(game3.Numbers))
