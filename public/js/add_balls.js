@@ -36,15 +36,12 @@ function Ball(){
   this.r = rendome(5,30);
   this.x = rendome(this.r,canvas.width  - this.r );
   this.y = rendome(this.r,canvas.height - this.r );
-
   this.xDelta = rendome(-5,5);
   this.yDelta = rendome(-5,5);
-
   this.color = `rgb(${rendome(0,255)},
                     ${rendome(0,255)},
                     ${rendome(0,255)})`;
     
-  
   this.drow = function(){
       ctx.fillStyle = this.color;
       ctx.beginPath();
@@ -67,6 +64,7 @@ function Ball(){
   }
   
 }
+
 for(let i = 0; i < 5; i++) {
   deita.balls.push(new Ball());
 }

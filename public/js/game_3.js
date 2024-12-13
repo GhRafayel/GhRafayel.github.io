@@ -124,13 +124,15 @@ function game3Style(eve){
   }
   
   if(game3.win <= 0){
+    
     audio('/public/audio/ambient-piano-logo-165357.mp3');
-    setTimeout(()=> game3Level(game3.level -=2),2500)
+    setTimeout(()=> game3Level(game3.level -= 2),2500)
     
   }
 }
 
 function game3Level(num){
+  debugger
   game3.level = num;
   audio('/public/audio/click1.wav');
   if(game3.playArray !== undefined){

@@ -1,35 +1,35 @@
-// import { createPool } from 'mysql2/promise';
-// import express from 'express';
-// import bcrypt from 'bcrypt';
-// import fs, { access } from 'fs';
-// import path  from 'path';
+import { createPool } from 'mysql2/promise';
+import express from 'express';
+import bcrypt from 'bcrypt';
+import fs, { access } from 'fs';
+import path  from 'path';
 
-// const app = express();
+const app = express();
 
-// app.use(express.static(path.resolve('./')));
+app.use(express.static(path.resolve('./')));
 
-// app.use(express.urlencoded( { extended: true } ) );
+app.use(express.urlencoded( { extended: true } ) );
 
-// app.use(express.json());
+app.use(express.json());
 
 
-// const todoPool = createPool({
-//   host: process.env.db_host,
-//   user: process.env.db_user,
-//   password: process.env.db_pass,
-//   database: process.env.db_name
-// });
+const todoPool = createPool({
+  host: process.env.db_host,
+  user: process.env.db_user,
+  password: process.env.db_pass,
+  database: process.env.db_name
+});
 
-// // let results;
-// // (async function(){
-// //   results =  await todoPool.query(`SHOW TABLES`);
-// //   console.log( Array.isArray(results[0])) ;
-// //   results[0].forEach(val => {
-// //     console.log(Array.isArray(val))
-// //      console.log(val)
-// //   });
-// //   return results;
-// // })();
+// let results;
+// (async function(){
+//   results =  await todoPool.query(`SHOW TABLES`);
+//   console.log( Array.isArray(results[0])) ;
+//   results[0].forEach(val => {
+//     console.log(Array.isArray(val))
+//      console.log(val)
+//   });
+//   return results;
+// })();
 
 
 // app.get('/searchList/:id', async   (req, res) => {
@@ -105,29 +105,28 @@
 // });
 
 
+app.get('/shopping_list', (req, res) => {
+  res.sendFile(path.resolve('shopping.html'));
+});
 
-// app.get('/Stop_Watch_Bill_total', (req, res) => {
-//   res.sendFile(path.resolve("Stop_Watch_Bill_total.html"));
+
+// app.delete('/deleteList/:id', (req, res) => {
+//   todoPool.query(` DROP TABLE ${req.params.id}`)
+//   .then ( resp => res.send (
+//                               {
+//                                 resp,
+//                                 ...req.params
+//                               }
+//                            )).catch(err => console.log(err));
+  
 // });
 
-// app.get('/weather', (req, res) => {
-//   res.sendFile(path.resolve('weather.html'));
-// });
-// app.get('/shopping', (req, res) => {
-//   res.sendFile(path.resolve('shopping.html'));
-// });
-// app.get('/game_1', (req, res) => {
-//   res.sendFile(path.resolve("game_1.html"));
-// });
-// app.get('/game_2', (req, res) => {
-//   res.sendFile(path.resolve("game_2.html"));
-// });
-// app.get('/game_3', (req, res) => {
-//   res.sendFile(path.resolve("game_3.html"));
-// });
-// app.get('/game_4', (req, res) => {
-//   res.sendFile(path.resolve("game_4.html"));
-// });
+
+// require dotenv/config 
+// npm install dotenv --save-dev
+// app.use((req, res, next) => next () );
+
+
 
 // app.post('/send_state', (req, res) => {
 //   fs.promises
@@ -140,22 +139,6 @@
 //     res.send(json);
 //   });
 // });
-
-// //require dotenv/config 
-// // npm install dotenv --save-dev
-// //app.use((req, res, next) => next () );
-
-
-// // app.delete('/deleteList/:id', (req, res) => {
-// //   todoPool.query(` DROP TABLE ${req.params.id}`)
-// //   .then ( resp => res.send (
-// //                               {
-// //                                 resp,
-// //                                 ...req.params
-// //                               }
-// //                            )).catch(err => console.log(err));
-  
-// // });
 
 
 // app.get('/todo', (req, res) => {
@@ -175,4 +158,4 @@
 //   })
 // });
 
-// app.listen(process.env.PORT);
+app.listen(process.env.PORT);

@@ -15,11 +15,8 @@ weather_form.addEventListener('submit',(e)=> {
 });
 
 function weather_response(name){
-  
   fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${name}&appid=8109965e7254a469d08a746e8b210e1e&units=imperial&cnt=10`)
-  .then(strim => strim.json())
-  .then(res =>  weather_distract(res))
-  .catch(error =>  console.log(error , 'something problem'));
+  .then(strim => strim.json()).then(res =>  weather_distract(res)).catch(error =>  console.log(error , 'something problem'));
 }
 
 function weather_distract(res){
@@ -33,7 +30,7 @@ function weather_distract(res){
   weather_HTML_innerText(weather_data);
   res.list[0].weather[0].main === "Rain"  ? weather_video.src = '/public/video/raining.mp4' : 
   res.list[0].weather[0].main === "Clouds" ? weather_video.src = '/public/video/weather.mp4' : weather_video.src = '/public/video/sunny.mp4' 
-  console.log(res.list[0].weather[0].main)
+  // console.log(res.list[0].weather[0].main)
 }
 
 function weather_HTML_innerText(weather){

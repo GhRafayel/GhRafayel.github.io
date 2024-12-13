@@ -1,5 +1,4 @@
 const keno_numbersArray = [...document.getElementsByClassName("keno_click")];
-
 const keno_div_2_ball_div = document.querySelector(".keno_div_2_ball_div");
 const keno_div_2_first = document.querySelector(".keno_div_2_first");
 const keno_addBet = document.getElementById('keno_add_bet');
@@ -246,6 +245,7 @@ function keno_create_bets_element(bet_array,bool){
         <div  id="keno_beted_numbers" class="beted_${i}"> </div>
     `; 
      keno_betList.appendChild(div);
+     
      value.beted_numbers.map(val => {
       const span = document.createElement('span');
       span.className = 'to_check_bets';
