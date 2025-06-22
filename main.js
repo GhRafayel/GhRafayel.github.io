@@ -12,7 +12,6 @@ app.use(express.urlencoded( { extended: true } ) );
 
 app.use(express.json());
 
-
 const todoPool = createPool({
   host: process.env.db_host,
   user: process.env.db_user,
