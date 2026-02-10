@@ -103,10 +103,10 @@ const Projects = ({darkMode}) => {
 					</p>
 				</div>
 				
-				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-12">
+				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-12 justify-center">
 					{projects.map((project, index) => 
 					(
-						<div key={index} className={`${colors}`} data-aos="fade-up" data-aos-delay={`${300 + index * 100}`} >
+						<div key={index} className={`${colors} justify-items-center`} data-aos="fade-up" data-aos-delay={`${300 + index * 100} `} >
 							<div className="h-full max-w-90 p-4 overflow-hidden rounded-2xl flex flex-col border border-green-600 hover:border-green-500/50 transition-all duration-300 hover:-translate-y-2">
 								{/* Image */}
 								<div className="w-full  h-48 overflow-hidden rounded-t-xl">
