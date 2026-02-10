@@ -70,7 +70,7 @@ const Hero = ({darkMode}) => {
                                         <a href={CV} download className="w-full sm:w-auto">
                                             <button  className={`${theme.buttonSecondary}`} >
                                                 <DownloadCloud className="w-4 h-4 sm:h-5 sm:w-5 mr-2"/>
-                                                    Downlad CV 
+                                                    Download CV 
                                             </button>
                                         </a>
                                         <a href="#contact" className="w-full sm:w-auto">

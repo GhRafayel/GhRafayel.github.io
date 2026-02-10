@@ -27,6 +27,28 @@ const projects = [
 		tags: ['C', 'Threads', 'Mutex', 'Concurrency'],
 		href: "https://github.com/GhRafayel/Philosopher",
 	},
+	{
+		title: 'Push_swap',
+		desc: 'A sorting algorithm project in C focused on stack manipulation and optimizing the number of operations.',
+		image: Push_swap,
+		tags: ['C', 'Algorithms', 'Data Structures', 'Stacks'],
+		href: 'https://github.com/GhRafayel/push_swap',
+	},
+	{
+		title: 'So_long',
+		desc: 'A small 2D game written in C using the MiniLibX library, featuring player movement, collectibles, and map validation.',
+		image: Solong,
+		tags: ['C', 'Game Dev', 'MiniLibX', '2D'],
+		href: "https://github.com/GhRafayel/so_long",
+	},
+
+	{
+		title: 'Cub3D',
+		desc: 'A 3D raycasting game engine developed in C, inspired by Wolfenstein 3D, using MiniLibX for rendering.',
+		image: Cub3D,
+		tags: ['C', 'Raycasting', 'Game Engine', 'MiniLibX'],
+		href: "https://github.com/GhRafayel/Cub_3d",
+	},
 
 	{
 		title: 'NetPractice',
@@ -52,13 +74,7 @@ const projects = [
 		href: "https://github.com/GhRafayel/Get_next_line",
 		
 	},
-	{
-		title: 'Push_swap',
-		desc: 'A sorting algorithm project in C focused on stack manipulation and optimizing the number of operations.',
-		image: Push_swap,
-		tags: ['C', 'Algorithms', 'Data Structures', 'Stacks'],
-		href: 'https://github.com/GhRafayel/push_swap',
-	},
+	
 	{
 		title: 'Minishell',
 		desc: 'A Unix shell implemented in C, supporting command execution, pipes, redirections, environment variables, and built-in commands.',
@@ -74,23 +90,6 @@ const projects = [
 		tags: ['C', 'Signals', 'IPC', 'Processes'],
 		href: "https://github.com/GhRafayel/minitalk",
 	},
-
-	{
-		title: 'So_long',
-		desc: 'A small 2D game written in C using the MiniLibX library, featuring player movement, collectibles, and map validation.',
-		image: Solong,
-		tags: ['C', 'Game Dev', 'MiniLibX', '2D'],
-		href: "https://github.com/GhRafayel/so_long",
-	},
-
-	{
-		title: 'Cub3D',
-		desc: 'A 3D raycasting game engine developed in C, inspired by Wolfenstein 3D, using MiniLibX for rendering.',
-		image: Cub3D,
-		tags: ['C', 'Raycasting', 'Game Engine', 'MiniLibX'],
-		href: "https://github.com/GhRafayel/Cub_3d",
-	}
-
 ];
 
 const Projects = ({darkMode}) => {
