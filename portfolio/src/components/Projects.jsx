@@ -93,7 +93,7 @@ const Projects = ({darkMode}) => {
 	return (
 		<section id="projects" className={`${colors} relative px-24 justify-items-center`}>
 			
-			<div className="container max-auto px-4 min-w-2xs">
+			<div className="container max-auto px-4">
 				<div className="text-center mb-10" data-aos='fade-up'>
 					<h2 className={`sm:text-4xl font-bold mb-3 ${darkMode ? 'white' : '#1f2937'}`} > My Project </h2>
 					<p className={`max-w-xl mx-auto ${darkMode ? '#d1d5db' : '#6b7280'}`}>
@@ -104,7 +104,7 @@ const Projects = ({darkMode}) => {
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-12">
 					{projects.map((project, index) => 
 					(
-						<div key={index} className={`${colors} justify-items-center`} data-aos="fade-up" data-aos-delay={`${300 + index * 100} `} >
+						<div key={index} className={`${colors} flex items-center justify-center`} data-aos="fade-up" data-aos-delay={`${300 + index * 100} `} >
 							<div className="h-full max-w-90 p-4 overflow-hidden rounded-2xl flex flex-col border border-green-600 hover:border-green-500/50 transition-all duration-300 hover:-translate-y-2">
 								{/* Image */}
 								<div className="w-full  h-48 overflow-hidden rounded-t-xl">
