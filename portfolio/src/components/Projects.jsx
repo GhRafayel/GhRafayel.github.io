@@ -72,22 +72,20 @@ const projects = [
 		href: "https://github.com/GhRafayel/Get_next_line",
 		
 	},
-	// {
-	// 	title: 'NetPractice',
-	// 	desc: 'A networking project focused on IP addressing, subnetting, and understanding TCP/IP communication.',
-	// 	image: NetPractice,
-	// 	tags: ['Networking', 'TCP/IP', 'Subnetting'],
-	// 	href: "#",
-	// },
-	// {
-	// 	title: 'Inception',
-	// 	desc: 'A DevOps project using Docker to build and manage multiple services with containers and Docker Compose.',
-	// 	image: Inception,
-	// 	tags: ['Docker', 'Docker Compose', 'DevOps'],
-	// 	href: "https://github.com/GhRafayel/Inception",
-	// },
-
-	
+	{
+		title: 'NetPractice',
+		desc: 'A networking project focused on IP addressing, subnetting, and understanding TCP/IP communication.',
+		image: NetPractice,
+		tags: ['Networking', 'TCP/IP', 'Subnetting'],
+		href: "#",
+	},
+	{
+		title: 'Inception',
+		desc: 'A DevOps project using Docker to build and manage multiple services with containers and Docker Compose.',
+		image: Inception,
+		tags: ['Docker', 'Docker Compose', 'DevOps'],
+		href: "https://github.com/GhRafayel/Inception",
+	},
 ];
 
 const Projects = ({darkMode}) => {
@@ -103,7 +101,7 @@ const Projects = ({darkMode}) => {
 					</p>
 				</div>
 				
-				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-12 justify-center">
+				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-12">
 					{projects.map((project, index) => 
 					(
 						<div key={index} className={`${colors} justify-items-center`} data-aos="fade-up" data-aos-delay={`${300 + index * 100} `} >
