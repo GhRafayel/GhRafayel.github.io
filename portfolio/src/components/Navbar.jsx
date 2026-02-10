@@ -66,7 +66,7 @@ const Navbar = ({darkMode, toggleDarkMode}) => {
 
 						<div className="flex lg:hidden items-center space-x-4 px-2">
 							<motion.button  whileTap={{scale: 0.9}} 
-											className={`p-2 rounded-lg ${darkMode ? 'bg-gray-500' : 'bg-gray-300'}`}
+											className={`p-2 rounded-lg ${!darkMode ? 'bg-gray-500' : 'bg-gray-300'}`}
 											onClick={() => setIsMonuOpen(!isMonuOpen)}>
 								{
 									isMonuOpen  ? (<X className={`w-5 h-5 ${colors}`}/>) : (<Menu className={`w-5 h-5 ${colors}`}/>)
@@ -80,9 +80,8 @@ const Navbar = ({darkMode, toggleDarkMode}) => {
 									animate={{opacity: 1, height: 'auto'}}
 									exit={{opacity: 0, height: 0.3}}
 									className={`absolute top-full left-0 right-0 mt-2 lg:hidden 
-												${!darkMode ? 'bg-white/95' : 'bg-gray-900/95'}
-												backdrop-blur-lg rounded-x1 shadow-lg border
-												${'border-gray-' + darkMode ? 700 : 200}`}>
+												${!darkMode ? 'bg-white/95 text-gray-900 border-gray-600' : 'bg-gray-900/95 text-gray-100 border-green-700'}
+												backdrop-blur-lg rounded-x1 shadow-lg border`}>
 										<div className="px-4 py-3 space-y-2">
 										{
 											data.navItems.map((item) => (
