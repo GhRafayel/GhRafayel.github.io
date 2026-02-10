@@ -19,7 +19,13 @@ const projects = [
 		tags: ['C', 'C++', 'Networking', 'HTTP'],
 		href: "https://github.com/GhRafayel/webserv",
 	},
-
+	{
+		title: 'Minishell',
+		desc: 'A Unix shell implemented in C, supporting command execution, pipes, redirections, environment variables, and built-in commands.',
+		image: Minishell,
+		tags: ['C', 'Unix', 'Shell', 'Processes'],
+		href: "https://github.com/GhRafayel/minishell",
+	},
 	{
 		title: 'Philosophers',
 		desc: 'A concurrency project solving the Dining Philosophers problem using threads, mutexes, and synchronization techniques.',
@@ -28,11 +34,11 @@ const projects = [
 		href: "https://github.com/GhRafayel/Philosopher",
 	},
 	{
-		title: 'Push_swap',
-		desc: 'A sorting algorithm project in C focused on stack manipulation and optimizing the number of operations.',
-		image: Push_swap,
-		tags: ['C', 'Algorithms', 'Data Structures', 'Stacks'],
-		href: 'https://github.com/GhRafayel/push_swap',
+		title: 'Cub3D',
+		desc: 'A 3D raycasting game engine developed in C, inspired by Wolfenstein 3D, using MiniLibX for rendering.',
+		image: Cub3D,
+		tags: ['C', 'Raycasting', 'Game Engine', 'MiniLibX'],
+		href: "https://github.com/GhRafayel/Cub_3d",
 	},
 	{
 		title: 'So_long',
@@ -41,31 +47,23 @@ const projects = [
 		tags: ['C', 'Game Dev', 'MiniLibX', '2D'],
 		href: "https://github.com/GhRafayel/so_long",
 	},
-
+	
+	
 	{
-		title: 'Cub3D',
-		desc: 'A 3D raycasting game engine developed in C, inspired by Wolfenstein 3D, using MiniLibX for rendering.',
-		image: Cub3D,
-		tags: ['C', 'Raycasting', 'Game Engine', 'MiniLibX'],
-		href: "https://github.com/GhRafayel/Cub_3d",
+		title: 'Push_swap',
+		desc: 'A sorting algorithm project in C focused on stack manipulation and optimizing the number of operations.',
+		image: Push_swap,
+		tags: ['C', 'Algorithms', 'Data Structures', 'Stacks'],
+		href: 'https://github.com/GhRafayel/push_swap',
 	},
-
+	
 	{
-		title: 'NetPractice',
-		desc: 'A networking project focused on IP addressing, subnetting, and understanding TCP/IP communication.',
-		image: NetPractice,
-		tags: ['Networking', 'TCP/IP', 'Subnetting'],
-		href: "#",
+		title: 'Minitalk',
+		desc: 'A client-server communication project in C using UNIX signals to transmit data bit by bit between processes.',
+		image: Minitalk,
+		tags: ['C', 'Signals', 'IPC', 'Processes'],
+		href: "https://github.com/GhRafayel/minitalk",
 	},
-
-	{
-		title: 'Inception',
-		desc: 'A DevOps project using Docker to build and manage multiple services with containers and Docker Compose.',
-		image: Inception,
-		tags: ['Docker', 'Docker Compose', 'DevOps'],
-		href: "https://github.com/GhRafayel/Inception",
-	},
-
 	{
 		title: 'Get Next Line',
 		desc: 'A C function that reads a file line by line from a file descriptor, handling memory management efficiently.',
@@ -74,28 +72,28 @@ const projects = [
 		href: "https://github.com/GhRafayel/Get_next_line",
 		
 	},
-	
-	{
-		title: 'Minishell',
-		desc: 'A Unix shell implemented in C, supporting command execution, pipes, redirections, environment variables, and built-in commands.',
-		image: Minishell,
-		tags: ['C', 'Unix', 'Shell', 'Processes'],
-		href: "https://github.com/GhRafayel/minishell",
-	},
+	// {
+	// 	title: 'NetPractice',
+	// 	desc: 'A networking project focused on IP addressing, subnetting, and understanding TCP/IP communication.',
+	// 	image: NetPractice,
+	// 	tags: ['Networking', 'TCP/IP', 'Subnetting'],
+	// 	href: "#",
+	// },
+	// {
+	// 	title: 'Inception',
+	// 	desc: 'A DevOps project using Docker to build and manage multiple services with containers and Docker Compose.',
+	// 	image: Inception,
+	// 	tags: ['Docker', 'Docker Compose', 'DevOps'],
+	// 	href: "https://github.com/GhRafayel/Inception",
+	// },
 
-	{
-		title: 'Minitalk',
-		desc: 'A client-server communication project in C using UNIX signals to transmit data bit by bit between processes.',
-		image: Minitalk,
-		tags: ['C', 'Signals', 'IPC', 'Processes'],
-		href: "https://github.com/GhRafayel/minitalk",
-	},
+	
 ];
 
 const Projects = ({darkMode}) => {
 	const colors = darkMode ? 'text-gray-100' : 'text-gray-900';
 	return (
-		<section id="projects" className={`${colors} relative px-24 justify-center`}>
+		<section id="projects" className={`${colors} relative px-24 justify-items-center`}>
 			
 			<div className="container max-auto px-4 min-w-2xs">
 				<div className="text-center mb-10" data-aos='fade-up'>
@@ -109,9 +107,9 @@ const Projects = ({darkMode}) => {
 					{projects.map((project, index) => 
 					(
 						<div key={index} className={`${colors}`} data-aos="fade-up" data-aos-delay={`${300 + index * 100}`} >
-							<div className="h-full p-4 overflow-hidden rounded-2xl flex flex-col border border-green-600 hover:border-green-500/50 transition-all duration-300 hover:-translate-y-2">
+							<div className="h-full max-w-90 p-4 overflow-hidden rounded-2xl flex flex-col border border-green-600 hover:border-green-500/50 transition-all duration-300 hover:-translate-y-2">
 								{/* Image */}
-								<div className="w-full h-48 overflow-hidden rounded-t-xl">
+								<div className="w-full  h-48 overflow-hidden rounded-t-xl">
 									<img src={project.image} alt={project.title} className="w-full h-full object-center" />
 								</div>
 
