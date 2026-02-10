@@ -91,9 +91,9 @@ const projects = [
 const Projects = ({darkMode}) => {
 	const colors = darkMode ? 'text-gray-100' : 'text-gray-900';
 	return (
-		<section id="projects" className={`${colors} relative px-24 justify-items-center`}>
+		<section id="projects" className={`${colors} relative px-24 text-center`}>
 			
-			<div className="container max-auto px-4">
+			<div className="container mx-auto px-4">
 				<div className="text-center mb-10" data-aos='fade-up'>
 					<h2 className={`sm:text-4xl font-bold mb-3 ${darkMode ? 'white' : '#1f2937'}`} > My Project </h2>
 					<p className={`max-w-xl mx-auto ${darkMode ? '#d1d5db' : '#6b7280'}`}>
@@ -101,11 +101,11 @@ const Projects = ({darkMode}) => {
 					</p>
 				</div>
 				
-				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-12">
+				<div className="grid justify-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-12`">
 					{projects.map((project, index) => 
 					(
-						<div key={index} className={`${colors} flex items-center justify-center`} data-aos="fade-up" data-aos-delay={`${300 + index * 100} `} >
-							<div className="h-full max-w-90 p-4 overflow-hidden rounded-2xl flex flex-col border border-green-600 hover:border-green-500/50 transition-all duration-300 hover:-translate-y-2">
+						<div key={index} className={`${colors} justify-items-center`} data-aos="fade-up" data-aos-delay={`${300 + index * 100} `} >
+							<div className="h-full max-w-90 min-w-60 p-4 overflow-hidden rounded-2xl flex flex-col border border-green-600 hover:border-green-500/50 transition-all duration-300 hover:-translate-y-2">
 								{/* Image */}
 								<div className="w-full  h-48 overflow-hidden rounded-t-xl">
 									<img src={project.image} alt={project.title} className="w-full h-full object-center" />
@@ -126,12 +126,13 @@ const Projects = ({darkMode}) => {
 									</div>
 
 									{/* Buttons */}
-									<div className="mt-auto flex gap-2">
+									<div className="mt-auto flex flex-col min-[450px]:flex-row gap-2">
 										<a href={project.href} target="_blank" className={`flex-1 flex items-center justify-center gap-1.5 px-3 py-2 text-sm rounded-lg bg-blue-400 ${colors} cursor-pointer`}>
 											<FaGithub />
 											Code
 										</a>
-										<a className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 text-sm rounded-lg bg-green-500">
+
+										<a href={project.href} target="_blank" className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 text-sm rounded-lg bg-green-500">
 											<FaExternalLinkAlt />
 											Demo
 										</a>

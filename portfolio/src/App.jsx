@@ -19,12 +19,12 @@ function App() {
   useEffect(()=> { AOS.refresh(); },[darkMode])
 
   const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
     document.documentElement.classList.toggle('dark');
+    setDarkMode(!darkMode);
   };
 
   return (
-    <div className={darkMode ? 'bg-linear-to-r from-gray-900 fia-[#0d182e] to-gray-900 min-h-screen' : 'bg-linear-to-br from-gray-100 to-blue-50 min-h-screen min-w-96'}
+    <div className={darkMode ? 'bg-linear-to-r from-gray-900 fia-[#0d182e] to-gray-900 min-h-screen' : 'bg-linear-to-br from-gray-100 to-blue-50 min-h-screen'}
     >
         <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode}/>
         <Hero darkMode={darkMode} />

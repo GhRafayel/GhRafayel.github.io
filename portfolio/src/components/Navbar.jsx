@@ -59,7 +59,7 @@ const Navbar = ({darkMode, toggleDarkMode}) => {
 								aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
 							>
 								{
-									darkMode ? (<Sun className={`w-8 h-8  text-yellow-300 cursor-pointer`}/>) : (<Moon className="w-6 h-6 ml-5 text-gray-300 cursor-pointer" />)
+									darkMode ? (<Sun className={`w-8 h-8  text-yellow-300 cursor-pointer`}/>) : (<Moon className="w-8 h-8 ml-5 text-gray-500 cursor-pointer" />)
 								}
 							</motion.button>
 						</div>
@@ -80,7 +80,7 @@ const Navbar = ({darkMode, toggleDarkMode}) => {
 									animate={{opacity: 1, height: 'auto'}}
 									exit={{opacity: 0, height: 0.3}}
 									className={`absolute top-full left-0 right-0 mt-2 lg:hidden 
-												${darkMode ? 'bg-white/95' : 'bg-gray-900/95'}
+												${!darkMode ? 'bg-white/95' : 'bg-gray-900/95'}
 												backdrop-blur-lg rounded-x1 shadow-lg border
 												${'border-gray-' + darkMode ? 700 : 200}`}>
 										<div className="px-4 py-3 space-y-2">
