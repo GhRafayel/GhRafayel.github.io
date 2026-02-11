@@ -23,7 +23,6 @@ const Navbar = ({darkMode, toggleDarkMode}) => {
 							<motion.a  href="/"  whileHover={{ scale: 1.05 }} className="flex items-center space-x-2">
 								<span className={`text-xl font-bold  ${darkMode ? "text-gray-100" : "text-gray-900"}`}>
 									Portfolio 
-									<span className="text-green-700" >. </span>
 								</span>
 							</motion.a>
 						</div>

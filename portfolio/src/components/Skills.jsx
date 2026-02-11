@@ -48,7 +48,7 @@ const Skills = ({darkMode}) =>
 							I have experience in these areas and enjoy learning new technologies to solve problems efficiently.
 						</p>
 					</div>
-					<div className="flex flex-wrap -m-4 lg:justify-center xl:justify-start" data-aos='fade-up' data-aos-delay='200'>
+					<div className="flex flex-wrap -m-4 lg:justify-center xl:justify-start" data-aos='fade-up' data-aos-delay='100'>
 
 						{
 							skills.map((item,i ) => (
