@@ -5,11 +5,12 @@ import Inception		from "../assets/project/Inception.png"
 import Get_next_line	from "../assets/project/Get_next_line.png"
 import Minishell		from "../assets/project/Minishell.png"
 import Minitalk			from "../assets/project/Minitalk.png"
-import NetPractice		from "../assets/project/NetPractice.png"
-import Web_server		from "../assets/project/WebServer_project.png"
+import NetPractice		from "../assets/project/Netproctic.png"
+import Web_server		from "../assets/project/WebServer.png"
 import Push_swap		from "../assets/project/push_swap.png"
 import Cub3D			from "../assets/project/Cub3D.png"
 import Solong			from "../assets/project/soLong.png"
+import Ft_printf		from "../assets/project/Ft_printf.png"
  
 const projects = [
 	{
@@ -47,8 +48,6 @@ const projects = [
 		tags: ['C', 'Game Dev', 'MiniLibX', '2D'],
 		href: "https://github.com/GhRafayel/so_long",
 	},
-	
-	
 	{
 		title: 'Push_swap',
 		desc: 'A sorting algorithm project in C focused on stack manipulation and optimizing the number of operations.',
@@ -73,6 +72,13 @@ const projects = [
 		
 	},
 	{
+	title: 'Ft_printf',
+	desc: 'A C function that replicates the behavior of printf, handling formatted output with various specifiers.',
+	image: Ft_printf,
+	tags: ['C', 'Formatting', 'Output'],
+	href: 'https://github.com/GhRafayel/Ft_printf',
+	},
+	{
 		title: 'NetPractice',
 		desc: 'A networking project focused on IP addressing, subnetting, and understanding TCP/IP communication.',
 		image: NetPractice,
@@ -95,7 +101,7 @@ const Projects = ({darkMode}) => {
 			
 			<div className="container mx-auto px-4">
 				<div className="text-center mb-10" data-aos='fade-up'>
-					<h2 className={`sm:text-4xl font-bold mb-3 ${darkMode ? 'white' : '#1f2937'}`} > My Project </h2>
+					<h2 className={`sm:text-4xl font-bold mb-3 ${darkMode ? 'white' : '#1f2937'}`} > My Projects </h2>
 					<p className={`max-w-xl mx-auto ${darkMode ? '#d1d5db' : '#6b7280'}`}>
 						A showcase of my recent projects.
 					</p>
@@ -148,7 +154,7 @@ const Projects = ({darkMode}) => {
 						<a href="#" className={`inline-flex items-center font-semibold gap-2 px-7 py-4  
 												text-white text-sm rounded-lg hover:shadow-lg
 												hover:shadow-green-500/25
-												transition-all bg-green-700 ${colors}` }
+												transition-all bg-green-700 ${colors}`}
 									data-aos='zoom-in'
 									data-aos-delay='400'
 						>

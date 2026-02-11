@@ -16,16 +16,17 @@ const skills = [
 	{name: 'Html 5' , icon: html},
 	{name: 'Css 3' , icon: css},
 	{name: 'Bootstrap ' , icon: Bootstrap },
-	{name: 'TalWind' , icon: tailwind},
+	{name: 'TailWind' , icon: tailwind},
 	{name: 'JavaScrpt' , icon: js},
 	{name: 'React JS' , icon: reactJS},
 	{name: 'Node JS' , icon: nodeJS},
-	{name: 'Expres JS' , icon: expres},
+	{name: 'Express JS' , icon: expres},
 	{name: 'C' , icon: c},
 	{name: 'C++' , icon: cpp},
-	{name: 'Regular Expretion' , icon: regular},
+	{name: 'Regular expression' , icon: regular},
 	{name: 'Docker' , icon: docker,},
 	{name: 'Linux' , icon: linux}
+
 ];
 
 const Skills = ({darkMode}) => 
