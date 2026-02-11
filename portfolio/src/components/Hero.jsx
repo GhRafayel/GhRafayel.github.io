@@ -73,7 +73,7 @@ const Hero = ({darkMode}) => {
                                                     Download CV 
                                             </button>
                                         </a>
-                                        <a href="#contact" className="w-full sm:w-auto">
+                                        <a href="mailto:ghazarysnrafayle@gmail.com" className="w-full sm:w-auto">
                                             <button className={`${theme.buttonSecondary}`} >
                                                 <Mail className="w-4 h-4 sm:h-5 sm:w-5 mr-2"/>
                                                     Contact Me
