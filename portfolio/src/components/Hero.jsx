@@ -1,38 +1,26 @@
 import { DownloadCloud , Mail} from "lucide-react";
-
 import Mypoto		from "../assets/home/My_.png"
 import CV			from "../assets/home/Rafayel-Ghazaryan-CV.pdf"
-import Armenian		from '../assets/home/Armenia.png';
-import English		from "../assets/home/United-kingdom.png";
-import German		from "../assets/home/Germany.png";
-import Russia		from "../assets/home/Russia.png";
+import data         from "../components/data";
 
+const languages = data.languages;
 const Btn =  "w-full sm:w-auto inline-flex items-center justify-center rounded-full border-2 border-green-700 py-3 px-6 sm:px-8 text-base sm:text-lg font-semibold hover:bg-green-700 transition-all duration-300 transfrom";
-
-const  darkTheme  = {
+const  darkstyle  = {
     textPrimary: 'text-white',
     textSecondary: 'text-gray-300',
     buttonSecondary: 'text-white hover:text-gray-900' + Btn,
     decorativeCircle: 'bg-green-500 opacity-10'
 };
-const lightTheme  = {
+const lightstyle  = {
     textPrimary: 'text-gray-900',
     textSecondary: 'text-gray-700',
     buttonSecondary: 'text-gray-900 hover:text-white' + Btn,
     decorativeCircle: 'bg-green-400 opacity-20'
 };
 
-const languages  = [
-    {icon: Armenian, alt: 'Armenian'},
-    {icon: English, alt: 'English'},
-    {icon: German, alt: 'German'},
-    {icon: Russia, alt: 'Russia'}
-];
-
 const Hero = ({darkMode}) => {
     
-    const theme = darkMode ?  darkTheme : lightTheme ;
-
+    const style = darkMode ?  darkstyle : lightstyle ;
     return (
         <div className="relative overflow-hidden min-h-screen flex flex-col">
                 <section id="home" data-aos='fade-up' data-aos-delat='250' className="bofy-font z-10">
@@ -46,13 +34,13 @@ const Hero = ({darkMode}) => {
                                         </span> )) 
                                 }
                             </div>
-                            <h1 className={`title-font text-3xl sm:text-4xl lg:text-5xl mb-4 font-bold ${theme.textPrimary}`}
+                            <h1 className={`title-font text-3xl sm:text-4xl lg:text-5xl mb-4 font-bold ${style.textPrimary}`}
                                 data-aos='fade-up'
                                 data-aos-delay='500'
                             >
                                 Hi, I'm Rafayel Ghazaryan 
                             </h1>
-                            <p className={`mb-6 sm:mb-8 leading-relaxed max-w-md sm:max-w-lg ${theme.textSecondary}`}
+                            <p className={`mb-6 sm:mb-8 leading-relaxed max-w-md sm:max-w-lg ${style.textSecondary}`}
                                 data-aos="fade-up"
                                 data-aos-dele='600'
                             >
@@ -68,13 +56,13 @@ const Hero = ({darkMode}) => {
                                          data-aos-delay='700'
                                     >
                                         <a href={CV} download className="w-full sm:w-auto">
-                                            <button  className={`${theme.buttonSecondary}`} >
+                                            <button  className={`${style.buttonSecondary}`} >
                                                 <DownloadCloud className="w-4 h-4 sm:h-5 sm:w-5 mr-2"/>
                                                     Download CV 
                                             </button>
                                         </a>
                                         <a href="mailto:ghazarysnrafayle@gmail.com" className="w-full sm:w-auto">
-                                            <button className={`${theme.buttonSecondary}`} >
+                                            <button className={`${style.buttonSecondary}`} >
                                                 <Mail className="w-4 h-4 sm:h-5 sm:w-5 mr-2"/>
                                                     Contact Me
                                             </button>

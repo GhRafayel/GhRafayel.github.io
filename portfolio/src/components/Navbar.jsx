@@ -2,14 +2,20 @@ import { useState } from "react";
 import { motion} from "framer-motion"
 import { Sun, Moon , Menu, X} from 'lucide-react';
 
-import data from "./data";
+const navItems = 
+[
+	{ name: 'Home', link: '#home' },
+	{ name: 'Skills', link: '#skills' },
+	{ name: 'Projects', link: '#projects' },
+	{ name: 'Contact', link: '#contact' }
+];
 
 const Navbar = ({darkMode, toggleDarkMode}) => {
 
+	const Menu_X = `w-8 h-8 ${darkMode ? "text-gray-300" :  "text-gray-700"}`;
 	const [isMonuOpen, setIsMonuOpen] = useState(false);
 	const [activeSection, setActiveSection] = useState('Home');
-	const colors = darkMode ?  data.darkColors : data.lightColors;
-	
+
 	const handleNavClick = (itemName) => {
 		setActiveSection(itemName.toLocaleLowerCase());
 		setIsMonuOpen(false);
@@ -21,25 +27,22 @@ const Navbar = ({darkMode, toggleDarkMode}) => {
 					className= {`flex items-center justify-center backdrop-blur-lg rounded-2xl px-4 lg:px-8 py-2 shadow-lg`}>
 						<div className="flex items-center justify-between w-full space-x-6 lg:space-x-8 mr-3">
 							<motion.a  href="/"  whileHover={{ scale: 1.05 }} className="flex items-center space-x-2">
-								<span className={`text-xl font-bold  ${darkMode ? "text-gray-100" : "text-gray-900"}`}>
-									Portfolio 
-								</span>
+								<span className={`text-xl font-bold ${darkMode ? "text-gray-100" : "text-gray-900"}`}> Portfolio  </span>
 							</motion.a>
 						</div>
 
 						<div className="hidden lg:flex items-center space-x-6 ">
 							{
-								data.navItems.map((item) => (
+								navItems.map((item) => (
 									<a key={item.name} href={item.link} onClick={() => handleNavClick(item.name)} className="relative" >
 										<motion.span	className={`font-medium transition-colors duration-300 ${darkMode ? "text-gray-100" : "text-gray-900"} hover:text-green-700` }
-														whileHover={{scale : 1.05}}	whileTap={{scale : 0.95}}
-										>
+														whileHover={{scale : 1.05}}	whileTap={{scale : 0.95}}>
 												{item.name}
 										</motion.span>
 										{
 											activeSection === item.name.toLocaleLowerCase() && (
 												<motion.div loaoutId="navbar-indicator" 
-															className={`absolute -bottom-1 left-0 right-0 h-0.5 bg-linear-to-r rounded-full bg-green-700` }>
+															className={`absolute -bottom-1 left-0 right-0 h-0.5 bg-linear-to-r rounded-full bg-green-700`}>
 
 												</motion.div>
 											)
@@ -54,50 +57,54 @@ const Navbar = ({darkMode, toggleDarkMode}) => {
 								whileHover={{scale: 1.1 }}
 								whileTap={{ scale: 0.9 }}
 								onClick={toggleDarkMode}
-								className={`p-2 rounded-lg ${colors} transition-colors`}
+								className={`p-2 rounded-lg  transition-colors`}
 								aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
 							>
 								{
-									darkMode ? (<Sun className={`w-8 h-8  text-yellow-300 cursor-pointer`}/>) : (<Moon className="w-8 h-8 ml-5 text-gray-500 cursor-pointer" />)
+									darkMode ?	(<Sun className={`w-8 h-8  text-yellow-300 cursor-pointer`}/>)
+											 :	(<Moon className="w-7 h-7 ml-5 text-gray-700 cursor-pointer" />)
 								}
 							</motion.button>
 						</div>
 
 						<div className="flex lg:hidden items-center space-x-4 px-2">
-							<motion.button  whileTap={{scale: 0.9}} 
-											className={`p-2 rounded-lg ${!darkMode ? 'bg-gray-500' : 'bg-gray-300'}`}
-											onClick={() => setIsMonuOpen(!isMonuOpen)}>
+							<motion.button  whileTap={{scale: 0.9}}  className={`p-2 rounded-lg`} onClick={() => setIsMonuOpen(!isMonuOpen)}>
 								{
-									isMonuOpen  ? (<X className={`w-5 h-5 ${colors}`}/>) : (<Menu className={`w-5 h-5 ${colors}`}/>)
+									isMonuOpen ? (<X className={Menu_X}/>) : (<Menu className={Menu_X}/>)
 								}
 							</motion.button>
 						</div>
 						{
 							isMonuOpen && (
-								<motion.div 
-									initial={{opacity: 0, height: 0}}
-									animate={{opacity: 1, height: 'auto'}}
-									exit={{opacity: 0, height: 0.3}}
-									className={`absolute top-full left-0 right-0 mt-2 lg:hidden 
-												${!darkMode ? 'bg-white/95 text-gray-900 border-gray-600' : 'bg-gray-900/95 text-gray-100 border-green-700'}
-												backdrop-blur-lg rounded-x1 shadow-lg border`}>
+								// <motion.div 
+								// 	initial={{opacity: 0, height: 0}}
+								// 	animate={{opacity: 1, height: 'auto'}}
+								// 	exit={{opacity: 0, height: 0.3}}
+								// 	className={`absolute top-full left-0 right-0 mt-2 lg:hidden 
+								// 				${!darkMode ? 'bg-white/95 text-gray-900 border-gray-600' : 'bg-gray-900/95 text-gray-100 border-green-700'}
+								// 				backdrop-blur-lg rounded-x1 shadow-lg border`}>
+							<motion.div
+										initial={{ opacity: 0 }}
+										animate={{ opacity: 1 }}
+										exit={{ opacity: 0 }}
+										className={`fixed inset-x-0 top-18 lg:hidden  max-h-[80vh] overflow-y-auto
+											${!darkMode 
+												? 'bg-white/95 text-gray-900 border-gray-600' 
+												: 'bg-gray-900/95 text-gray-100 border-green-700'}
+											backdrop-blur-lg rounded-xl shadow-lg border`}
+									>
 										<div className="px-4 py-3 space-y-2">
 										{
-											data.navItems.map((item) => (
+											navItems.map((item) => (
 												<a	key={item.name} href={item.link} onClick={() => setActiveSection(item.name.toLocaleLowerCase())} className={`block`}>
 													<motion.div whileHover={{x: 5}}
-														className={`py-3 px-4 rounded-lg text-center ${activeSection === item.name.toLocaleLowerCase() ? "bg-green-700 text-white" : ' '}`}>
-														<span className={`font-medium ${colors}`}>
-															{item.name}
-														</span>
+																className={`py-3 px-4 rounded-lg text-center ${activeSection === item.name.toLocaleLowerCase() ? "bg-green-700 text-white" : ' '}`}>
+														<span className={`font-medium `}> {item.name} </span>
 													</motion.div>
 												</a>
 											))}
-											<motion.a 
-											href="#contact"
-											onClick={() => setIsMonuOpen(false)}
-											whileTap={{scale: 0.95}}
-											className={`block py-3 px-4 text-center font-semibold rounded-lg shadow-md border-2 border-green-700 hover:bg-blue-400 hover:text-white`}>
+											<motion.a 	href="#contact" onClick={() => setIsMonuOpen(false)} whileTap={{scale: 0.95}}
+														className={`block py-3 px-4 text-center font-semibold rounded-lg shadow-md border-2 border-green-700 hover:bg-blue-400 hover:text-white`}>
 												Hire Me
 											</motion.a>
 										</div>

@@ -1,98 +1,8 @@
-import {FaExternalLinkAlt, FaGithub} from 'react-icons/fa'
-
-import Philosopher		from "../assets/project/Philosopher.png"
-import Inception		from "../assets/project/Inception.png"
-import Get_next_line	from "../assets/project/Get_next_line.png"
-import Minishell		from "../assets/project/Minishell.png"
-import Minitalk			from "../assets/project/Minitalk.png"
-import NetPractice		from "../assets/project/NetProctice.png"
-import Web_server		from "../assets/project/WebServer.png"
-import Push_swap		from "../assets/project/push_swap.png"
-import Cub3D			from "../assets/project/Cub3D.png"
-import Solong			from "../assets/project/soLong.png"
-import Ft_printf		from "../assets/project/Ft_printf.png"
+import {FaExternalLinkAlt, FaGithub} from 'react-icons/fa';
  
-const projects = [
-	{
-		title: 'Web Server',
-		desc: 'A custom web server implemented in C and C++, handling HTTP requests, responses, and basic networking concepts.',
-		image: Web_server,
-		tags: ['C', 'C++', 'Networking', 'HTTP'],
-		href: "https://github.com/GhRafayel/webserv",
-	},
-	{
-		title: 'Minishell',
-		desc: 'A Unix bash implemented in C, supporting command execution, pipes, redirections, environment variables, and built-in commands.',
-		image: Minishell,
-		tags: ['C', 'Unix', 'Shell', 'Processes'],
-		href: "https://github.com/GhRafayel/minishell",
-	},
-	{
-		title: 'Philosophers',
-		desc: "A project focused on solving shared data problems using threads, mutexes, and synchronization techniques.",
-		image: Philosopher,
-		tags: ['C', 'Threads', 'Mutex', 'Concurrency'],
-		href: "https://github.com/GhRafayel/Philosopher",
-	},
-	{
-		title: 'Cub3D',
-		desc: 'A 3D raycasting game engine developed in C, inspired by Wolfenstein 3D, using MiniLibX for rendering.',
-		image: Cub3D,
-		tags: ['C', 'Raycasting', 'Game Engine', 'MiniLibX'],
-		href: "https://github.com/GhRafayel/Cub_3d",
-	},
-	{
-		title: 'So_long',
-		desc: 'A small 2D game written in C using the MiniLibX library, featuring player movement, collectibles, and map validation.',
-		image: Solong,
-		tags: ['C', 'Game Dev', 'MiniLibX', '2D'],
-		href: "https://github.com/GhRafayel/so_long",
-	},
-	{
-		title: 'Push_swap',
-		desc: 'A sorting algorithm project in C focused on stack manipulation and optimizing the number of operations.',
-		image: Push_swap,
-		tags: ['C', 'Algorithms', 'Data Structures', 'Stacks'],
-		href: 'https://github.com/GhRafayel/push_swap',
-	},
-	
-	{
-		title: 'Minitalk',
-		desc: 'A client-server communication project in C using UNIX signals to transmit data bit by bit between processes.',
-		image: Minitalk,
-		tags: ['C', 'Signals', 'IPC', 'Processes'],
-		href: "https://github.com/GhRafayel/minitalk",
-	},
-	{
-		title: 'Get Next Line',
-		desc: 'A C function that reads a file line by line from a file descriptor, handling memory management efficiently.',
-		image: Get_next_line,
-		tags: ['C', 'Memory Management', 'File Descriptors'],
-		href: "https://github.com/GhRafayel/Get_next_line",
-		
-	},
-	{
-	title: 'Ft_printf',
-	desc: 'A C function that replicates the behavior of printf, handling formatted output with various specifiers.',
-	image: Ft_printf,
-	tags: ['C', 'Formatting', 'Output'],
-	href: 'https://github.com/GhRafayel/Ft_printf',
-	},
-	{
-		title: 'NetPractice',
-		desc: 'A networking project focused on IP addressing, subnetting, and understanding TCP/IP communication.',
-		image: NetPractice,
-		tags: ['Networking', 'TCP/IP', 'Subnetting'],
-		href: "#",
-	},
-	{
-		title: 'Inception',
-		desc: 'A DevOps project using Docker to build and manage multiple services with containers and Docker Compose.',
-		image: Inception,
-		tags: ['Docker', 'Docker Compose', 'DevOps'],
-		href: "https://github.com/GhRafayel/Inception",
-	},
-];
+import data	from "../components/data";
+
+const projects = data.projects.low_level;
 
 const Projects = ({darkMode}) => {
 	const colors = darkMode ? 'text-gray-100' : 'text-gray-900';
@@ -113,7 +23,7 @@ const Projects = ({darkMode}) => {
 						<div key={index} className={`${colors} justify-items-center`} data-aos="fade-up" data-aos-delay={`${300 + index * 100} min-w-70`} >
 							<div className="h-full max-w-90 min-w-60 p-4 overflow-hidden rounded-2xl flex flex-col border border-green-600 hover:border-green-500/50 transition-all duration-300 hover:-translate-y-2">
 								{/* Image */}
-								<div className="w-full  h-48 overflow-hidden rounded-t-xl">
+								<div className="w-full  h-58 overflow-hidden rounded-t-xl">
 									<img src={project.image} alt={project.title} className="w-full h-full object-center" />
 								</div>
 

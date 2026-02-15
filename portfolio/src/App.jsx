@@ -16,10 +16,11 @@ function App() {
       document.documentElement.classList.add('dark');
   },[]);
 
-  useEffect(()=> { AOS.refresh(); },[darkMode])
+ useEffect(()=> { AOS.refresh(); },[darkMode])
 
   const toggleDarkMode = () => {
-    document.documentElement.classList.toggle('dark');
+    //document.documentElement.classList.toggle('dark');
+    
     setDarkMode(!darkMode);
   };
 
