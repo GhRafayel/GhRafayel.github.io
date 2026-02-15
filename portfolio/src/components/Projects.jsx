@@ -28,7 +28,7 @@ const Projects = ({darkMode}) => {
 								</div>
 
 								{/* Content */}
-								<div className="p-4 flex flex-col flex-grow ">
+								<div className="p-4 flex flex-col">
 									<h3 className={`${colors} text-lg font-bold mb-2`}> {project.title} </h3>
 
 									<p className={`${colors} text-sm mb-3 line-clamp-3`}> {project.desc} </p>
@@ -39,10 +39,8 @@ const Projects = ({darkMode}) => {
 												{item}
 											</span>
 										))}
-									</div><picture>
-										<source media="(min-width: )" srcset="" />
-										<img src="" alt="" />
-									</picture>
+									</div>
+									
 
 									{/* Buttons */}
 									<div className="mt-auto flex flex-col min-[450px]:flex-row gap-2 justify-center">
