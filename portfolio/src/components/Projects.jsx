@@ -1,8 +1,8 @@
 import {FaExternalLinkAlt, FaGithub} from 'react-icons/fa';
  
-import data	from "../components/data";
+import Data	from "../components/data";
 
-const projects = data.projects.low_level;
+const projects = Data.projects.low_level;
 
 const Projects = ({darkMode}) => {
 	const colors = darkMode ? 'text-gray-100' : 'text-gray-900';
@@ -39,7 +39,10 @@ const Projects = ({darkMode}) => {
 												{item}
 											</span>
 										))}
-									</div>
+									</div><picture>
+										<source media="(min-width: )" srcset="" />
+										<img src="" alt="" />
+									</picture>
 
 									{/* Buttons */}
 									<div className="mt-auto flex flex-col min-[450px]:flex-row gap-2 justify-center">
