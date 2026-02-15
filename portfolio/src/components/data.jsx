@@ -25,11 +25,19 @@ import Modul08			from "../assets/project/Modul08.jpg"
 import Modul09			from "../assets/project/Modul09.jpg"
 
 const Data = {
-    languages  : [
-    {icon: Armenian, alt: 'Armenian'},
-    {icon: English, alt: 'English'},
-    {icon: German, alt: 'German'},
-    {icon: Russia, alt: 'Russia'}
+    navItems :
+    [
+        { name: 'Home', link: '#home' },
+        { name: 'Skills', link: '#skills' },
+        { name: 'Projects', link: '#projects' },
+        { name: 'Contact', link: '#contact' }
+    ],
+    languages  : 
+    [
+        {icon: Armenian, alt: 'Armenian'},
+        {icon: English, alt: 'English'},
+        {icon: German, alt: 'German'},
+        {icon: Russia, alt: 'Russia'}
     ],
     projects : {
         low_level :[
@@ -102,7 +110,7 @@ const Data = {
                         desc: 'A networking project focused on IP addressing, subnetting, and understanding TCP/IP communication.',
                         image: NetPractice,
                         tags: ['Networking', 'TCP/IP', 'Subnetting'],
-                        href: "#",
+                        href: "",
                     },
                     {
                         title: 'Inception',
@@ -117,70 +125,70 @@ const Data = {
                         desc: 'Introduction to C++ basics: namespaces, classes, member functions, stdio streams, initialization lists, static members, and fundamental object-oriented programming concepts.',
                         image: Modul00,
                         tags: ['C++', 'OOP Basics', 'Classes'],
-                        href: 'https://github.com/yourusername/cpp-module-00',
+                        href: '',
                     },
                     {
                         title: 'CPP Module 01',
                         desc: 'Memory allocation, pointers to members, references, switch statements, and dynamic allocation in C++. Focus on understanding stack vs heap and proper resource management.',
                         image: Modul01,
                         tags: ['C++', 'Memory Management', 'Pointers'],
-                        href: 'https://github.com/yourusername/cpp-module-01',
+                        href: '',
                     },
                     {
                         title: 'CPP Module 02',
                         desc: 'Ad-hoc polymorphism and operator overloading. Implementation of canonical class form (Orthodox Canonical Form) including constructors, copy constructor, assignment operator, and destructor.',
                         image: Modul02,
                         tags: ['C++', 'Operator Overloading', 'Canonical Form'],
-                        href: 'https://github.com/yourusername/cpp-module-02',
+                        href: '',
                     },
                     {
                         title: 'CPP Module 03',
                         desc: 'Inheritance in C++. Explores base and derived classes, constructor/destructor chaining, and introduction to polymorphism.',
                         image: Modul03,
                         tags: ['C++', 'Inheritance', 'Polymorphism'],
-                        href: 'https://github.com/yourusername/cpp-module-03',
+                        href: '',
                     },
                     {
                         title: 'CPP Module 04',
                         desc: 'Subtype polymorphism, abstract classes, interfaces, and deep copies. Focus on virtual functions and dynamic binding.',
                         image: Modul04,
                         tags: ['C++', 'Abstract Classes', 'Virtual Functions'],
-                        href: 'https://github.com/yourusername/cpp-module-04',
+                        href: '',
                     },
                     {
                         title: 'CPP Module 05',
                         desc: 'Exception handling in C++. Designing classes with custom exceptions and managing error handling using try/catch mechanisms.',
                         image: Modul05,
                         tags: ['C++', 'Exceptions', 'Error Handling'],
-                        href: 'https://github.com/yourusername/cpp-module-05',
+                        href: '',
                     },
                     {
                         title: 'CPP Module 06',
                         desc: 'C++ casting operators: static_cast, dynamic_cast, reinterpret_cast, and const_cast. Focus on type conversion and runtime type identification (RTTI).',
                         image: Modul06,
                         tags: ['C++', 'Casting', 'RTTI'],
-                        href: 'https://github.com/yourusername/cpp-module-06',
+                        href: '',
                     },
                     {
                         title: 'CPP Module 07',
                         desc: 'C++ templates and generic programming. Implementation of function templates and class templates to achieve compile-time polymorphism.',
                         image: Modul07,
                         tags: ['C++', 'Templates', 'Generic Programming'],
-                        href: 'https://github.com/yourusername/cpp-module-07',
+                        href: '',
                     },
                     {
                         title: 'CPP Module 08',
                         desc: 'Standard Template Library (STL) containers and algorithms. Work with containers such as vector, list, and map, including iterators and algorithm usage.',
                         image: Modul08,
                         tags: ['C++', 'STL', 'Containers'],
-                        href: 'https://github.com/yourusername/cpp-module-08',
+                        href: '',
                     },
                     {
                         title: 'CPP Module 09',
                         desc: 'desc: Study and comparison of STL containers with focus on memory management and performance. Implementation of the Ford–Johnson (Merge-Insertion) sorting algorithm using the Jacobsthal sequence, analyzing container efficiency for insertion and access operations.',
                         image: Modul09,
                         tags: ['C++', 'STL', 'Algorithms'],
-                        href: 'https://github.com/yourusername/cpp-module-09',
+                        href: '',
                     },
 
                 ],

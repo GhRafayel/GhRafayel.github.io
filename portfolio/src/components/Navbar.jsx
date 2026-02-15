@@ -1,14 +1,9 @@
 import { useState } from "react";
 import { motion} from "framer-motion"
 import { Sun, Moon , Menu, X} from 'lucide-react';
+import Data from "../components/data";
 
-const navItems = 
-[
-	{ name: 'Home', link: '#home' },
-	{ name: 'Skills', link: '#skills' },
-	{ name: 'Projects', link: '#projects' },
-	{ name: 'Contact', link: '#contact' }
-];
+const navItems = Data.navItems;
 
 const Navbar = ({darkMode, toggleDarkMode}) => {
 
@@ -21,6 +16,7 @@ const Navbar = ({darkMode, toggleDarkMode}) => {
 		setActiveSection(itemName.toLocaleLowerCase());
 		setIsMonuOpen(false);
 	}
+
 	return (
 				<div className="flex justify-center w-full fixed z-50 mt-4" >
 					<motion.nav	initial={{ y: -100 }}  animate={{ y: 0 }} transition={{ duration: 0.5 }}
