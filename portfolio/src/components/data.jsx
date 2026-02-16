@@ -125,76 +125,74 @@ const Data = {
                         desc: 'Introduction to C++ basics: namespaces, classes, member functions, stdio streams, initialization lists, static members, and fundamental object-oriented programming concepts.',
                         image: Modul00,
                         tags: ['C++', 'OOP Basics', 'Classes'],
-                        href: '',
+                        href: 'https://github.com/GhRafayel/CPP-Modules',
                     },
                     {
                         title: 'CPP Module 01',
                         desc: 'Memory allocation, pointers to members, references, switch statements, and dynamic allocation in C++. Focus on understanding stack vs heap and proper resource management.',
                         image: Modul01,
                         tags: ['C++', 'Memory Management', 'Pointers'],
-                        href: '',
+                        href: 'https://github.com/GhRafayel/CPP-Modules',
                     },
                     {
                         title: 'CPP Module 02',
                         desc: 'Ad-hoc polymorphism and operator overloading. Implementation of canonical class form (Orthodox Canonical Form) including constructors, copy constructor, assignment operator, and destructor.',
                         image: Modul02,
                         tags: ['C++', 'Operator Overloading', 'Canonical Form'],
-                        href: '',
+                        href: 'https://github.com/GhRafayel/CPP-Modules',
                     },
                     {
                         title: 'CPP Module 03',
                         desc: 'Inheritance in C++. Explores base and derived classes, constructor/destructor chaining, and introduction to polymorphism.',
                         image: Modul03,
                         tags: ['C++', 'Inheritance', 'Polymorphism'],
-                        href: '',
+                        href: 'https://github.com/GhRafayel/CPP-Modules',
                     },
                     {
                         title: 'CPP Module 04',
                         desc: 'Subtype polymorphism, abstract classes, interfaces, and deep copies. Focus on virtual functions and dynamic binding.',
                         image: Modul04,
                         tags: ['C++', 'Abstract Classes', 'Virtual Functions'],
-                        href: '',
+                        href: 'https://github.com/GhRafayel/CPP-Modules',
                     },
                     {
                         title: 'CPP Module 05',
                         desc: 'Exception handling in C++. Designing classes with custom exceptions and managing error handling using try/catch mechanisms.',
                         image: Modul05,
                         tags: ['C++', 'Exceptions', 'Error Handling'],
-                        href: '',
+                        href: 'https://github.com/GhRafayel/CPP-Modules',
                     },
                     {
                         title: 'CPP Module 06',
                         desc: 'C++ casting operators: static_cast, dynamic_cast, reinterpret_cast, and const_cast. Focus on type conversion and runtime type identification (RTTI).',
                         image: Modul06,
                         tags: ['C++', 'Casting', 'RTTI'],
-                        href: '',
+                        href: 'https://github.com/GhRafayel/CPP-Modules',
                     },
                     {
                         title: 'CPP Module 07',
                         desc: 'C++ templates and generic programming. Implementation of function templates and class templates to achieve compile-time polymorphism.',
                         image: Modul07,
                         tags: ['C++', 'Templates', 'Generic Programming'],
-                        href: '',
+                        href: 'https://github.com/GhRafayel/CPP-Modules',
                     },
                     {
                         title: 'CPP Module 08',
                         desc: 'Standard Template Library (STL) containers and algorithms. Work with containers such as vector, list, and map, including iterators and algorithm usage.',
                         image: Modul08,
                         tags: ['C++', 'STL', 'Containers'],
-                        href: '',
+                        href: 'https://github.com/GhRafayel/CPP-Modules',
                     },
                     {
                         title: 'CPP Module 09',
                         desc: 'desc: Study and comparison of STL containers with focus on memory management and performance. Implementation of the Ford–Johnson (Merge-Insertion) sorting algorithm using the Jacobsthal sequence, analyzing container efficiency for insertion and access operations.',
                         image: Modul09,
                         tags: ['C++', 'STL', 'Algorithms'],
-                        href: '',
+                        href: 'https://github.com/GhRafayel/CPP-Modules',
                     },
-
                 ],
         web: []
     }
-
 };
 
 export default Data;
