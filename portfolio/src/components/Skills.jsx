@@ -37,7 +37,7 @@ const Skills = ({darkMode}) =>
 {
 	const color = darkMode ? 'text-gray-100' : 'text-gray-900';
 	return (
-		<section id="skills" className={`${color} py-4 relative overflow-hidden `}>
+		<section id="skills" className={`${color}  relative overflow-hidden `}>
 			<div className="py-14  relative overflow-hidden justify-center">
 				<div className=" container px-5 py-4 mx-auto">
 					<div className="text-center mb-20" data-aos='fade-up'>

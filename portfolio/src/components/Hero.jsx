@@ -2,6 +2,7 @@ import { DownloadCloud , Mail} from "lucide-react";
 import Mypoto		from "../assets/home/My_.png"
 import CV			from "../assets/home/Rafayel-Ghazaryan-CV.pdf"
 import data         from "../components/data";
+import Skills   from "./Skills";
 
 const languages = data.languages;
 const Btn =  "w-full sm:w-auto inline-flex items-center justify-center rounded-full border-2 border-green-700 py-3 px-6 sm:px-8 text-base sm:text-lg font-semibold hover:bg-green-700 transition-all duration-300 transfrom";
@@ -27,6 +28,7 @@ const Hero = ({darkMode}) => {
                     <div className="container mx-auto flex px-4 sm:px-8 lg:px-14 py-12 lg:py-32 flex-col lg:flex-row items-center justify-between lg:mt-0 mt-14">
                         <div className="lg:w-1/2 w-full flex flex-col items-center lg:items-start text-center lg:text-left mb-12 lg:mb-0">
                             <div className="flex justify-center lg:justify-start gap-4 sm:gap-6 mb-6 sm:mb-7 w-full">
+                                <h1 className="text-4xl text-black">Languages </h1>
                                 {
                                     languages.map((item, i) => (
                                         <span key={i}  data-aos-delay={`${400 + i * 100}`} className="transform hover:scale-110 transition-transform duration-300">
@@ -76,7 +78,9 @@ const Hero = ({darkMode}) => {
                                 </div>
                         </div>
                     </div>
+                     <Skills darkMode={darkMode}/>
                 </section>
+               
         </div>
     )
 }

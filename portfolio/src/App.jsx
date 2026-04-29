@@ -25,12 +25,14 @@ function App() {
   };
 
   return (
-    <div className={darkMode ? 'bg-linear-to-r from-gray-900 fia-[#0d182e] to-gray-900 min-h-screen' : 'bg-linear-to-br from-gray-100 to-blue-50 min-h-screen'}
+    <div className={darkMode ? 'bg-linear-to-r from-gray-900 fia-[#0d182e] to-gray-900 min-h-screen' : 
+      'bg-linear-to-br from-gray-200 to-blue-100 min-h-screen'}
     >
         <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode}/>
         <Hero darkMode={darkMode} />
-        <Skills darkMode={darkMode}/>
+      
         <Projects darkMode={darkMode}/>
+        {/* <Skills darkMode={darkMode}/> */}
         <Footer darkMode={darkMode}/>
     </div>
   )
