@@ -27,8 +27,16 @@ const Hero = ({darkMode}) => {
                 <section id="home" data-aos='fade-up' data-aos-delat='250' className="bofy-font z-10">
                     <div className="container mx-auto flex px-4 sm:px-8 lg:px-14 py-12 lg:py-32 flex-col lg:flex-row items-center justify-between lg:mt-0 mt-14">
                         <div className="lg:w-1/2 w-full flex flex-col items-center lg:items-start text-center lg:text-left mb-12 lg:mb-0">
+                            
+                            <h1 className={`title-font text-3xl sm:text-4xl lg:text-5xl mb-4 font-bold ${style.textPrimary}`}
+                                data-aos='fade-up'
+                                data-aos-delay='500'
+                            >
+                                Hi, I'm Rafayel Ghazaryan 
+                            </h1>
                             <div className="flex justify-center lg:justify-start gap-4 sm:gap-6 mb-6 sm:mb-7 w-full">
-                                <h1 className="text-4xl text-black">Languages </h1>
+                                
+                                <h1 className="text-4xl text-black font-bold">Languages </h1>
                                 {
                                     languages.map((item, i) => (
                                         <span key={i}  data-aos-delay={`${400 + i * 100}`} className="transform hover:scale-110 transition-transform duration-300">
@@ -36,18 +44,13 @@ const Hero = ({darkMode}) => {
                                         </span> )) 
                                 }
                             </div>
-                            <h1 className={`title-font text-3xl sm:text-4xl lg:text-5xl mb-4 font-bold ${style.textPrimary}`}
-                                data-aos='fade-up'
-                                data-aos-delay='500'
-                            >
-                                Hi, I'm Rafayel Ghazaryan 
-                            </h1>
                             <p className={`mb-6 sm:mb-8 leading-relaxed max-w-md sm:max-w-lg ${style.textSecondary}`}
                                 data-aos="fade-up"
                                 data-aos-dele='600'
                             >
                                 I am a full-stack developer currently studying at 42 Vienna Coding School. I am passionate about applying my skills to real-world projects and continuously expanding my knowledge by taking on new challenges.
                             </p>
+                            
                             <div >
 
                             </div>
