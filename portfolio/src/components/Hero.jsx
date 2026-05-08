@@ -1,7 +1,7 @@
 import { DownloadCloud , Mail} from "lucide-react";
 import Mypoto		from "../assets/home/Rafayel.png"
 import CV			from "../assets/document/Rafayel-Ghazaryan-CV.pdf"
-import Lebenslauf   from "../assets/document/Rafayel-Ghazaryan-CV-Lebenslauf.pdf"
+import Lebenslauf   from "../assets/document/Rafayel-Ghazaryan-Lb.pdf"
 import data         from "../components/data";
 import Skills   from "./Skills";
 
