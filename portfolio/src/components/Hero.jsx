@@ -37,7 +37,7 @@ const Hero = ({darkMode}) => {
                             </h1>
                             <div className="flex justify-center lg:justify-start gap-4 sm:gap-6 mb-6 sm:mb-7 w-full">
                                 
-                                <h1 className="text-4xl text-black font-bold">Languages </h1>
+                                <h1 className={`text-4xl font-bold ${style.textPrimary}`}> Languages </h1>
                                 {
                                     languages.map((item, i) => (
                                         <span key={i}  data-aos-delay={`${400 + i * 100}`} className="transform hover:scale-110 transition-transform duration-300">
