@@ -1,6 +1,7 @@
 import { DownloadCloud , Mail} from "lucide-react";
 import Mypoto		from "../assets/home/Rafayel.png"
-import CV			from "../assets/home/Rafayel-Ghazaryan-CV.pdf"
+import CV			from "../assets/document/Rafayel-Ghazaryan-CV.pdf"
+import Lebenslauf   from "../assets/document/Rafayel-Ghazaryan-CV-Lebenslauf.pdf"
 import data         from "../components/data";
 import Skills   from "./Skills";
 
@@ -63,13 +64,13 @@ const Hero = ({darkMode}) => {
                                         <a href={CV} download className="w-full sm:w-auto">
                                             <button  className={`${style.buttonSecondary}`} >
                                                 <DownloadCloud className="w-4 h-4 sm:h-5 sm:w-5 mr-2"/>
-                                                    Download CV 
+                                                    Download CV
                                             </button>
                                         </a>
-                                        <a href="mailto:ghazarysnrafayle@gmail.com" className="w-full sm:w-auto">
+                                         <a href={Lebenslauf} download className="w-full sm:w-auto">
                                             <button className={`${style.buttonSecondary}`} >
-                                                <Mail className="w-4 h-4 sm:h-5 sm:w-5 mr-2"/>
-                                                    Contact Me
+                                                <DownloadCloud className="w-4 h-4 sm:h-5 sm:w-5 mr-2"/>
+                                                    Herunterladen Lebenslauf
                                             </button>
                                         </a>
                                     </div>
