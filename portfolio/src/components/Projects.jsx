@@ -21,7 +21,7 @@ const Projects = ({darkMode}) => {
 					{projects.map((project, index) => 
 					(
 						<div key={index} className={`${colors} justify-items-center`} data-aos="fade-up" data-aos-delay={`${300 + index * 100} min-w-70`} >
-							<div className="h-full max-w-90 min-w-60 p-4 overflow-hidden rounded-2xl flex flex-col border border-green-600 hover:border-green-500/50 transition-all duration-300 hover:-translate-y-2">
+							<div className="h-full  max-w-90 min-w-60 p-4 overflow-hidden rounded-2xl flex justify-between flex-col border border-green-600 hover:border-green-500/50 transition-all duration-300 hover:-translate-y-2">
 								{/* Image */}
 								<div className="w-full  h-58 overflow-hidden rounded-t-xl">
 									<img src={project.image} alt={project.title} className="w-full h-full object-center" />
