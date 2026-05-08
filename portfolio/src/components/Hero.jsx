@@ -1,5 +1,5 @@
 import { DownloadCloud , Mail} from "lucide-react";
-import Mypoto		from "../assets/home/My_.png"
+import Mypoto		from "../assets/home/Rafayel.png"
 import CV			from "../assets/home/Rafayel-Ghazaryan-CV.pdf"
 import data         from "../components/data";
 import Skills   from "./Skills";
