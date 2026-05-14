@@ -2,7 +2,6 @@
 import {FaGithub, FaLinkedin, FaFacebook, FaPhoneVolume} from 'react-icons/fa';
 import { SiGmail } from "react-icons/si";
 
-
 const Footer = ({darkMode}) => {
     
     const color = darkMode ? "text-white" : "text-gray-900"
@@ -41,6 +40,7 @@ const Footer = ({darkMode}) => {
                     </div>
                 </div>
             </div>
+     
         </footer>
     )
 }

@@ -14,6 +14,7 @@ import expres 		from "../assets/Express-js.png"
 import MongoDB		from "../assets/Mongo-db.png"
 import MySQL 		from "../assets/Mysql.png"
 
+
 const skills = [
 	{name: 'Html 5' , icon: html},
 	{name: 'Css 3' , icon: css},

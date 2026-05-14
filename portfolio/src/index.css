@@ -2,7 +2,7 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-body {
+body {    
     font-family: 'Inter', sans-serif;
     min-width: 350px;
 }
@@ -14,7 +14,3 @@ body {
 html {
     scroll-behavior: smooth;
 }
-
-/* *{
-    outline: 1px solid red;
-} */

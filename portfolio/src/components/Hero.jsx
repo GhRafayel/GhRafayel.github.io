@@ -3,19 +3,20 @@ import Mypoto		from "../assets/home/Rafayel.png"
 import CV			from "../assets/document/Rafayel-Ghazaryan-CV.pdf"
 import Lebenslauf   from "../assets/document/Rafayel-Ghazaryan-Lb.pdf"
 import data         from "../components/data";
-import Skills   from "./Skills";
+import Skills       from "./Skills";
+
 
 const languages = data.languages;
-const Btn =  "w-full sm:w-auto inline-flex items-center justify-center rounded-full border-2 border-green-700 py-3 px-6 sm:px-8 text-base sm:text-lg font-semibold hover:bg-green-700 transition-all duration-300 transfrom";
+const Btn =  "w-full sm:w-auto inline-flex items-center justify-center rounded-full border-2 border-green-700 py-3 px-6 sm:px-8 text-base sm:text-lg font-semibold hover:bg-green-700 transition-all duration-300 transfrom cursor-pointer";
 const  darkstyle  = {
-    textPrimary: 'text-white',
+    textPrimary: 'text-white ',
     textSecondary: 'text-gray-300',
-    buttonSecondary: 'text-white hover:text-gray-900' + Btn,
+    buttonSecondary: 'text-white hover:text-gray-900 ' + Btn,
     decorativeCircle: 'bg-green-500 opacity-10'
 };
 const lightstyle  = {
     textPrimary: 'text-gray-900',
-    textSecondary: 'text-gray-700',
+    textSecondary: 'text-gray-700 ',
     buttonSecondary: 'text-gray-900 hover:text-white' + Btn,
     decorativeCircle: 'bg-green-400 opacity-20'
 };
@@ -35,7 +36,7 @@ const Hero = ({darkMode}) => {
                             >
                                 Hi, I'm Rafayel Ghazaryan 
                             </h1>
-                            <div className="flex justify-center lg:justify-start gap-4 sm:gap-6 mb-6 sm:mb-7 w-full">
+                            <div className="flex justify-center lg:justify-start gap-4 sm:gap-6 mb-6 sm:mb-7 w-full ">
                                 
                                 <h1 className={`text-4xl font-bold ${style.textPrimary}`}> Languages </h1>
                                 {
@@ -61,14 +62,14 @@ const Hero = ({darkMode}) => {
                                          data-aos='fade-up'
                                          data-aos-delay='700'
                                     >
-                                        <a href={CV} download className="w-full sm:w-auto">
-                                            <button  className={`${style.buttonSecondary}`} >
-                                                <DownloadCloud className="w-4 h-4 sm:h-5 sm:w-5 mr-2"/>
+                                        <a href={CV} download className="w-full sm:w-auto ">
+                                            <button  className={style.buttonSecondary} >
+                                                <DownloadCloud className="w-4 h-4 sm:h-5 sm:w-5 mr-2 "/>
                                                     Download CV
                                             </button>
                                         </a>
                                          <a href={Lebenslauf} download className="w-full sm:w-auto">
-                                            <button className={`${style.buttonSecondary}`} >
+                                            <button className={style.buttonSecondary} >
                                                 <DownloadCloud className="w-4 h-4 sm:h-5 sm:w-5 mr-2"/>
                                                     Herunterladen Lebenslauf
                                             </button>
@@ -83,8 +84,7 @@ const Hero = ({darkMode}) => {
                         </div>
                     </div>
                      <Skills darkMode={darkMode}/>
-                </section>
-               
+                </section>           
         </div>
     )
 }
