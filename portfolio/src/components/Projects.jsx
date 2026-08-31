@@ -84,11 +84,16 @@ const Projects = ({ darkMode }) => {
 
 				<div className="flex items-center justify-center mb-4">
 					<div
-						className="relative w-full max-w-5xl h-115 sm:h-122.5 select-none touch-pan-y"
+						className="relative w-full max-w-5xl h-80 sm:h-122.5 select-none touch-pan-y"
 						style={{ perspective: "1600px" }}
 						onPointerDown={onPointerDown}
 						onPointerUp={onPointerUp}
 					>
+						{/* pull the "camera" back on phones so the side cards are visible */}
+						<div
+							className="absolute inset-0 scale-[0.68] sm:scale-100"
+							style={{ transformStyle: "preserve-3d" }}
+						>
 						<div className="absolute inset-0" style={{ transformStyle: "preserve-3d" }}>
 							{projects.map((project, i) => {
 								const offset = offsetOf(i);
@@ -181,6 +186,7 @@ const Projects = ({ darkMode }) => {
 									</div>
 								);
 							})}
+						</div>
 						</div>
 
 						{/* click the coming project on either side to bring it to the centre.
