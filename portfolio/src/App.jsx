@@ -3,9 +3,10 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
-import Skills from './components/Skills'
+import About from './components/About'
 import Projects from "./components/Projects"
 import Footer from "./components/Footer"
+import ParticleField from "./components/three/ParticleField"
 
 function App() {
 
@@ -25,14 +26,15 @@ function App() {
   };
 
   return (
-    <div className={darkMode ? 'bg-linear-to-r from-gray-900 fia-[#0d182e] to-gray-900 min-h-screen' : 
+    <div className={darkMode ? 'bg-linear-to-r from-gray-900 fia-[#0d182e] to-gray-900 min-h-screen' :
       'bg-linear-to-br from-gray-200 to-blue-100 min-h-screen'}
     >
+        <ParticleField darkMode={darkMode} />
         <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode}/>
-        <Hero darkMode={darkMode} />
-      
+       
+        <About darkMode={darkMode} />
+         <Hero darkMode={darkMode} />
         <Projects darkMode={darkMode}/>
-        {/* <Skills darkMode={darkMode}/> */}
         <Footer darkMode={darkMode}/>
     </div>
   )

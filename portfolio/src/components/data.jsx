@@ -23,6 +23,28 @@ import Modul06		    from "../assets/project/Modul06.jpg"
 import Modul07		    from "../assets/project/Modul07.jpg"
 import Modul08			from "../assets/project/Modul08.jpg"
 import Modul09			from "../assets/project/Modul09.jpg"
+import html			from "../assets/Html.png"
+import css			from "../assets/Css.png"
+import js			from "../assets/Js.png"
+import regular		from "../assets/expressions.png"
+import nodeJS		from "../assets/Nodejs.png"
+import reactJS		from "../assets/React-js.png"
+import docker		from "../assets/docker.png"
+import linux		from "../assets/Terminal.png"
+import cpp			from "../assets/C.png"
+import c			from "../assets/C.png"
+import Bootstrap	from "../assets/bootstrap.png"
+import tailwind		from "../assets/icons8-tailwind-css-48.png"
+import expres 		from "../assets/Express-js.png"
+import MongoDB		from "../assets/Mongo-db.png"
+import MySQL 		from "../assets/Mysql.png"
+import {
+	SiPostgresql,
+	SiRedis,
+	SiNextdotjs,
+	SiNestjs,
+	SiSocketdotio,
+} from "react-icons/si";
 
 const Data = {
     navItems :
@@ -192,7 +214,29 @@ const Data = {
                     },
                 ],
         web: []
-    }
+    },
+    skills : [
+        {name: 'Html 5' , icon: html},
+        {name: 'Css 3' , icon: css},
+        {name: 'Bootstrap' , icon: Bootstrap },
+        {name: 'TailWind' , icon: tailwind},
+        {name: 'JavaScript' , icon: js},
+        {name: 'React JS' , icon: reactJS},
+        {name: 'Next JS' , Icon: SiNextdotjs, color: '#000000', darkColor: '#ffffff'},
+        {name: 'Node JS' , icon: nodeJS},
+        {name: 'Nest JS' , Icon: SiNestjs, color: '#E0234E'},
+        {name: 'Express JS' , icon: expres},
+        {name: 'Socket.io' , Icon: SiSocketdotio, color: '#010101', darkColor: '#ffffff'},
+        {name: 'PostgreSQL' , Icon: SiPostgresql, color: '#4169E1'},
+        {name: 'Redis' , Icon: SiRedis, color: '#DC382D'},
+        {name: 'MongoDB', icon: MongoDB},
+        {name: 'MySQL', icon: MySQL },
+        {name: 'C' , icon: c},
+        {name: 'C++' , icon: cpp},
+        {name: 'Regular expression' , icon: regular},
+        {name: 'Docker' , icon: docker},
+        {name: 'Shell' , icon: linux}
+    ]
 };
 
 export default Data;
