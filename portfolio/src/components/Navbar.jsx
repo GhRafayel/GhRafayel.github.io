@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion} from "framer-motion"
 import { Sun, Moon , Menu, X} from 'lucide-react';
 import Data from "../components/data";
@@ -7,15 +7,33 @@ const navItems = Data.navItems;
 
 const Navbar = ({darkMode, toggleDarkMode}) => {
 
-	
+
 	const Menu_X = `w-8 h-8 ${darkMode ? "text-gray-300" :  "text-gray-700"}`;
 	const [isMonuOpen, setIsMonuOpen] = useState(false);
-	const [activeSection, setActiveSection] = useState('Home');
+	const [activeSection, setActiveSection] = useState('home');
 
 	const handleNavClick = (itemName) => {
 		setActiveSection(itemName.toLocaleLowerCase());
 		setIsMonuOpen(false);
 	}
+
+	useEffect(() => {
+		const sections = navItems
+			.map((item) => document.getElementById(item.link.slice(1)))
+			.filter(Boolean);
+
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) setActiveSection(entry.target.id);
+				});
+			},
+			{ rootMargin: "-45% 0px -50% 0px", threshold: 0 }
+		);
+
+		sections.forEach((section) => observer.observe(section));
+		return () => observer.disconnect();
+	}, []);
 
 	return (
 				<div className="flex justify-center w-full fixed z-50 mt-4" >
@@ -37,7 +55,7 @@ const Navbar = ({darkMode, toggleDarkMode}) => {
 										</motion.span>
 										{
 											activeSection === item.name.toLocaleLowerCase() && (
-												<motion.div loaoutId="navbar-indicator" 
+												<motion.div layoutId="navbar-indicator"
 															className={`absolute -bottom-1 left-0 right-0 h-0.5 bg-linear-to-r rounded-full bg-green-700`}>
 
 												</motion.div>
