@@ -26,8 +26,8 @@ function App() {
   };
 
   return (
-    <div className={darkMode ? 'bg-linear-to-r from-gray-900 fia-[#0d182e] to-gray-900 min-h-screen' :
-      'bg-linear-to-br from-gray-200 to-blue-100 min-h-screen'}
+    <div className={`overflow-x-hidden ${darkMode ? 'bg-linear-to-r from-gray-900 fia-[#0d182e] to-gray-900 min-h-screen' :
+      'bg-linear-to-br from-gray-200 to-blue-100 min-h-screen'}`}
     >
         <ParticleField darkMode={darkMode} />
         <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode}/>

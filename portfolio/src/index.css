@@ -2,9 +2,13 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-body {    
+html, body {
+    overflow-x: hidden;
+}
+
+body {
     font-family: 'Inter', sans-serif;
-    min-width: 350px;
+    min-width: 320px;
 }
 
 .dark {
