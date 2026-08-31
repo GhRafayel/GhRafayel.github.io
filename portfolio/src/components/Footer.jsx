@@ -25,7 +25,7 @@ const Footer = ({ darkMode }) => {
 	const scrollTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
 	return (
-		<footer id="contact" className={`relative mt-16 ${heading}`}>
+		<footer id="contact" className={`relative mt-16 scroll-mt-28 ${heading}`}>
 			{/* gradient hairline */}
 			<div className="h-px w-full bg-gradient-to-r from-transparent via-green-600/60 to-transparent" />
 

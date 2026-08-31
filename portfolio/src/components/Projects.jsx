@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
-import { FaExternalLinkAlt, FaGithub, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 
 import Data from "../components/data";
 import ProjectsHeaderScene from "./three/ProjectsHeaderScene";
@@ -19,7 +18,6 @@ function shuffle(list) {
 
 const Projects = ({ darkMode }) => {
 	const colors = darkMode ? "text-gray-100" : "text-gray-900";
-	const arrowBtn = `shrink-0 w-11 h-11 sm:w-13 sm:h-13 rounded-full border-2 border-green-700 flex items-center justify-center cursor-pointer shadow-md ${colors} hover:bg-green-700 hover:text-white transition-colors duration-300`;
 
 	// opaque surfaces so cards behind never bleed through the text
 	const cardSurface = darkMode
@@ -74,7 +72,7 @@ const Projects = ({ darkMode }) => {
 	};
 
 	return (
-		<section id="projects" className={`${colors} relative px-4 sm:px-8 lg:px-16 xl:px-24 text-center`}>
+		<section id="projects" className={`${colors} relative scroll-mt-28 overflow-x-clip px-4 sm:px-8 lg:px-16 xl:px-24 text-center`}>
 			<ProjectsHeaderScene darkMode={darkMode} />
 			<div className="container mx-auto px-4">
 				<div className="text-center mb-10" data-aos="fade-up">
@@ -84,19 +82,9 @@ const Projects = ({ darkMode }) => {
 					</p>
 				</div>
 
-				<div className="flex items-center justify-center gap-2 sm:gap-6 mb-6">
-					<motion.button
-						onClick={goPrev}
-						aria-label="Previous project"
-						className={arrowBtn}
-						whileHover={{ scale: 1.08 }}
-						whileTap={{ scale: 0.92 }}
-					>
-						<FaChevronLeft />
-					</motion.button>
-
+				<div className="flex items-center justify-center mb-4">
 					<div
-						className="relative w-full max-w-5xl h-125 sm:h-135 select-none"
+						className="relative w-full max-w-5xl h-115 sm:h-122.5 select-none touch-pan-y"
 						style={{ perspective: "1600px" }}
 						onPointerDown={onPointerDown}
 						onPointerUp={onPointerUp}
@@ -112,6 +100,9 @@ const Projects = ({ darkMode }) => {
 								const translateZ = isCenter ? 0 : -260 - (abs - 1) * 120;
 								const scale = isCenter ? 1 : 0.9;
 								const opacity = isHidden ? 0 : abs === 2 ? 0.4 : 1;
+								// the side cards ARE the navigation: tap the left one to go
+								// back, the right one to go forward
+								const interactive = abs <= 1;
 
 								return (
 									<div
@@ -120,13 +111,14 @@ const Projects = ({ darkMode }) => {
 										style={{
 											transform: `translate(-50%, -50%) translateX(${offset * 56}%) translateZ(${translateZ}px) rotateY(${rotateY}deg) scale(${scale})`,
 											opacity,
-											zIndex: 100 - abs,
-											pointerEvents: isHidden ? "none" : "auto",
+											zIndex: isCenter ? 20 : 10 - abs,
+											pointerEvents: interactive ? "auto" : "none",
 											transition:
 												"transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.6s ease",
 										}}
 										onClick={() => {
-											if (!isCenter) setActive(i);
+											if (offset < 0) goPrev();
+											else if (offset > 0) goNext();
 										}}
 									>
 										<div
@@ -190,29 +182,39 @@ const Projects = ({ darkMode }) => {
 								);
 							})}
 						</div>
-					</div>
 
-					<motion.button
-						onClick={goNext}
-						aria-label="Next project"
-						className={arrowBtn}
-						whileHover={{ scale: 1.08 }}
-						whileTap={{ scale: 0.92 }}
-					>
-						<FaChevronRight />
-					</motion.button>
+						{/* click the coming project on either side to bring it to the centre.
+						    these sit above the side cards but below the active card (z-20),
+						    so the active card's Code / Demo links stay clickable */}
+						<button
+							type="button"
+							onClick={goPrev}
+							aria-label="Previous project"
+							className="absolute inset-y-0 left-0 z-[15] w-1/2 cursor-pointer"
+						/>
+						<button
+							type="button"
+							onClick={goNext}
+							aria-label="Next project"
+							className="absolute inset-y-0 right-0 z-[15] w-1/2 cursor-pointer"
+						/>
+					</div>
 				</div>
 
-				<div className="flex flex-wrap justify-center items-center gap-2 max-w-md mx-auto">
+				<div className="relative z-30 flex flex-wrap justify-center items-center max-w-md mx-auto">
 					{projects.map((_, i) => (
 						<button
 							key={i}
 							onClick={() => setActive(i)}
 							aria-label={`Go to project ${i + 1}`}
-							className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
-								i === active ? "w-6 bg-green-700" : `w-2 ${darkMode ? "bg-gray-500" : "bg-gray-400"}`
-							}`}
-						/>
+							className="flex items-center justify-center p-2 cursor-pointer"
+						>
+							<span
+								className={`block h-2 rounded-full transition-all duration-300 ${
+									i === active ? "w-6 bg-green-700" : `w-2 ${darkMode ? "bg-gray-500" : "bg-gray-400"}`
+								}`}
+							/>
+						</button>
 					))}
 				</div>
 			</div>

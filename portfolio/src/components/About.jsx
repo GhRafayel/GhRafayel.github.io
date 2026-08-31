@@ -37,7 +37,7 @@ const About = ({ darkMode }) => {
 	const style = darkMode ? darkstyle : lightstyle;
 
 	return (
-		<section id="about" className="bofy-font relative z-10 px-4 sm:px-8 lg:px-14 py-12 lg:py-24">
+		<section id="about" className="bofy-font relative z-10 scroll-mt-28 px-4 sm:px-8 lg:px-14 pt-28 pb-12 lg:pt-32 lg:pb-24">
 			<div className="container mx-auto">
 				{/* Heading */}
 				<div className="max-w-3xl" data-aos="fade-up" data-aos-delay="200">

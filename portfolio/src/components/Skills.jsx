@@ -6,7 +6,7 @@ const skills = Data.skills;
 const Skills = ({darkMode}) =>
 {
 	return (
-		<div id="skills" className="w-full">
+		<div id="skills" className="w-full scroll-mt-28">
 			<TechConstellation darkMode={darkMode} skills={skills} />
 		</div>
 	)
