@@ -27,10 +27,10 @@ const Footer = ({ darkMode }) => {
 	return (
 		<footer id="contact" className={`relative mt-16 scroll-mt-28 ${heading}`}>
 			{/* gradient hairline */}
-			<div className="h-px w-full bg-gradient-to-r from-transparent via-green-600/60 to-transparent" />
+			<div className="h-px w-full bg-linear-to-r from-transparent via-green-600/60 to-transparent" />
 
 			<div className="container mx-auto px-4 sm:px-8 lg:px-14 py-12">
-				<div className="grid gap-10 md:grid-cols-3 md:gap-8">
+				<div className="grid gap-10 md:grid-cols-2 md:gap-8 md:items-start">
 					{/* Brand */}
 					<div className="text-center md:text-left">
 						<h3 className="text-lg font-bold tracking-tight">
@@ -42,7 +42,7 @@ const Footer = ({ darkMode }) => {
 					</div>
 
 					{/* Quick links */}
-					<nav className="text-center">
+					{/* <nav className="text-center">
 						<h4 className={`text-xs font-semibold uppercase tracking-widest mb-4 ${muted}`}>
 							Navigate
 						</h4>
@@ -55,7 +55,7 @@ const Footer = ({ darkMode }) => {
 								</li>
 							))}
 						</ul>
-					</nav>
+					</nav> */}
 
 					{/* Connect */}
 					<div className="text-center md:text-right">

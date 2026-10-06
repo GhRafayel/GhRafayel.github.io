@@ -115,7 +115,7 @@ const About = ({ darkMode }) => {
 				</div>
 
 				{/* Buttons — full width */}
-				<div
+				{/* <div
 					className="mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4"
 					data-aos="fade-up"
 					data-aos-delay="400"
@@ -132,7 +132,7 @@ const About = ({ darkMode }) => {
 							Herunterladen Lebenslauf
 						</button>
 					</a>
-				</div>
+				</div> */}
 			</div>
 		</section>
 	);
