@@ -33,7 +33,11 @@ const Projects = ({ darkMode }) => {
 		? "border border-white/20 text-gray-100 hover:bg-white/10"
 		: "border border-gray-300 text-gray-800 hover:bg-gray-100";
 
-	const [projects] = useState(() => shuffle(allProjects));
+	// featured projects (e.g. live demos) always open in the centre
+	const [projects] = useState(() => [
+		...allProjects.filter((p) => p.featured),
+		...shuffle(allProjects.filter((p) => !p.featured)),
+	]);
 	const count = projects.length;
 	const [active, setActive] = useState(0);
 
@@ -89,9 +93,8 @@ const Projects = ({ darkMode }) => {
 						onPointerDown={onPointerDown}
 						onPointerUp={onPointerUp}
 					>
-						{/* pull the "camera" back on phones so the side cards are visible */}
-						<div
-							className="absolute inset-0 scale-[0.68] sm:scale-100"
+						
+						<div className="absolute inset-0 z-20 pointer-events-none scale-[0.68] sm:scale-100"
 							style={{ transformStyle: "preserve-3d" }}
 						>
 						<div className="absolute inset-0" style={{ transformStyle: "preserve-3d" }}>
@@ -157,6 +160,7 @@ const Projects = ({ darkMode }) => {
 
 												{/* Buttons */}
 												<div className="mt-auto flex gap-2">
+													{project.href && (
 													<a
 														href={project.href}
 														target="_blank"
@@ -168,9 +172,10 @@ const Projects = ({ darkMode }) => {
 														<FaGithub />
 														Code
 													</a>
+													)}
 
 													<a
-														href={project.href}
+														href={project.demo || project.href}
 														target="_blank"
 														rel="noreferrer"
 														onClick={(e) => e.stopPropagation()}
@@ -178,7 +183,7 @@ const Projects = ({ darkMode }) => {
 														className="flex-1 inline-flex items-center justify-center gap-1.5 py-2 rounded-xl text-sm font-medium bg-green-600 text-white hover:bg-green-700 transition-colors duration-300 cursor-pointer"
 													>
 														<FaExternalLinkAlt />
-														Demo
+														{project.demo ? "Play" : "Demo"}
 													</a>
 												</div>
 											</div>
@@ -190,19 +195,19 @@ const Projects = ({ darkMode }) => {
 						</div>
 
 						{/* click the coming project on either side to bring it to the centre.
-						    these sit above the side cards but below the active card (z-20),
-						    so the active card's Code / Demo links stay clickable */}
+						    these sit below the cards layer (z-20), so they only catch clicks on
+						    empty space and the active card's Code / Play links stay clickable */}
 						<button
 							type="button"
 							onClick={goPrev}
 							aria-label="Previous project"
-							className="absolute inset-y-0 left-0 z-[15] w-1/2 cursor-pointer"
+							className="absolute inset-y-0 left-0 z-15 w-1/2 cursor-pointer"
 						/>
 						<button
 							type="button"
 							onClick={goNext}
 							aria-label="Next project"
-							className="absolute inset-y-0 right-0 z-[15] w-1/2 cursor-pointer"
+							className="absolute inset-y-0 right-0 z-15 w-1/2 cursor-pointer"
 						/>
 					</div>
 				</div>

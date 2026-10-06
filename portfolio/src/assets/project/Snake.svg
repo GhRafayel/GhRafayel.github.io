@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" width="600" height="400">
+  <defs>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M20 0H0V20" fill="none" stroke="#1f3b2a" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="glow" cx="50%" cy="45%" r="70%">
+      <stop offset="0" stop-color="#14532d"/>
+      <stop offset="1" stop-color="#05140b"/>
+    </radialGradient>
+  </defs>
+  <rect width="300" height="200" fill="url(#glow)"/>
+  <rect width="300" height="200" fill="url(#grid)"/>
+
+  <!-- player 1 snake -->
+  <g fill="#22c55e">
+    <rect x="41" y="141" width="18" height="18" rx="4"/>
+    <rect x="61" y="141" width="18" height="18" rx="4"/>
+    <rect x="81" y="141" width="18" height="18" rx="4"/>
+    <rect x="81" y="121" width="18" height="18" rx="4"/>
+    <rect x="81" y="101" width="18" height="18" rx="4"/>
+    <rect x="101" y="101" width="18" height="18" rx="4"/>
+    <rect x="121" y="101" width="18" height="18" rx="4"/>
+  </g>
+  <rect x="141" y="101" width="18" height="18" rx="5" fill="#86efac"/>
+  <circle cx="153" cy="106" r="2" fill="#05140b"/>
+  <circle cx="153" cy="114" r="2" fill="#05140b"/>
+
+  <!-- player 2 snake -->
+  <g fill="#38bdf8">
+    <rect x="241" y="21" width="18" height="18" rx="4"/>
+    <rect x="221" y="21" width="18" height="18" rx="4"/>
+    <rect x="201" y="21" width="18" height="18" rx="4"/>
+    <rect x="201" y="41" width="18" height="18" rx="4"/>
+  </g>
+  <rect x="201" y="61" width="18" height="18" rx="5" fill="#bae6fd"/>
+  <circle cx="206" cy="73" r="2" fill="#05140b"/>
+  <circle cx="214" cy="73" r="2" fill="#05140b"/>
+
+  <!-- food -->
+  <circle cx="190" cy="110" r="8" fill="#ef4444"/>
+  <path d="M190 102c1-4 4-5 6-5" stroke="#22c55e" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+  <text x="20" y="38" font-family="ui-monospace, Menlo, monospace" font-size="22" font-weight="700" fill="#ecfdf5">SNAKE</text>
+  <text x="20" y="56" font-family="ui-monospace, Menlo, monospace" font-size="10" fill="#86efac" letter-spacing="2">MULTIPLAYER · LIVE</text>
+</svg>

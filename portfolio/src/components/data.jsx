@@ -23,6 +23,7 @@ import Modul06		    from "../assets/project/Modul06.jpg"
 import Modul07		    from "../assets/project/Modul07.jpg"
 import Modul08			from "../assets/project/Modul08.jpg"
 import Modul09			from "../assets/project/Modul09.jpg"
+import Snake			from "../assets/project/Snake.svg"
 import html			from "../assets/Html.png"
 import css			from "../assets/Css.png"
 import js			from "../assets/Js.png"
@@ -63,6 +64,15 @@ const Data = {
     ],
     projects : {
         low_level :[
+                    {
+                        title: 'Snake Online',
+                        desc: 'ft_transcendence: a real-time multiplayer Snake game with rooms, an AI opponent, friends, match history and an admin panel. Next.js frontend and NestJS backend synced over WebSockets.',
+                        image: Snake,
+                        tags: ['Next.js', 'NestJS', 'TypeScript', 'WebSockets', 'PostgreSQL'],
+                        href: "https://github.com/GhRafayel/Snake",
+                        demo: "https://snake-frontend-0o1a.onrender.com/",
+                        featured: true,
+                    },
                     {
                         title: 'Web Server',
                         desc: 'A custom web server implemented in C and C++, handling HTTP requests, responses, and basic networking concepts.',
