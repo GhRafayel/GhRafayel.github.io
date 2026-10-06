@@ -61,7 +61,7 @@ const TechConstellation = ({ darkMode, skills }) => {
 	const color = darkMode ? "#22c55e" : "#15803d";
 
 	return (
-		<div className="w-full h-[360px] sm:h-[440px] lg:h-[500px] touch-pan-y">
+		<div className="w-full h-90 sm:h-110 lg:h-125 touch-pan-y">
 			<Canvas camera={{ position: [0, 0, 8.5], fov: 45 }} dpr={[1, 1.5]}>
 				<ambientLight intensity={0.7} />
 				<pointLight position={[5, 5, 5]} intensity={1.3} color={color} />
