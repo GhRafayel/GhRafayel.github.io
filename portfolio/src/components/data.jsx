@@ -60,7 +60,7 @@ const Data = {
         {icon: Armenian, alt: 'Armenian'},
         {icon: English, alt: 'English'},
         {icon: German, alt: 'German'},
-        {icon: Russia, alt: 'Russia'}
+        {icon: Russia, alt: 'Russian'}
     ],
     projects : {
         low_level :[
