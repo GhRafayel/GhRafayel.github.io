@@ -53,7 +53,6 @@ const Data = {
         { name: 'Home', link: '#home' },
         { name: 'Skills', link: '#skills' },
         { name: 'Projects', link: '#projects' },
-        { name: 'Design', link: '#design' },
         { name: 'Contact', link: '#contact' }
     ],
     languages  : 
@@ -226,16 +225,6 @@ const Data = {
                 ],
         web: []
     },
-    designs : [
-        {
-            title: 'Armenian Diaspora School — Redesign',
-            subtitle: 'Classic layout concept',
-            desc: 'A redesign concept for the Armenian Diaspora School online magazine: sticky header with dropdown menu, hero section, magazine issue archive and latest posts, in a warm cream and gold palette with Armenian serif typography.',
-            tags: ['HTML', 'CSS', 'JavaScript', 'Responsive', 'UI Design'],
-            preview: '/version1.html',
-            original: 'https://armeniandiasporaschool.com/',
-        },
-    ],
     skills : [
         {name: 'Html 5' , icon: html},
         {name: 'Css 3' , icon: css},
